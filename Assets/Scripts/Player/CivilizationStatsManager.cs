@@ -4,10 +4,15 @@ using UnityEngine;
 
 public class CivilizationStatsManager : MonoBehaviour
 {
+    [Header("Civilization Stats")]
     [SerializeField] private int _population;
     [SerializeField] private float _resources;
-    [SerializeField] private float _tickTime;
     [SerializeField] private float _popGrowthPerTick;
+
+    [Header("Game Settings")]
+    [SerializeField] private float _tickTime;
+    
+    
 
     public int Population { get => _population; set => _population = value; }
     public float Resources { get => _resources; set => _resources = value; }
