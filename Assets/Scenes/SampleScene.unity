@@ -692,6 +692,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _population: 2
   _resources: 10.4
+  _tickTime: 1
 --- !u!4 &1179055394
 Transform:
   m_ObjectHideFlags: 0
