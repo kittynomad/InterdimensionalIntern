@@ -7,6 +7,7 @@ public class CivilizationStatsManager : MonoBehaviour
     [SerializeField] private int _population;
     [SerializeField] private float _resources;
     [SerializeField] private float _tickTime;
+    [SerializeField] private float _popGrowthPerTick;
 
     public int Population { get => _population; set => _population = value; }
     public float Resources { get => _resources; set => _resources = value; }
@@ -18,7 +19,9 @@ public class CivilizationStatsManager : MonoBehaviour
 
     public void OnTick()
     {
-        _population++;
+        
+        _population = Random.Range(0, 2) + 
+            (int)((float)_population * _popGrowthPerTick);
     }
 
     public IEnumerator tickAdvance()
