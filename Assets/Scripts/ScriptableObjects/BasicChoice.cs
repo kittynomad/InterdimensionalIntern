@@ -9,4 +9,14 @@ public class BasicChoice : ScriptableObject
     [SerializeField] private string _choiceDescription;
 
     [SerializeField] private StatModifier[] _statModifiers;
+
+    public override string ToString()
+    {
+        string output = _choiceName + "\n" + _choiceDescription + "\n";
+        foreach(StatModifier s in _statModifiers)
+        {
+            output = output + s.StatToModify + " change by " + s.ModificationValue + "\n";
+        }
+        return output;
+    }
 }
