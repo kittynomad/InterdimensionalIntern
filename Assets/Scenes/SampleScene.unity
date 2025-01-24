@@ -693,6 +693,8 @@ MonoBehaviour:
   _population: 2
   _resources: 10.4
   _popGrowthPerTick: 1.2
+  _happinessGrowthPerTick: 0.98
+  _happiness: 100
   _tickTime: 1
 --- !u!4 &1179055394
 Transform:
