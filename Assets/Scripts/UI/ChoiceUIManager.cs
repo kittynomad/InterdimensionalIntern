@@ -1,17 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class ChoiceUIManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] private TextMeshProUGUI _choiceOneText;
+    [SerializeField] private TextMeshProUGUI _choiceTwoText;
+    [SerializeField] private BasicChoice[] _choices;
 
-    // Update is called once per frame
-    void Update()
+    public void Start()
     {
         
     }
