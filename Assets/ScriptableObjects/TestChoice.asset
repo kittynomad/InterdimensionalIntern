@@ -14,4 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _choiceName: 
   _choiceDescription: 
-  _statModifiers: []
+  _statModifiers:
+  - _statToModify: 2
+    _modificationValue: 0
+  - _statToModify: 2
+    _modificationValue: 0
