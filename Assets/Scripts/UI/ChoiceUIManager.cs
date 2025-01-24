@@ -11,6 +11,7 @@ public class ChoiceUIManager : MonoBehaviour
 
     public void Start()
     {
-        
+        _choiceOneText.text = _choices[0].ToString();
+        _choiceTwoText.text = _choices[1].ToString();
     }
 }

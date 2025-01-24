@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92109ab8881064945aec6e7a2ed0e84a, type: 3}
   m_Name: TestChoice
   m_EditorClassIdentifier: 
-  _choiceName: 
-  _choiceDescription: 
+  _choiceName: TestChoice 1
+  _choiceDescription: testDesc
   _statModifiers:
   - _statToModify: 2
-    _modificationValue: 0
-  - _statToModify: 2
-    _modificationValue: 0
+    _modificationValue: 1
+  - _statToModify: 0
+    _modificationValue: 3

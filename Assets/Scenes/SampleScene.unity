@@ -843,6 +843,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b798a96c48144b844a998193df1e9b1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _choiceOneText: {fileID: 425859578}
+  _choiceTwoText: {fileID: 1256977512}
+  _choices:
+  - {fileID: 11400000, guid: 9c577a7ee30efbb44a03d3d7db01a3f9, type: 2}
+  - {fileID: 11400000, guid: 9c577a7ee30efbb44a03d3d7db01a3f9, type: 2}
 --- !u!1 &1003524899
 GameObject:
   m_ObjectHideFlags: 0
