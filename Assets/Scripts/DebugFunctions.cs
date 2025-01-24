@@ -1,18 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class DebugFunctions : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private TextMeshProUGUI _debugInfoDisplay;
+
+    private CivilizationStatsManager stats;
+
+    public void Start()
     {
-        
+        stats = FindObjectOfType<CivilizationStatsManager>();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void Update()
     {
-        
+        _debugInfoDisplay.text = "pop: " + stats.Population +
+            "\nResources: " + stats.Resources;
     }
 }
