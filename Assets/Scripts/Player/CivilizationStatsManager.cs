@@ -18,6 +18,7 @@ public class CivilizationStatsManager : MonoBehaviour
 
     public int Population { get => _population; set => _population = value; }
     public float Resources { get => _resources; set => _resources = value; }
+    public float Happiness { get => _happiness; set => _happiness = value; }
 
     public void Start()
     {
@@ -30,7 +31,7 @@ public class CivilizationStatsManager : MonoBehaviour
         _population = Random.Range(0, 2) + 
             (int)((float)_population * _popGrowthPerTick);
 
-        _happiness *= _happinessGrowthPerTick;
+        Happiness *= _happinessGrowthPerTick;
     }
 
     public IEnumerator tickAdvance()

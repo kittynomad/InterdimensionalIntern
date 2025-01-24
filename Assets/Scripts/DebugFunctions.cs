@@ -17,6 +17,7 @@ public class DebugFunctions : MonoBehaviour
     public void Update()
     {
         _debugInfoDisplay.text = "pop: " + stats.Population +
-            "\nResources: " + stats.Resources;
+            "\nResources: " + stats.Resources + 
+            "\nHappiness: " + stats.Happiness + "%";
     }
 }
