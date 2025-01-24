@@ -15,7 +15,8 @@ public class BasicChoice : ScriptableObject
         string output = _choiceName + "\n" + _choiceDescription + "\n";
         foreach(StatModifier s in _statModifiers)
         {
-            output = output + s.StatToModify + " change by " + s.ModificationValue + "\n";
+            if(!s.HiddenModification)
+                output = output + s.StatToModify + " change by " + s.ModificationValue + "\n";
         }
         return output;
     }
