@@ -13,8 +13,12 @@ public class CivilizationStatsManager : MonoBehaviour
 
     [Header("Game Settings")]
     [SerializeField] private float _tickTime = 1f;
-    
-    
+
+    [Header("Stage Settings")]
+    [SerializeField] private int stage = 0;
+    [SerializeField] private int[] stageChangers;
+
+
 
     public int Population { get => _population; set => _population = value; }
     public float Resources { get => _resources; set => _resources = value; }
@@ -42,5 +46,10 @@ public class CivilizationStatsManager : MonoBehaviour
             OnTick();
         }
         
+    }
+
+    public void AdvanceStage()
+    {
+
     }
 }
