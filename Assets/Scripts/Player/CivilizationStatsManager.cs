@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine;
 
 public class CivilizationStatsManager : MonoBehaviour
@@ -17,12 +18,13 @@ public class CivilizationStatsManager : MonoBehaviour
     [Header("Stage Settings")]
     [SerializeField] private int stage = 0;
     [SerializeField] private int[] stageChangers;
-
+    [SerializeField] private Animator anim;
 
 
     public int Population { get => _population; set => _population = value; }
     public float Resources { get => _resources; set => _resources = value; }
     public float Happiness { get => _happiness; set => _happiness = value; }
+    public int Stage { get => stage; set => stage = value; }
 
     public void Start()
     {
@@ -35,6 +37,13 @@ public class CivilizationStatsManager : MonoBehaviour
         _population = Random.Range(0, 2) + 
             (int)((float)_population * _popGrowthPerTick);
 
+        //changes the stage number and animation if population hits a certain number
+        if (_population > stageChangers[stage])
+        {
+            stage++;
+            anim.SetInteger("curStage", stage);
+        }
+
         Happiness *= _happinessGrowthPerTick;
     }
 
@@ -46,10 +55,5 @@ public class CivilizationStatsManager : MonoBehaviour
             OnTick();
         }
         
-    }
-
-    public void AdvanceStage()
-    {
-
     }
 }
