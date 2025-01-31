@@ -18,6 +18,7 @@ public class DebugFunctions : MonoBehaviour
     {
         _debugInfoDisplay.text = "pop: " + stats.Population +
             "\nResources: " + stats.Resources + 
-            "\nHappiness: " + stats.Happiness + "%";
+            "\nHappiness: " + stats.Happiness + "%" +
+            "\nStage: " + stats.Stage;
     }
 }
