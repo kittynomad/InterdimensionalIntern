@@ -7,5 +7,5 @@ public class ChoiceSet : ScriptableObject
 {
     [SerializeField] private string _choiceSetName;
     [SerializeField] private Enums.CivilizationPhase _choicePhase;
-    [SerializeField] private BasicChoice[] _choices;
+    [SerializeField] private BasicChoice[] _choices; //set of choices available in this set
 }
