@@ -20,6 +20,8 @@ public class CivilizationStatsManager : MonoBehaviour
     [SerializeField] private int[] stageChangers;
     [SerializeField] private Animator anim;
 
+    delegate float modifierDelegate(float modifiedVar, float modValue);
+
 
     public int Population { get => _population; set => _population = value; }
     public float Resources { get => _resources; set => _resources = value; }
@@ -47,6 +49,49 @@ public class CivilizationStatsManager : MonoBehaviour
         Happiness *= _happinessGrowthPerTick;
     }
 
+    public void ApplyChoice(BasicChoice choice)
+    {
+        foreach(StatModifier s in choice.StatModifiers)
+        {
+            modifierDelegate m = null;
+
+            switch(s.ModificationToPerform)
+            {
+                case (Enums.StatOperators.add):
+                    m = Add;
+                    break;
+                case (Enums.StatOperators.subtract):
+                    m = Subtract;
+                    break;
+                case (Enums.StatOperators.multiply):
+                    m = Multiply;
+                    break;
+                case (Enums.StatOperators.divide):
+                    m = Divide;
+                    break;
+            }
+
+            switch(s.StatToModify)
+            {
+                case (Enums.ModifyableStats.population):
+                    Population = (int)m(Population, s.ModificationValue);
+                    break;
+                case (Enums.ModifyableStats.populationGrowth):
+                    _popGrowthPerTick = m(_popGrowthPerTick, s.ModificationValue);
+                    break;
+                case (Enums.ModifyableStats.happiness):
+                    _happiness = m(_happiness, s.ModificationValue);
+                    break;
+                case (Enums.ModifyableStats.happinessGrowth):
+                    _happinessGrowthPerTick = m(_happinessGrowthPerTick, s.ModificationValue);
+                    break;
+                case (Enums.ModifyableStats.resources):
+                    _resources = m(_resources, s.ModificationValue);
+                    break;
+            }
+        }
+    }
+
     public IEnumerator tickAdvance()
     {
         while(true)
@@ -56,4 +101,11 @@ public class CivilizationStatsManager : MonoBehaviour
         }
         
     }
+
+    //basic math for delegate
+    private float Add(float fOne, float fTwo) { return fOne + fTwo; }
+    private float Subtract(float fOne, float fTwo) { return fOne - fTwo; }
+    private float Multiply(float fOne, float fTwo) { return fOne * fTwo; }
+    private float Divide(float fOne, float fTwo) { return fOne / fTwo; }
+
 }

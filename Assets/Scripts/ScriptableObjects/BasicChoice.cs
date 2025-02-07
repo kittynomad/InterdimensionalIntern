@@ -10,10 +10,12 @@ public class BasicChoice : ScriptableObject
 
     [SerializeField] private StatModifier[] _statModifiers;
 
+    public StatModifier[] StatModifiers { get => _statModifiers; set => _statModifiers = value; }
+
     public override string ToString()
     {
         string output = _choiceName + "\n" + _choiceDescription + "\n";
-        foreach(StatModifier s in _statModifiers)
+        foreach(StatModifier s in StatModifiers)
         {
             if(!s.HiddenModification)
                 output = output + s.StatToModify + " change by " + s.ModificationValue + "\n";
