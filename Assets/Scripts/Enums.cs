@@ -13,6 +13,14 @@ public class Enums : MonoBehaviour
         happinessGrowth
     }
 
+    public enum StatOperators
+    {
+        add,
+        subtract,
+        multiply,
+        divide
+    }
+
     public enum CivilizationPhase
     {
         huts,
