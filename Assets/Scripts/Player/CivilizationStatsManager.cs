@@ -70,6 +70,25 @@ public class CivilizationStatsManager : MonoBehaviour
                     m = Divide;
                     break;
             }
+
+            switch(s.StatToModify)
+            {
+                case (Enums.ModifyableStats.population):
+                    Population = (int)m(Population, s.ModificationValue);
+                    break;
+                case (Enums.ModifyableStats.populationGrowth):
+                    _popGrowthPerTick = m(_popGrowthPerTick, s.ModificationValue);
+                    break;
+                case (Enums.ModifyableStats.happiness):
+                    _happiness = m(_happiness, s.ModificationValue);
+                    break;
+                case (Enums.ModifyableStats.happinessGrowth):
+                    _happinessGrowthPerTick = m(_happinessGrowthPerTick, s.ModificationValue);
+                    break;
+                case (Enums.ModifyableStats.resources):
+                    _resources = m(_resources, s.ModificationValue);
+                    break;
+            }
         }
     }
 
