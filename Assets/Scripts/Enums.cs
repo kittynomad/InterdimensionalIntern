@@ -12,4 +12,15 @@ public class Enums : MonoBehaviour
         happiness,
         happinessGrowth
     }
+
+    public enum CivilizationPhase
+    {
+        huts,
+        cabins,
+        castles,
+        brick,
+        modern,
+        future,
+        superFuture
+    }
 }
