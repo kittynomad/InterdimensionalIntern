@@ -47,6 +47,11 @@ public class CivilizationStatsManager : MonoBehaviour
         Happiness *= _happinessGrowthPerTick;
     }
 
+    public void ApplyChoice(BasicChoice choice)
+    {
+
+    }
+
     public IEnumerator tickAdvance()
     {
         while(true)

@@ -15,4 +15,9 @@ public class ChoiceUIManager : MonoBehaviour
             _choiceTexts[i].text = _choices.Choices[i].ToString();
         }
     }
+
+    public void ApplyChoice(int choiceToApply)
+    {
+        FindObjectOfType<CivilizationStatsManager>().ApplyChoice(_choices.Choices[choiceToApply]);
+    }
 }
