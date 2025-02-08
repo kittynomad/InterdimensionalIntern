@@ -44,7 +44,7 @@ public class UILineRenderer : Graphic
         {
             Vector2 point = _points[index];
             if (index < _points.Count - 1)
-                angle = GetAngle(_points[index], _points[index + 1]);
+                angle = GetAngle(_points[index], _points[index + 1]) + 45f;
             DrawVerticiesForPoint(point, vertexHelper, angle);
         }
         for (int i = 0; i < _points.Count - 1; i++)
