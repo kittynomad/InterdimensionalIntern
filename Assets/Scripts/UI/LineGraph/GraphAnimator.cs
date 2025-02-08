@@ -9,7 +9,7 @@ using UnityEngine;
 public class GraphAnimator : MonoBehaviour
 {
     [SerializeField] private UILineRenderer[] _lines;
-    [SerializeField] private float _time = 1f;
+    [SerializeField] private float _time = 0.5f;
 
     private void OnEnable()
     {
@@ -27,7 +27,7 @@ public class GraphAnimator : MonoBehaviour
         List<Vector2> points = new List<Vector2>(lineRenderer.Points);
         Animate(lineRenderer, points);
     }
-    private void Animate(UILineRenderer lineRenderer, List<Vector2> points)
+    public void Animate(UILineRenderer lineRenderer, List<Vector2> points)
     {
         lineRenderer.Points = new List<Vector2>();
         for (int index = 0; index < points.Count; index++)

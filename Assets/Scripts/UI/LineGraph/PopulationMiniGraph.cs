@@ -4,6 +4,7 @@
  * CreationDate:        2/8/2025
  */
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class PopulationMiniGraph : MonoBehaviour
@@ -25,14 +26,14 @@ public class PopulationMiniGraph : MonoBehaviour
         while (true)
         {
             yield return new WaitForSeconds(statsManager.TickTime);
-            if (lineRenderer.Points.Count - 1 > _maxPoints)
+            lineRenderer.Points.Add(new Vector2(((lineRenderer.Points.Count * gridRenderer.gameObject.GetComponent<RectTransform>().sizeDelta.x) / _maxPoints) / 2, ((float)statsManager.Population / _maximumPopulation) * (float)gridRenderer.gameObject.GetComponent<RectTransform>().sizeDelta.y));
+            if (lineRenderer.Points.Count > 1)
             {
-
+                //gameObject.GetComponent<GraphAnimator>().Animate(lineRenderer, new List<Vector2>() { lineRenderer.Points[lineRenderer.Points.Count - 2], lineRenderer.Points[lineRenderer.Points.Count - 1] });
             }
-            lineRenderer.Points.Add(new Vector2(((lineRenderer.Points.Count * gridRenderer.gameObject.GetComponent<RectTransform>().sizeDelta.x) / _maxPoints) / 2,
-                ((float)statsManager.Population / _maximumPopulation) * (float)gridRenderer.gameObject.GetComponent<RectTransform>().sizeDelta.y));
-            gameObject.GetComponent<GraphAnimator>().AnimatePoint(lineRenderer, 0, lineRenderer.Points[lineRenderer.Points.Count - 2], 
-                lineRenderer.Points[lineRenderer.Points.Count - 1]);
+
+                //gameObject.GetComponent<GraphAnimator>().AnimatePoint(lineRenderer, 2, lineRenderer.Points[lineRenderer.Points.Count - 2], 
+                    //lineRenderer.Points[lineRenderer.Points.Count - 1]);
         }
     }
 }
