@@ -17,6 +17,8 @@ public class UILineRenderer : Graphic
     private float unitWidth;
     private float unitHeight;
 
+    public List<Vector2> Points { get => _points; set => _points = value; }
+
     private void Update()
     {
         if (_grid != null)
