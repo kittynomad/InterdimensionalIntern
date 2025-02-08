@@ -872,7 +872,7 @@ MonoBehaviour:
   lineRenderer: {fileID: 586633360}
   _minimumPopulation: 0
   _maximumPopulation: 100
-  _maxPoints: 20
+  _maxPoints: 10
 --- !u!114 &586633360 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5802633802236077892, guid: 473d5054b365a804592a40d71965dfba, type: 3}

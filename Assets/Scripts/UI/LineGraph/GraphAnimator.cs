@@ -22,7 +22,7 @@ public class GraphAnimator : MonoBehaviour
             AnimateLine(line);
         }
     }
-    private void AnimateLine(UILineRenderer lineRenderer)
+    public void AnimateLine(UILineRenderer lineRenderer)
     {
         List<Vector2> points = new List<Vector2>(lineRenderer.Points);
         Animate(lineRenderer, points);
@@ -35,7 +35,7 @@ public class GraphAnimator : MonoBehaviour
             AnimatePoint(lineRenderer, index, new Vector2(0, 4), points[index]);
         }
     }
-    private void AnimatePoint(UILineRenderer lineRenderer, int index, Vector2 pointA, Vector2 pointB)
+    public void AnimatePoint(UILineRenderer lineRenderer, int index, Vector2 pointA, Vector2 pointB)
     {
         LeanTween.delayedCall(_time * index, () =>
         {
