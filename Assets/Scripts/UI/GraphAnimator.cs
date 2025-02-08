@@ -1,4 +1,8 @@
-using System.Collections;
+/*
+ * FileName:            GraphAnimator.cs
+ * Author:              Marlow Greenan
+ * CreationDate:        2/7/2025
+ */
 using System.Collections.Generic;
 using UnityEngine;
 

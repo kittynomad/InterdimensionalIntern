@@ -1,5 +1,5 @@
 /*
- * FileName:            UIGridRenderer
+ * FileName:            UIGridRenderer.cs
  * Author:              Marlow Greenan
  * CreationDate:        2/7/2025
  */
@@ -19,7 +19,7 @@ public class UIGridRenderer : Graphic
     public Vector2Int GridSize { get => _gridSize; set => _gridSize = value; }
 
     /// <summary>
-    ///  
+    ///  Creates a graph
     /// </summary>
     /// <param name="vertexHelper"></param>
     protected override void OnPopulateMesh(VertexHelper vertexHelper)
@@ -41,7 +41,7 @@ public class UIGridRenderer : Graphic
         }
     }
     /// <summary>
-    /// 
+    /// Creates a cell of a graph
     /// </summary>
     /// <param name="x"></param>
     /// <param name="y"></param>

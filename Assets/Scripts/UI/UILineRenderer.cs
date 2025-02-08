@@ -1,9 +1,11 @@
-using System.Collections;
+/*
+ * FileName:            UILineRenderer.cs
+ * Author:              Marlow Greenan
+ * CreationDate:        2/7/2025
+ */
 using System.Collections.Generic;
-using UnityEditor.Tilemaps;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.UIElements;
 
 public class UILineRenderer : Graphic
 {
@@ -30,6 +32,10 @@ public class UILineRenderer : Graphic
             }
         }
     }
+    /// <summary>
+    /// Creates lines between all the points
+    /// </summary>
+    /// <param name="vertexHelper"></param>
     protected override void OnPopulateMesh(VertexHelper vertexHelper)
     {
         vertexHelper.Clear();
@@ -56,10 +62,22 @@ public class UILineRenderer : Graphic
             vertexHelper.AddTriangle(index + 3, index + 2, index + 0);
         }
     }
+    /// <summary>
+    /// Gets the angle between pointA and pointB to render the line correctly
+    /// </summary>
+    /// <param name="pointA"></param>
+    /// <param name="pointB"></param>
+    /// <returns></returns>
     private float GetAngle(Vector2 pointA, Vector2 pointB)
     {
         return (float)(Mathf.Atan2(pointB.y - pointA.y, pointB.x - pointA.x) * (180 / Mathf.PI));
     }
+    /// <summary>
+    /// Draws lines between points
+    /// </summary>
+    /// <param name="point"></param>
+    /// <param name="vertexHelper"></param>
+    /// <param name="angle"></param>
     private void DrawVerticiesForPoint(Vector2 point, VertexHelper vertexHelper, float angle)
     {
         UIVertex vertex = UIVertex.simpleVert;
