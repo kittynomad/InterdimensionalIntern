@@ -779,7 +779,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 917226120659334246, guid: 473d5054b365a804592a40d71965dfba, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1696349180670445661, guid: 473d5054b365a804592a40d71965dfba, type: 3}
       propertyPath: m_Name
@@ -835,7 +835,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5802633802236077892, guid: 473d5054b365a804592a40d71965dfba, type: 3}
       propertyPath: _points.Array.size
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5802633802236077892, guid: 473d5054b365a804592a40d71965dfba, type: 3}
+      propertyPath: _points.Array.data[1].x
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5802633802236077892, guid: 473d5054b365a804592a40d71965dfba, type: 3}
+      propertyPath: _points.Array.data[1].y
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -872,7 +880,7 @@ MonoBehaviour:
   lineRenderer: {fileID: 586633360}
   _minimumPopulation: 0
   _maximumPopulation: 100
-  _maxPoints: 10
+  _maxPoints: 15
 --- !u!114 &586633360 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5802633802236077892, guid: 473d5054b365a804592a40d71965dfba, type: 3}

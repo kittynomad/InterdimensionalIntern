@@ -22,12 +22,12 @@ public class GraphAnimator : MonoBehaviour
             AnimateLine(line);
         }
     }
-    public void AnimateLine(UILineRenderer lineRenderer)
+    private void AnimateLine(UILineRenderer lineRenderer)
     {
         List<Vector2> points = new List<Vector2>(lineRenderer.Points);
         Animate(lineRenderer, points);
     }
-    public void Animate(UILineRenderer lineRenderer, List<Vector2> points)
+    private void Animate(UILineRenderer lineRenderer, List<Vector2> points)
     {
         lineRenderer.Points = new List<Vector2>();
         for (int index = 0; index < points.Count; index++)
@@ -35,7 +35,7 @@ public class GraphAnimator : MonoBehaviour
             AnimatePoint(lineRenderer, index, new Vector2(0, 4), points[index]);
         }
     }
-    public void AnimatePoint(UILineRenderer lineRenderer, int index, Vector2 pointA, Vector2 pointB)
+    private void AnimatePoint(UILineRenderer lineRenderer, int index, Vector2 pointA, Vector2 pointB)
     {
         LeanTween.delayedCall(_time * index, () =>
         {
@@ -46,6 +46,17 @@ public class GraphAnimator : MonoBehaviour
             }
             else
                 lineRenderer.Points.Add(pointA);
+            LeanTween.value(gameObject, (value) =>
+            {
+                lineRenderer.Points[index] = value;
+                lineRenderer.SetVerticesDirty();
+            }, pointA, pointB, _time);
+        });
+    }
+    public void AnimatePointLive(UILineRenderer lineRenderer, int index, Vector2 pointA, Vector2 pointB)
+    {
+        LeanTween.delayedCall(_time * index, () =>
+        {
             LeanTween.value(gameObject, (value) =>
             {
                 lineRenderer.Points[index] = value;
