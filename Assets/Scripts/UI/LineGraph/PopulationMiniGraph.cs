@@ -27,8 +27,22 @@ public class PopulationMiniGraph : MonoBehaviour
         while (true)
         {
             yield return new WaitForSeconds(statsManager.TickTime);
-            lineRenderer.Points.Add(new Vector2(((lineRenderer.Points.Count * gridRenderer.gameObject.GetComponent<RectTransform>().sizeDelta.x) / _maxPoints) / 2, ((float)statsManager.Population / _maximumPopulation) * (float)gridRenderer.gameObject.GetComponent<RectTransform>().sizeDelta.y));
-            if (lineRenderer.Points.Count > 1)
+            //
+            if (lineRenderer.Points.Count >= _maxPoints)
+            {
+                List<Vector2> tempPoints = new List<Vector2>();
+                for (int index = 0; index < lineRenderer.Points.Count; index++)
+                {
+                    if (index < lineRenderer.Points.Count - 1)
+                        tempPoints.Add(new Vector2(lineRenderer.Points[index].x, lineRenderer.Points[index + 1].y));
+                }
+                lineRenderer.Points = tempPoints;
+                lineRenderer.VertexHelper.Clear();
+                tickCount--;
+            }
+            //
+            lineRenderer.Points.Add(new Vector2(((lineRenderer.Points.Count * gridRenderer.gameObject.GetComponent<RectTransform>().sizeDelta.x) / _maxPoints), ((float)statsManager.Population / _maximumPopulation) * (float)gridRenderer.gameObject.GetComponent<RectTransform>().sizeDelta.y));
+            if (lineRenderer.Points.Count > 1 && lineRenderer.Points.Count < _maxPoints + 2)
                 gameObject.GetComponent<GraphAnimator>().AnimatePointLive(lineRenderer, tickCount, lineRenderer.Points[lineRenderer.Points.Count - 2] ,lineRenderer.Points[lineRenderer.Points.Count - 1]);
             tickCount++;
         }

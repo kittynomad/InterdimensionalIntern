@@ -778,6 +778,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 929536302}
     m_Modifications:
     - target: {fileID: 917226120659334246, guid: 473d5054b365a804592a40d71965dfba, type: 3}
+      propertyPath: _time
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 917226120659334246, guid: 473d5054b365a804592a40d71965dfba, type: 3}
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
@@ -879,8 +883,8 @@ MonoBehaviour:
   gridRenderer: {fileID: 586633361}
   lineRenderer: {fileID: 586633360}
   _minimumPopulation: 0
-  _maximumPopulation: 100
-  _maxPoints: 15
+  _maximumPopulation: 1000
+  _maxPoints: 30
 --- !u!114 &586633360 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5802633802236077892, guid: 473d5054b365a804592a40d71965dfba, type: 3}
