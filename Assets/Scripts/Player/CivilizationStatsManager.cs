@@ -27,6 +27,7 @@ public class CivilizationStatsManager : MonoBehaviour
     public float Resources { get => _resources; set => _resources = value; }
     public float Happiness { get => _happiness; set => _happiness = value; }
     public int Stage { get => stage; set => stage = value; }
+    public float TickTime { get => _tickTime; set => _tickTime = value; }
 
     public void Start()
     {

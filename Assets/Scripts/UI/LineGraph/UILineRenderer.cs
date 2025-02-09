@@ -13,6 +13,7 @@ public class UILineRenderer : Graphic
     [SerializeField] private Vector2Int _gridSize;
     [SerializeField] private List<Vector2> _points;
     [SerializeField] private float _thickness = 1;
+    private VertexHelper vertexHelper;
 
     private float width;
     private float height;
@@ -20,6 +21,7 @@ public class UILineRenderer : Graphic
     private float unitHeight;
 
     public List<Vector2> Points { get => _points; set => _points = value; }
+    public VertexHelper VertexHelper { get => vertexHelper; set => vertexHelper = value; }
 
     private void Update()
     {
@@ -38,6 +40,7 @@ public class UILineRenderer : Graphic
     /// <param name="vertexHelper"></param>
     protected override void OnPopulateMesh(VertexHelper vertexHelper)
     {
+        this.vertexHelper = vertexHelper;
         vertexHelper.Clear();
         width = rectTransform.rect.width;
         height = rectTransform.rect.height;

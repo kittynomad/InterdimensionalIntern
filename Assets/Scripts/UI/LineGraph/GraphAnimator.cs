@@ -9,7 +9,7 @@ using UnityEngine;
 public class GraphAnimator : MonoBehaviour
 {
     [SerializeField] private UILineRenderer[] _lines;
-    [SerializeField] private float _time = 1f;
+    [SerializeField] private float _time = 0.5f;
 
     private void OnEnable()
     {
@@ -46,6 +46,17 @@ public class GraphAnimator : MonoBehaviour
             }
             else
                 lineRenderer.Points.Add(pointA);
+            LeanTween.value(gameObject, (value) =>
+            {
+                lineRenderer.Points[index] = value;
+                lineRenderer.SetVerticesDirty();
+            }, pointA, pointB, _time);
+        });
+    }
+    public void AnimatePointLive(UILineRenderer lineRenderer, int index, Vector2 pointA, Vector2 pointB)
+    {
+        LeanTween.delayedCall(_time * index, () =>
+        {
             LeanTween.value(gameObject, (value) =>
             {
                 lineRenderer.Points[index] = value;
