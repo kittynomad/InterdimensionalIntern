@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c59ac08da7614d84d8a2c5a14d7c72e3, type: 3}
-  m_Name: HutStage
+  m_Name: ModernStage
   m_EditorClassIdentifier: 
-  _phase: 0
-  minPop: 0
-  maxPop: 50
+  _phase: 4
+  minPop: 51
+  maxPop: 10000

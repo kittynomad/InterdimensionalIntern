@@ -14,15 +14,17 @@ public class StageManager : MonoBehaviour
     {
         statsManager = FindAnyObjectByType<CivilizationStatsManager>();
         choiceCount = 0;
+        curStage = 0;
         Debug.Log("Stages Length:" + (stages.Length - 1));
     }
 
     public void OnChoice()
     {
-        Debug.Log("Choice #:" + choiceCount);
         choiceCount++;
+        Debug.Log("Choice #:" + choiceCount);
         if (choiceCount == 3)
         {
+            Debug.Log("Population: " + statsManager.Population + "\nMax Population: " + stages[curStage].MaxPopulation + "\nCurrent Stage: " + curStage);
             StageCheck();
             choiceCount = 0;
         }
@@ -32,12 +34,15 @@ public class StageManager : MonoBehaviour
     {
         if (curStage > 0 && statsManager.Population <= stages[curStage].MinPopulation)
         {
+            Debug.Log("Stage Change");
             curStage--;
         }
         else if (curStage < stages.Length - 1 && statsManager.Population >= stages[curStage].MaxPopulation)
         {
+            Debug.Log("Stage Change");
             curStage++;
         }
+        Debug.Log("CurrentStage:" + stages[curStage].Phase);
     }
 
     void Update()
