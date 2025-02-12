@@ -23,6 +23,7 @@ public class UILineRenderer : Graphic
     public List<Vector2> Points { get => _points; set => _points = value; }
     public VertexHelper VertexHelper { get => vertexHelper; set => vertexHelper = value; }
 
+    /*
     private void Update()
     {
         if (_grid != null)
@@ -34,6 +35,7 @@ public class UILineRenderer : Graphic
             }
         }
     }
+    */
     /// <summary>
     /// Creates lines between all the points
     /// </summary>
