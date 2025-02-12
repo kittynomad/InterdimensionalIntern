@@ -957,9 +957,8 @@ MonoBehaviour:
   statsManager: {fileID: 1179055393}
   gridRenderer: {fileID: 586633361}
   lineRenderer: {fileID: 586633360}
-  _minimumPopulation: 0
-  _maximumPopulation: 1000
-  _maxPoints: 30
+  _maxX: 20
+  _maxY: 1000
 --- !u!114 &586633360 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5802633802236077892, guid: 473d5054b365a804592a40d71965dfba, type: 3}
