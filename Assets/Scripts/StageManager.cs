@@ -4,24 +4,42 @@ using UnityEngine;
 
 public class StageManager : MonoBehaviour
 {
-
+    [SerializeField] private CivStage[] stages;
+    private int curStage;
     private int choiceCount;
-    // Start is called before the first frame update
+
+    private CivilizationStatsManager statsManager;
+
     void Start()
     {
+        statsManager = FindAnyObjectByType<CivilizationStatsManager>();
         choiceCount = 0;
+        Debug.Log("Stages Length:" + (stages.Length - 1));
     }
 
     public void OnChoice()
     {
+        Debug.Log("Choice #:" + choiceCount);
         choiceCount++;
         if (choiceCount == 3)
         {
-            
+            StageCheck();
+            choiceCount = 0;
         }
     }
 
-    // Update is called once per frame
+    private void StageCheck()
+    {
+        if (curStage > 0 && statsManager.Population <= stages[curStage].MinPopulation)
+        {
+            curStage--;
+        }
+        else if (curStage < stages.Length - 1 && statsManager.Population >= stages[curStage].MaxPopulation)
+        {
+            curStage++;
+        }
+    }
+
     void Update()
     {
         

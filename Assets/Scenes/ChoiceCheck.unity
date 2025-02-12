@@ -558,6 +558,7 @@ GameObject:
   m_Component:
   - component: {fileID: 504462879}
   - component: {fileID: 504462878}
+  - component: {fileID: 504462880}
   m_Layer: 0
   m_Name: CivManager
   m_TagString: Untagged
@@ -601,6 +602,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &504462880
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 504462877}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5158d0ff52f2c2e49abbfdfef76a588e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stages:
+  - {fileID: 11400000, guid: 491cf11f28629054d92afb624723aa80, type: 2}
 --- !u!1001 &761984156
 PrefabInstance:
   m_ObjectHideFlags: 0
