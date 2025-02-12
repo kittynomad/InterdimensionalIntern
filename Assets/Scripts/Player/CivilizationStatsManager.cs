@@ -41,11 +41,11 @@ public class CivilizationStatsManager : MonoBehaviour
             (int)((float)_population * _popGrowthPerTick);
 
         //changes the stage number and animation if population hits a certain number
-        if (_population > stageChangers[stage])
-        {
-            stage++;
-            anim.SetInteger("curStage", stage);
-        }
+        //if (_population > stageChangers[stage])
+        //{
+            //stage++;
+            //anim.SetInteger("curStage", stage);
+        //}
 
         Happiness *= _happinessGrowthPerTick;
     }
