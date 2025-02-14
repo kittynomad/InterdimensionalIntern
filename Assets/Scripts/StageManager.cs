@@ -25,7 +25,7 @@ public class StageManager : MonoBehaviour
         Debug.Log("Choice #:" + choiceCount);
         if (choiceCount >= _choicesUntilCivilizationShift)
         {
-            Debug.Log("Population: " + statsManager.Population + "\nMax Population: " + stages[curStage].MaxPopulation + "\nCurrent Stage: " + curStage);
+            Debug.Log("Population: " + statsManager.Population + "\nMax " + stages[curStage].MaxStats[0].Stat + ": " + stages[curStage].MaxStats[0].Value + "\nCurrent Stage: " + curStage);
             StageCheck();
             choiceCount = 0;
         }
