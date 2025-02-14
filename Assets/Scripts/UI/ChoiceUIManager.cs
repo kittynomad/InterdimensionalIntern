@@ -33,6 +33,7 @@ public class ChoiceUIManager : MonoBehaviour
 
     public void ApplyChoice(int choiceToApply)
     {
+        StartCoroutine(TypeAdditional("\nchose a thing"));
         FindObjectOfType<CivilizationStatsManager>().ApplyChoice(_choices.Choices[choiceToApply]);
     }
 
@@ -56,6 +57,29 @@ public class ChoiceUIManager : MonoBehaviour
 
         _choiceTexts[0].maxVisibleCharacters = 0;
         _choiceTexts[0].text = sentence;
+        char[] sentenceCharArray = sentence.ToCharArray();
+
+        for (int i = 0; i < sentenceCharArray.Length; i++)
+        {
+            char letter = sentenceCharArray[i];
+
+            _choiceTexts[0].maxVisibleCharacters++;
+
+
+            //wait pre-specified time until printing the next letter
+            yield return new WaitForSeconds(_textSpeed);
+        }
+    }
+
+    IEnumerator TypeAdditional(string sentence)
+    {
+        isTyping = true;
+
+        char[] oldSentenceCharArray = _choiceTexts[0].text.ToCharArray();
+
+        _choiceTexts[0].maxVisibleCharacters = oldSentenceCharArray.Length;
+        _choiceTexts[0].text = _choiceTexts[0].text + sentence;
+
         char[] sentenceCharArray = sentence.ToCharArray();
 
         for (int i = 0; i < sentenceCharArray.Length; i++)
