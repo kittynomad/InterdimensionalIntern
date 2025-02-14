@@ -5,6 +5,7 @@ using UnityEngine;
 public class StageManager : MonoBehaviour
 {
     [SerializeField] private CivStage[] stages;
+    [SerializeField] private int _choicesUntilCivilizationShift = 3;
     private int curStage;
     private int choiceCount;
 
@@ -22,9 +23,9 @@ public class StageManager : MonoBehaviour
     {
         choiceCount++;
         Debug.Log("Choice #:" + choiceCount);
-        if (choiceCount == 3)
+        if (choiceCount >= _choicesUntilCivilizationShift)
         {
-            Debug.Log("Population: " + statsManager.Population + "\nMax Population: " + stages[curStage].MaxPopulation + "\nCurrent Stage: " + curStage);
+            Debug.Log("Population: " + statsManager.Population + "\nMax " + stages[curStage].MaxStats[0].Stat + ": " + stages[curStage].MaxStats[0].Value + "\nCurrent Stage: " + curStage);
             StageCheck();
             choiceCount = 0;
         }
@@ -32,14 +33,14 @@ public class StageManager : MonoBehaviour
 
     private void StageCheck()
     {
-        if (curStage > 0 && statsManager.Population <= stages[curStage].MinPopulation)
+        if (curStage > 0 && !stages[curStage].CivilizationAboveMinimumStats(statsManager))//statsManager.Population <= stages[curStage].MinPopulation)
         {
-            Debug.Log("Stage Change");
+            Debug.Log("Not above minimum:" + !stages[curStage].CivilizationAboveMinimumStats(statsManager));
             curStage--;
         }
-        else if (curStage < stages.Length - 1 && statsManager.Population >= stages[curStage].MaxPopulation)
+        else if (curStage < stages.Length - 1 && !stages[curStage].CivilizationBelowMaximumStats(statsManager))//statsManager.Population >= stages[curStage].MaxPopulation)
         {
-            Debug.Log("Stage Change");
+            Debug.Log("Not below maximum: " + !stages[curStage].CivilizationBelowMaximumStats(statsManager));
             curStage++;
         }
         Debug.Log("CurrentStage:" + stages[curStage].Phase);
