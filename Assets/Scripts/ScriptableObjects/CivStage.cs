@@ -6,11 +6,13 @@ using UnityEngine;
 public class CivStage : ScriptableObject
 {
     [SerializeField] private Enums.CivilizationPhase _phase;
-    //[SerializeField] private 
+    [SerializeField] private StatWithAssociatedValue[] _minStats;
+    [SerializeField] private StatWithAssociatedValue[] _maxStats;
     [SerializeField] private int minPop;
     [SerializeField] private int maxPop;
 
     public Enums.CivilizationPhase Phase { get => _phase; set { _phase = value; } }
     public int MinPopulation { get => minPop; set { minPop = value; } }
     public int MaxPopulation { get => maxPop; set { maxPop = value; } }
+
 }
