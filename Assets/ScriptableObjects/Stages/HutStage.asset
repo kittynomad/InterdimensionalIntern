@@ -13,5 +13,9 @@ MonoBehaviour:
   m_Name: HutStage
   m_EditorClassIdentifier: 
   _phase: 0
-  minPop: 0
-  maxPop: 50
+  _minStats:
+  - _stat: 0
+    _value: 0
+  _maxStats:
+  - _stat: 0
+    _value: 50
