@@ -2,6 +2,8 @@
  * FileName:            PopulationMiniGraph.cs
  * Author:              Marlow Greenan
  * CreationDate:        2/8/2025
+ * 
+ * Creates a line graph that updates every tick to show the live population.
  */
 using System.Collections;
 using System.Collections.Generic;
