@@ -6,6 +6,7 @@ using UnityEngine;
 public class CivStage : ScriptableObject
 {
     [SerializeField] private Enums.CivilizationPhase _phase;
+    //[SerializeField] private 
     [SerializeField] private int minPop;
     [SerializeField] private int maxPop;
 
