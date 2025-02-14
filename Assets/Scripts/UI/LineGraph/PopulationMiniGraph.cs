@@ -14,7 +14,7 @@ public class PopulationMiniGraph : MonoBehaviour
     [SerializeField] private CivilizationStatsManager statsManager;
     [SerializeField] private UIGridRenderer gridRenderer;
     [SerializeField] private UILineRenderer lineRenderer;
-    [SerializeField] private int _maxX = 30;
+    [SerializeField] private int _maxX = 20;
     [SerializeField] private int _maxY = 1000;
 
     private void Awake()
@@ -46,6 +46,8 @@ public class PopulationMiniGraph : MonoBehaviour
                 tickCount--;
             }
             lineRenderer.Points.Add(new Vector2(((lineRenderer.Points.Count * gridRenderer.gameObject.GetComponent<RectTransform>().sizeDelta.x) / _maxX), ((float)statsManager.Population / _maxY) * (float)gridRenderer.gameObject.GetComponent<RectTransform>().sizeDelta.y));
+            if (lineRenderer.Points[lineRenderer.Points.Count - 1].y > (float)gridRenderer.gameObject.GetComponent<RectTransform>().sizeDelta.y) //if y is greater than the size of the grid,change it to be the top of the grid
+                lineRenderer.Points[lineRenderer.Points.Count - 1] = new Vector2(lineRenderer.Points[lineRenderer.Points.Count - 1].x, (float)gridRenderer.gameObject.GetComponent<RectTransform>().sizeDelta.y);
             if (lineRenderer.Points.Count > 1 && lineRenderer.Points.Count < _maxX + 2) //has more than 1 point and is less than maxX draw all lines
                 gameObject.GetComponent<GraphAnimator>().AnimatePointLive(lineRenderer, tickCount, lineRenderer.Points[lineRenderer.Points.Count - 2] ,lineRenderer.Points[lineRenderer.Points.Count - 1]);
             tickCount++;
