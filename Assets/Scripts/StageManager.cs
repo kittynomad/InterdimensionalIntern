@@ -5,6 +5,7 @@ using UnityEngine;
 public class StageManager : MonoBehaviour
 {
     [SerializeField] private CivStage[] stages;
+    [SerializeField] private int _choicesUntilCivilizationShift = 3;
     private int curStage;
     private int choiceCount;
 
@@ -22,7 +23,7 @@ public class StageManager : MonoBehaviour
     {
         choiceCount++;
         Debug.Log("Choice #:" + choiceCount);
-        if (choiceCount == 3)
+        if (choiceCount >= _choicesUntilCivilizationShift)
         {
             Debug.Log("Population: " + statsManager.Population + "\nMax Population: " + stages[curStage].MaxPopulation + "\nCurrent Stage: " + curStage);
             StageCheck();
