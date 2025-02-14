@@ -15,4 +15,37 @@ public class CivStage : ScriptableObject
     public int MinPopulation { get => minPop; set { minPop = value; } }
     public int MaxPopulation { get => maxPop; set { maxPop = value; } }
 
+    public bool CivilizationAboveMinimumStats(CivilizationStatsManager civ, bool requireAllStats = false)
+    {
+        foreach(StatWithAssociatedValue s in _minStats)
+        {
+            if(civ.GetStatFromModifyableStatsEnum(s.Stat) >= s.Value)
+            {
+                if (!requireAllStats) return true;
+            }
+            else
+            {
+                if (requireAllStats) return false;
+            }
+        }
+
+        return requireAllStats;
+    }
+
+    public bool CivilizationBelowMaximumStats(CivilizationStatsManager civ, bool requireAllStats = true)
+    {
+        foreach (StatWithAssociatedValue s in _minStats)
+        {
+            if (civ.GetStatFromModifyableStatsEnum(s.Stat) <= s.Value)
+            {
+                if (!requireAllStats) return true;
+            }
+            else
+            {
+                if (requireAllStats) return false;
+            }
+        }
+
+        return requireAllStats;
+    }
 }
