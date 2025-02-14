@@ -31,4 +31,18 @@ public class ChoiceUIManager : MonoBehaviour
     {
         FindObjectOfType<CivilizationStatsManager>().ApplyChoice(_choices.Choices[choiceToApply]);
     }
+
+    public void ApplyChoice()
+    {
+        try
+        {
+            string t = _inputField.text;
+            ApplyChoice(System.Convert.ToInt32(t));
+            _inputField.text = "";
+        }
+        catch
+        {
+            Debug.LogError("attempt to convert string to int failed!");
+        }
+    }
 }
