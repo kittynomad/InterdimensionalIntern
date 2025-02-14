@@ -93,6 +93,25 @@ public class CivilizationStatsManager : MonoBehaviour
         }
     }
 
+    public float GetStatFromModifyableStatsEnum(Enums.ModifyableStats s)
+    {
+        switch(s)
+        {
+            case (Enums.ModifyableStats.happiness):
+                return _happiness;
+            case (Enums.ModifyableStats.happinessGrowth):
+                return _happinessGrowthPerTick;
+            case (Enums.ModifyableStats.population):
+                return _population;
+            case (Enums.ModifyableStats.populationGrowth):
+                return _popGrowthPerTick;
+            case (Enums.ModifyableStats.resources):
+                return _resources;
+        }
+
+        return null;
+    }
+
     public IEnumerator tickAdvance()
     {
         while(true)
