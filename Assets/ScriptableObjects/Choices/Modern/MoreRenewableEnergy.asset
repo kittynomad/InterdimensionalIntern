@@ -12,6 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92109ab8881064945aec6e7a2ed0e84a, type: 3}
   m_Name: MoreRenewableEnergy
   m_EditorClassIdentifier: 
-  _choiceName: 
-  _choiceDescription: 
-  _statModifiers: []
+  _choiceName: Greener Energy
+  _choiceDescription: Go Green for a brighter future
+  _statModifiers:
+  - _statToModify: 1
+    _modificationToPerform: 0
+    _modificationValue: 4
+    _hiddenModification: 0
+  - _statToModify: 3
+    _modificationToPerform: 0
+    _modificationValue: 1
+    _hiddenModification: 0

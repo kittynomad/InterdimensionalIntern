@@ -12,6 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92109ab8881064945aec6e7a2ed0e84a, type: 3}
   m_Name: PutGiantIceCubeInOcean
   m_EditorClassIdentifier: 
-  _choiceName: 
-  _choiceDescription: 
-  _statModifiers: []
+  _choiceName: Cool down Ocean
+  _choiceDescription: Dropping a big Ice cube into the ocean has to fix something
+  _statModifiers:
+  - _statToModify: 3
+    _modificationToPerform: 0
+    _modificationValue: 2
+    _hiddenModification: 0

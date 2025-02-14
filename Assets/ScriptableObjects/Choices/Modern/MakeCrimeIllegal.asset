@@ -16,8 +16,10 @@ MonoBehaviour:
   _choiceDescription: Crime is now illegal! Don't do crime or else!
   _statModifiers:
   - _statToModify: 3
+    _modificationToPerform: 0
     _modificationValue: 2
     _hiddenModification: 0
   - _statToModify: 0
-    _modificationValue: 2
+    _modificationToPerform: 0
+    _modificationValue: 3
     _hiddenModification: 0

@@ -12,6 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92109ab8881064945aec6e7a2ed0e84a, type: 3}
   m_Name: SecondsIncreasedToHowManySecondsAreInADay
   m_EditorClassIdentifier: 
-  _choiceName: 
-  _choiceDescription: 
-  _statModifiers: []
+  _choiceName: Make days Longer
+  _choiceDescription: Everybody needs more time every day, so just make the days
+    longer!
+  _statModifiers:
+  - _statToModify: 4
+    _modificationToPerform: 0
+    _modificationValue: 2
+    _hiddenModification: 0
