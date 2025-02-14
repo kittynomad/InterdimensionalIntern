@@ -33,8 +33,18 @@ public class ChoiceUIManager : MonoBehaviour
 
     public void ApplyChoice(int choiceToApply)
     {
-        StartCoroutine(TypeAdditional("\nchose a thing"));
-        FindObjectOfType<CivilizationStatsManager>().ApplyChoice(_choices.Choices[choiceToApply]);
+        
+        try
+        {
+            FindObjectOfType<CivilizationStatsManager>().ApplyChoice(_choices.Choices[choiceToApply]);
+            StartCoroutine(TypeAdditional("\nchose a thing"));
+        }
+        catch
+        {
+            StartCoroutine(TypeAdditional("\nInvalid choice!"));
+            _inputField.Select();
+        }
+        
     }
 
     public void ApplyChoice()
