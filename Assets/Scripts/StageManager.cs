@@ -33,14 +33,14 @@ public class StageManager : MonoBehaviour
 
     private void StageCheck()
     {
-        if (curStage > 0 && statsManager.Population <= stages[curStage].MinPopulation)
+        if (curStage > 0 && !stages[curStage].CivilizationAboveMinimumStats(statsManager))//statsManager.Population <= stages[curStage].MinPopulation)
         {
-            Debug.Log("Stage Change");
+            Debug.Log("Not above minimum:" + !stages[curStage].CivilizationAboveMinimumStats(statsManager));
             curStage--;
         }
-        else if (curStage < stages.Length - 1 && statsManager.Population >= stages[curStage].MaxPopulation)
+        else if (curStage < stages.Length - 1 && !stages[curStage].CivilizationBelowMaximumStats(statsManager))//statsManager.Population >= stages[curStage].MaxPopulation)
         {
-            Debug.Log("Stage Change");
+            Debug.Log("Not below maximum: " + !stages[curStage].CivilizationBelowMaximumStats(statsManager));
             curStage++;
         }
         Debug.Log("CurrentStage:" + stages[curStage].Phase);
