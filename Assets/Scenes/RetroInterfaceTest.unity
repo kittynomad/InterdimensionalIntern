@@ -1309,6 +1309,7 @@ MonoBehaviour:
   _inputField: {fileID: 1131647515}
   _choices: {fileID: 11400000, guid: 9a59f4269f6c7b040bffe23b01fe4dc9, type: 2}
   _retroMode: 1
+  _textSpeed: 0.025
 --- !u!114 &1088247646
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2276,7 +2277,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: -156.33562, w: -132.37175}
+  m_margin: {x: 0, y: -3.4234095, z: -156.33562, w: -132.37175}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
