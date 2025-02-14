@@ -864,6 +864,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: LineGraph
       objectReference: {fileID: 0}
+    - target: {fileID: 3097966590239209967, guid: 473d5054b365a804592a40d71965dfba, type: 3}
+      propertyPath: _gridSize.x
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 3097966590239209967, guid: 473d5054b365a804592a40d71965dfba, type: 3}
+      propertyPath: _gridSize.y
+      value: 23
+      objectReference: {fileID: 0}
     - target: {fileID: 5667540318574485277, guid: 473d5054b365a804592a40d71965dfba, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.3
