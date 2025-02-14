@@ -109,7 +109,7 @@ public class CivilizationStatsManager : MonoBehaviour
                 return _resources;
         }
 
-        return null;
+        return -1f;
     }
 
     public IEnumerator tickAdvance()
