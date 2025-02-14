@@ -88,12 +88,6 @@ public class ChoiceUIManager : MonoBehaviour
 
             _choiceTexts[0].maxVisibleCharacters++;
 
-            /*while(_choiceTexts[0].isTextOverflowing)
-            {
-                _choiceTexts[0].text = _choiceTexts[0].text.Substring(1);
-                _choiceTexts[0].maxVisibleCharacters--;
-            }*/
-
 
             //wait pre-specified time until printing the next letter
             yield return new WaitForSeconds(_textSpeed);
