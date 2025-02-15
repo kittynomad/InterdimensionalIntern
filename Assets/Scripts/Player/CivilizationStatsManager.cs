@@ -14,6 +14,11 @@ public class CivilizationStatsManager : MonoBehaviour
 
     [Header("Game Settings")]
     [SerializeField] private float _tickTime = 1f;
+    [SerializeField] private ChoiceUIManager _choiceUIManager;
+    [SerializeField] private float _ticksBetweenChoices = 30f;
+    [SerializeField] private float _ticksToChoose = 6f;
+    private bool advancingTick = true;
+    private int tickCount = 0;
 
     [Header("Stage Settings")]
     [SerializeField] private int stage = 0;
@@ -31,12 +36,14 @@ public class CivilizationStatsManager : MonoBehaviour
 
     public void Start()
     {
+        if (_choiceUIManager == null)
+            _choiceUIManager = GameObject.FindObjectOfType<ChoiceUIManager>();
+        _choiceUIManager.gameObject.SetActive(false);
         StartCoroutine(tickAdvance());
     }
 
     public void OnTick()
     {
-        
         _population = Random.Range(0, 2) + 
             (int)((float)_population * _popGrowthPerTick);
 
@@ -48,6 +55,28 @@ public class CivilizationStatsManager : MonoBehaviour
         //}
 
         Happiness *= _happinessGrowthPerTick;
+        ChoiceDelay();
+        Debug.Log(tickCount);
+    }
+    public void ChoiceDelay()
+    {
+        if (tickCount >= _ticksBetweenChoices)
+        {
+            advancingTick = false;
+            tickCount = 0;
+            StartCoroutine(ChoicePauseTimer());
+            return;
+        }
+        tickCount++;
+    }
+    IEnumerator ChoicePauseTimer()
+    {
+        _choiceUIManager.gameObject.SetActive(true);
+        yield return new WaitForSeconds(_ticksToChoose);
+        _choiceUIManager.gameObject.SetActive(false);
+        advancingTick = true;
+        StartCoroutine(tickAdvance());
+
     }
 
     public void ApplyChoice(BasicChoice choice)
@@ -114,7 +143,7 @@ public class CivilizationStatsManager : MonoBehaviour
 
     public IEnumerator tickAdvance()
     {
-        while(true)
+        while(advancingTick)
         {
             yield return new WaitForSeconds(_tickTime);
             OnTick();
