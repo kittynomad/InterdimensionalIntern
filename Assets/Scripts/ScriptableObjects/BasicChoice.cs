@@ -11,6 +11,7 @@ public class BasicChoice : ScriptableObject
     [SerializeField] private StatModifier[] _statModifiers;
 
     public StatModifier[] StatModifiers { get => _statModifiers; set => _statModifiers = value; }
+    public string ChoiceName { get => _choiceName; set => _choiceName = value; }
 
     public override string ToString()
     {

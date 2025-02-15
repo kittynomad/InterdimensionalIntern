@@ -42,8 +42,41 @@ public class LiveGraph : MonoBehaviour
     {
         if (statsManager == null)
             statsManager = GameObject.FindObjectOfType<CivilizationStatsManager>();
-        StartCoroutine(TickAdvance());
+        //StartCoroutine(TickAdvance());
     }
+    public void UpdateLiveGraph()
+    {
+        foreach (LiveStat liveStat in _liveStats)
+        {
+            float stat = 0;
+            switch (liveStat.Type)
+            {
+                default:
+                case LiveStat.LiveStatType.POPULATION: stat = (float)statsManager.Population; break;
+                case LiveStat.LiveStatType.RESOURCES: stat = (float)statsManager.Resources; break;
+                case LiveStat.LiveStatType.HAPPINESS: stat = (float)statsManager.Happiness; break;
+            }
+            if (liveStat.Line.Points.Count >= liveStat.Max.x) //if the line has not reached the far right of the graph yet
+            {
+                List<Vector2> tempPoints = new List<Vector2>();
+                for (int index = 0; index < liveStat.Line.Points.Count; index++)
+                {
+                    if (index < liveStat.Line.Points.Count - 1)
+                        tempPoints.Add(new Vector2(liveStat.Line.Points[index].x, liveStat.Line.Points[index + 1].y));
+                }
+                liveStat.Line.Points = tempPoints;
+                liveStat.Line.VertexHelper.Clear(); //clears lines
+                liveStat.TickCount--;
+            }
+            liveStat.Line.Points.Add(new Vector2(((liveStat.Line.Points.Count * gridRenderer.gameObject.GetComponent<RectTransform>().sizeDelta.x) / liveStat.Max.x), (stat / liveStat.Max.y) * (float)gridRenderer.gameObject.GetComponent<RectTransform>().sizeDelta.y));
+            if (liveStat.Line.Points[liveStat.Line.Points.Count - 1].y > (float)gridRenderer.gameObject.GetComponent<RectTransform>().sizeDelta.y) //if y is greater than the size of the grid,change it to be the top of the grid
+                liveStat.Line.Points[liveStat.Line.Points.Count - 1] = new Vector2(liveStat.Line.Points[liveStat.Line.Points.Count - 1].x, (float)gridRenderer.gameObject.GetComponent<RectTransform>().sizeDelta.y);
+            if (liveStat.Line.Points.Count > 1 && liveStat.Line.Points.Count < liveStat.Max.x + 2) //has more than 1 point and is less than maxX draw all lines
+                gameObject.GetComponent<GraphAnimator>().AnimatePointLive(liveStat.Line, liveStat.TickCount, liveStat.Line.Points[liveStat.Line.Points.Count - 2], liveStat.Line.Points[liveStat.Line.Points.Count - 1]);
+            liveStat.TickCount++;
+        }
+    }
+    /*
     /// <summary>
     /// Updates a population line graph every tick
     /// </summary>
@@ -84,4 +117,5 @@ public class LiveGraph : MonoBehaviour
             }
         }
     }
+    */
 }

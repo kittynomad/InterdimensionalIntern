@@ -1753,6 +1753,7 @@ MonoBehaviour:
   _choiceUIManager: {fileID: 982888351}
   _ticksBetweenChoices: 30
   _ticksToChoose: 6
+  _liveGraph: {fileID: 0}
   stage: 0
   stageChangers: 64000000e8030000ffc99a3b
   anim: {fileID: 10253655}
