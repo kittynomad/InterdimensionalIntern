@@ -50,7 +50,6 @@ public class LiveGraph : MonoBehaviour
     /// <returns></returns>
     IEnumerator TickAdvance()
     {
-        //int tickCount = 0;
         while (true)
         {
             yield return new WaitForSeconds(statsManager.TickTime);
@@ -76,7 +75,7 @@ public class LiveGraph : MonoBehaviour
                     liveStat.Line.VertexHelper.Clear(); //clears lines
                     liveStat.TickCount--;
                 }
-                liveStat.Line.Points.Add(new Vector2(((liveStat.Line.Points.Count * gridRenderer.gameObject.GetComponent<RectTransform>().sizeDelta.x) / liveStat.Max.x), ((float)statsManager.Population / liveStat.Max.y) * (float)gridRenderer.gameObject.GetComponent<RectTransform>().sizeDelta.y));
+                liveStat.Line.Points.Add(new Vector2(((liveStat.Line.Points.Count * gridRenderer.gameObject.GetComponent<RectTransform>().sizeDelta.x) / liveStat.Max.x), (stat / liveStat.Max.y) * (float)gridRenderer.gameObject.GetComponent<RectTransform>().sizeDelta.y));
                 if (liveStat.Line.Points[liveStat.Line.Points.Count - 1].y > (float)gridRenderer.gameObject.GetComponent<RectTransform>().sizeDelta.y) //if y is greater than the size of the grid,change it to be the top of the grid
                     liveStat.Line.Points[liveStat.Line.Points.Count - 1] = new Vector2(liveStat.Line.Points[liveStat.Line.Points.Count - 1].x, (float)gridRenderer.gameObject.GetComponent<RectTransform>().sizeDelta.y);
                 if (liveStat.Line.Points.Count > 1 && liveStat.Line.Points.Count < liveStat.Max.x + 2) //has more than 1 point and is less than maxX draw all lines
