@@ -1061,7 +1061,7 @@ MonoBehaviour:
     _min: {x: 0, y: 0}
     _max: {x: 20, y: 500}
   - _line: {fileID: 398367292}
-    _type: 1
+    _type: 2
     _min: {x: 0, y: 0}
     _max: {x: 20, y: 100}
 --- !u!114 &586633360 stripped
