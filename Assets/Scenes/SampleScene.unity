@@ -1423,7 +1423,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_IgnoreReversedGraphics: 1
+  m_IgnoreReversedGraphics: 0
   m_BlockingObjects: 0
   m_BlockingMask:
     serializedVersion: 2
@@ -1750,6 +1750,9 @@ MonoBehaviour:
   _happinessGrowthPerTick: 0.98
   _happiness: 100
   _tickTime: 1
+  _choiceUIManager: {fileID: 982888351}
+  _ticksBetweenChoices: 30
+  _ticksToChoose: 6
   stage: 0
   stageChangers: 64000000e8030000ffc99a3b
   anim: {fileID: 10253655}
