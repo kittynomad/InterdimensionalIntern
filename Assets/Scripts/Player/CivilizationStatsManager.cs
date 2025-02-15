@@ -56,7 +56,6 @@ public class CivilizationStatsManager : MonoBehaviour
 
         Happiness *= _happinessGrowthPerTick;
         ChoiceDelay();
-        Debug.Log(tickCount);
     }
     public void ChoiceDelay()
     {
