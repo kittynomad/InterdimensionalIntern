@@ -16,7 +16,6 @@ public class ChoiceUIManager : MonoBehaviour
     Dictionary<string, string> commands = new Dictionary<string, string>();
 
 
-
     public void Start()
     {
         commands.Add("help", "help");
@@ -74,7 +73,13 @@ public class ChoiceUIManager : MonoBehaviour
         _choiceTexts[0].maxVisibleCharacters += t.Length;
         _choiceTexts[0].text += "\n>" + t;
 
-        if (t.Substring(t.Length - 1).Equals(commands["choiceLookup"]))
+        if(t.Equals(commands["help"])) //display commands
+        {
+            DisplayCommands();
+            return;
+        }
+
+        if (t.Substring(t.Length - 1).Equals(commands["choiceLookup"])) //display info about a choice
         {
             try
             {
@@ -91,7 +96,7 @@ public class ChoiceUIManager : MonoBehaviour
             }
         }
         int inputAsInt = -1;
-        try
+        try //choose an option
         {
             inputAsInt = System.Convert.ToInt32(t);
             ApplyChoice(inputAsInt);
@@ -107,7 +112,13 @@ public class ChoiceUIManager : MonoBehaviour
     private void InvalidInputHandler()
     {
         StopAllCoroutines();
-        StartCoroutine(TypeAdditional("\nInvalid command!"));
+        StartCoroutine(TypeAdditional("\nInvalid command!\nType \"help\" for list of commands"));
+    }
+
+    private void DisplayCommands()
+    {
+        StartCoroutine(TypeAdditional("\nType choice num. + \"?\" to display choice info \n(i.e. \"0?\" for choice 0)"
+            +"\nType choice number to choose that option\n(i.e. type \"1\" for choice 1)"));
     }
 
     IEnumerator TypeChoices(string sentence)
