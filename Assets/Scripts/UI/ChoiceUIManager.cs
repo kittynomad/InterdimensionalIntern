@@ -79,33 +79,40 @@ public class ChoiceUIManager : MonoBehaviour
             try
             {
                 int i = System.Convert.ToInt32(t.Substring(0, 1));
-                TypeAdditional(_choices.Choices[i].ToString());
+                print(_choices.Choices[i].ToString());
+                StopAllCoroutines();
+                StartCoroutine(TypeAdditional("\n"+_choices.Choices[i].ToString()));
+                return;
             }
             catch
             {
                 InvalidInputHandler();
+                return;
             }
         }
         int inputAsInt = -1;
         try
         {
             inputAsInt = System.Convert.ToInt32(t);
+            ApplyChoice(inputAsInt);
         }
         catch
         {
             InvalidInputHandler();
         }
-        ApplyChoice(inputAsInt);
-        _inputField.text = "";
+        
+        
     }
 
     private void InvalidInputHandler()
     {
-        TypeAdditional("\nInvalid command!");
+        StopAllCoroutines();
+        StartCoroutine(TypeAdditional("\nInvalid command!"));
     }
 
     IEnumerator TypeChoices(string sentence)
     {
+        _inputField.text = "";
         isTyping = true;
 
         _choiceTexts[0].maxVisibleCharacters = 0;
@@ -126,6 +133,7 @@ public class ChoiceUIManager : MonoBehaviour
 
     IEnumerator TypeAdditional(string sentence)
     {
+        _inputField.text = "";
         isTyping = true;
 
         char[] oldSentenceCharArray = _choiceTexts[0].text.ToCharArray();
