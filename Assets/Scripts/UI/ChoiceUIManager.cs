@@ -13,10 +13,16 @@ public class ChoiceUIManager : MonoBehaviour
 
     private bool isTyping;
 
+    Dictionary<string, string> commands = new Dictionary<string, string>();
+
+
+
     public void Start()
     {
+        commands.Add("help", "help");
+        commands.Add("choiceLookup", "?");
         //foreach (TextMeshProUGUI t in _choiceTexts)
-            //t.text = "";
+        //t.text = "";
         for (int i = 0; i < _choices.Choices.Length; i++)
         {
             if (!_retroMode)
@@ -52,13 +58,50 @@ public class ChoiceUIManager : MonoBehaviour
         try
         {
             string t = _inputField.text;
-            ApplyChoice(System.Convert.ToInt32(t));
-            _inputField.text = "";
+
+            InputTextHandler(t);
+            
         }
         catch
         {
             Debug.LogError("attempt to convert string to int failed!");
         }
+    }
+
+    private void InputTextHandler(string t)
+    {
+        //add entered text to output text
+        _choiceTexts[0].maxVisibleCharacters += t.Length;
+        _choiceTexts[0].text += "\n>" + t;
+
+        if (t.Substring(t.Length - 1).Equals(commands["choiceLookup"]))
+        {
+            try
+            {
+                int i = System.Convert.ToInt32(t.Substring(0, 1));
+                TypeAdditional(_choices.Choices[i].ToString());
+            }
+            catch
+            {
+                InvalidInputHandler();
+            }
+        }
+        int inputAsInt = -1;
+        try
+        {
+            inputAsInt = System.Convert.ToInt32(t);
+        }
+        catch
+        {
+            InvalidInputHandler();
+        }
+        ApplyChoice(inputAsInt);
+        _inputField.text = "";
+    }
+
+    private void InvalidInputHandler()
+    {
+        TypeAdditional("\nInvalid command!");
     }
 
     IEnumerator TypeChoices(string sentence)
