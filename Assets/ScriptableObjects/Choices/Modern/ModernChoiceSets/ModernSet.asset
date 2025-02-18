@@ -15,6 +15,6 @@ MonoBehaviour:
   _choiceSetName: 
   _choicePhase: 4
   _choices:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 11400000, guid: 7c252c1cfc9b8b540adcc92615f7b0ba, type: 2}
+  - {fileID: 11400000, guid: 423ee7b943f18d643bc566025bcea376, type: 2}
+  - {fileID: 11400000, guid: e6cd5eb9fe1c1ef43952dff76aabb053, type: 2}

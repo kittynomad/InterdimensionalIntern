@@ -10,13 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 92109ab8881064945aec6e7a2ed0e84a, type: 3}
-  m_Name: MakeAPyramid
+  m_Name: CoolDownOcean
   m_EditorClassIdentifier: 
-  _choiceName: Make Another Pyramid
-  _choiceDescription: Your civilians have been curious about the limitations of their
-    architectural abilities. Give them some inspiration from the ancients.
+  _choiceName: Cool down Ocean
+  _choiceDescription: Dropping a big Ice cube into the ocean has to fix something
   _statModifiers:
+  - _statToModify: 3
+    _modificationToPerform: 1
+    _modificationValue: 2
+    _hiddenModification: 0
   - _statToModify: 0
     _modificationToPerform: 0
-    _modificationValue: 1
+    _modificationValue: 4
     _hiddenModification: 0

@@ -13,13 +13,14 @@ MonoBehaviour:
   m_Name: GeneticallyModifyMoreStuff
   m_EditorClassIdentifier: 
   _choiceName: Genetically Modify New Things
-  _choiceDescription: What does this piece of DNA do?
+  _choiceDescription: "Our research team got bored and asked the following question:
+    \u201CWhat does this piece of DNA do?\u201D "
   _statModifiers:
-  - _statToModify: 2
+  - _statToModify: 3
+    _modificationToPerform: 1
+    _modificationValue: 1
+    _hiddenModification: 0
+  - _statToModify: 0
     _modificationToPerform: 0
     _modificationValue: 3
-    _hiddenModification: 0
-  - _statToModify: 1
-    _modificationToPerform: 0
-    _modificationValue: 1
     _hiddenModification: 0

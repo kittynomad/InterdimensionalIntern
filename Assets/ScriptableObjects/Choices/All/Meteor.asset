@@ -10,12 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 92109ab8881064945aec6e7a2ed0e84a, type: 3}
-  m_Name: PutGiantIceCubeInOcean
+  m_Name: Meteor
   m_EditorClassIdentifier: 
-  _choiceName: Cool down Ocean
-  _choiceDescription: Dropping a big Ice cube into the ocean has to fix something
+  _choiceName: Goodness Gracious Great Ball Of Fire
+  _choiceDescription: I lost the bet, better hold up my bargain and put on a show.
   _statModifiers:
+  - _statToModify: 0
+    _modificationToPerform: 1
+    _modificationValue: 1e+9
+    _hiddenModification: 0
   - _statToModify: 3
-    _modificationToPerform: 0
-    _modificationValue: 2
+    _modificationToPerform: 1
+    _modificationValue: 1e+9
     _hiddenModification: 0

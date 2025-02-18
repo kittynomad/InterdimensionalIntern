@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: BiggerGasStation
   m_EditorClassIdentifier: 
   _choiceName: Build Bigger Gas Stations
-  _choiceDescription: Why do we have small safe gas stations when you can have them
-    big and leaking gas fumes?
+  _choiceDescription: "Fuel Inc. has been an integral part of your civilization\u2019s
+    economy. Reward them for their hard work with an expansion to their capitalistic
+    empire"
   _statModifiers:
   - _statToModify: 3
     _modificationToPerform: 0
