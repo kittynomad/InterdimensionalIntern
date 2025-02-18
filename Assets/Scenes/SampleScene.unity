@@ -573,6 +573,71 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 371887746}
   m_CullTransparentMesh: 1
+--- !u!1 &398367290
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 398367291}
+  - component: {fileID: 398367293}
+  - component: {fileID: 398367292}
+  m_Layer: 0
+  m_Name: Happiness_Line
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &398367291
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 398367290}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 841615150}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 1, y: 1}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &398367292
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 398367290}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e5dac8fd84b5464ea12217fdf3bdc3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.97106683, g: 1, b: 0, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  _grid: {fileID: 0}
+  _gridSize: {x: 1, y: 1}
+  _points: []
+  _thickness: 5
+--- !u!222 &398367293
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 398367290}
+  m_CullTransparentMesh: 1
 --- !u!1 &425859576
 GameObject:
   m_ObjectHideFlags: 0
@@ -860,6 +925,18 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 917226120659334246, guid: 473d5054b365a804592a40d71965dfba, type: 3}
+      propertyPath: _lines.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 917226120659334246, guid: 473d5054b365a804592a40d71965dfba, type: 3}
+      propertyPath: _lines.Array.data[1]
+      value: 
+      objectReference: {fileID: 1662038608}
+    - target: {fileID: 917226120659334246, guid: 473d5054b365a804592a40d71965dfba, type: 3}
+      propertyPath: _lines.Array.data[2]
+      value: 
+      objectReference: {fileID: 398367292}
     - target: {fileID: 1696349180670445661, guid: 473d5054b365a804592a40d71965dfba, type: 3}
       propertyPath: m_Name
       value: LineGraph
@@ -871,6 +948,10 @@ PrefabInstance:
     - target: {fileID: 3097966590239209967, guid: 473d5054b365a804592a40d71965dfba, type: 3}
       propertyPath: _gridSize.y
       value: 23
+      objectReference: {fileID: 0}
+    - target: {fileID: 4322368879752234505, guid: 473d5054b365a804592a40d71965dfba, type: 3}
+      propertyPath: m_Name
+      value: Population_Line
       objectReference: {fileID: 0}
     - target: {fileID: 5667540318574485277, guid: 473d5054b365a804592a40d71965dfba, type: 3}
       propertyPath: m_LocalScale.x
@@ -934,7 +1015,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 6027657780702089845, guid: 473d5054b365a804592a40d71965dfba, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1662038607}
+    - targetCorrespondingSourceObject: {fileID: 6027657780702089845, guid: 473d5054b365a804592a40d71965dfba, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 398367291}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 1696349180670445661, guid: 473d5054b365a804592a40d71965dfba, type: 3}
       insertIndex: -1
@@ -964,9 +1051,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   statsManager: {fileID: 1179055393}
   gridRenderer: {fileID: 586633361}
-  lineRenderer: {fileID: 586633360}
-  _maxX: 20
-  _maxY: 1000
+  _liveStats:
+  - _line: {fileID: 586633360}
+    _type: 0
+    _min: {x: 0, y: 0}
+    _max: {x: 20, y: 1000}
+  - _line: {fileID: 1662038608}
+    _type: 1
+    _min: {x: 0, y: 0}
+    _max: {x: 20, y: 500}
+  - _line: {fileID: 398367292}
+    _type: 2
+    _min: {x: 0, y: 0}
+    _max: {x: 20, y: 100}
 --- !u!114 &586633360 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5802633802236077892, guid: 473d5054b365a804592a40d71965dfba, type: 3}
@@ -1187,6 +1284,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _debugInfoDisplay: {fileID: 371887748}
+--- !u!224 &841615150 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 6027657780702089845, guid: 473d5054b365a804592a40d71965dfba, type: 3}
+  m_PrefabInstance: {fileID: 586633356}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &929536298
 GameObject:
   m_ObjectHideFlags: 0
@@ -1200,7 +1302,7 @@ GameObject:
   - component: {fileID: 929536300}
   - component: {fileID: 929536299}
   m_Layer: 5
-  m_Name: PopulationMiniGraphCanvas
+  m_Name: LiveGraph_Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1321,7 +1423,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_IgnoreReversedGraphics: 1
+  m_IgnoreReversedGraphics: 0
   m_BlockingObjects: 0
   m_BlockingMask:
     serializedVersion: 2
@@ -1648,6 +1750,10 @@ MonoBehaviour:
   _happinessGrowthPerTick: 0.98
   _happiness: 100
   _tickTime: 1
+  _choiceUIManager: {fileID: 982888351}
+  _ticksBetweenChoices: 30
+  _ticksToChoose: 6
+  _liveGraph: {fileID: 0}
   stage: 0
   stageChangers: 64000000e8030000ffc99a3b
   anim: {fileID: 10253655}
@@ -2025,6 +2131,71 @@ MonoBehaviour:
   _selectType: 0
   _spriteChanges: []
   _childSprite: 0
+--- !u!1 &1662038606
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1662038607}
+  - component: {fileID: 1662038609}
+  - component: {fileID: 1662038608}
+  m_Layer: 0
+  m_Name: Resources_Line
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1662038607
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1662038606}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 841615150}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 1, y: 1}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1662038608
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1662038606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e5dac8fd84b5464ea12217fdf3bdc3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 0.5338221, b: 0, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  _grid: {fileID: 0}
+  _gridSize: {x: 1, y: 1}
+  _points: []
+  _thickness: 5
+--- !u!222 &1662038609
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1662038606}
+  m_CullTransparentMesh: 1
 --- !u!1 &2058284968
 GameObject:
   m_ObjectHideFlags: 0

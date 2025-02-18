@@ -16,6 +16,8 @@ public class ChoiceUIManager : MonoBehaviour
     Dictionary<string, string> commands = new Dictionary<string, string>();
 
 
+    public ChoiceSet Choices { get => _choices; set => _choices = value; }
+
     public void Start()
     {
         commands.Add("help", "help");
