@@ -33,7 +33,7 @@ public class ChoiceUIManager : MonoBehaviour
             }
 
         }
-        StartCoroutine(TypeChoices(_choiceTexts[0].text));
+        StartCoroutine(TypeChoices(_choiceTexts[0].text + "\ntype \"help\" for a list of commands"));
     }
 
     public void ApplyChoice(int choiceToApply)
