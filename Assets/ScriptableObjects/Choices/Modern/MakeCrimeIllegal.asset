@@ -13,11 +13,14 @@ MonoBehaviour:
   m_Name: MakeCrimeIllegal
   m_EditorClassIdentifier: 
   _choiceName: Make Crime Illegal
-  _choiceDescription: Crime is now illegal! Don't do crime or else!
+  _choiceDescription: 'Criminal action is on the rise. Create a new law that makes
+    all crime illegal.  '
   _statModifiers:
   - _statToModify: 3
+    _modificationToPerform: 0
     _modificationValue: 2
     _hiddenModification: 0
   - _statToModify: 0
+    _modificationToPerform: 0
     _modificationValue: 2
     _hiddenModification: 0

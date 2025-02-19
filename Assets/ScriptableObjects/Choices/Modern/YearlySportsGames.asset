@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: YearlySportsGames
   m_EditorClassIdentifier: 
   _choiceSetName: 
-  _choicePhase: 0
+  _choicePhase: 4
   _choices: []

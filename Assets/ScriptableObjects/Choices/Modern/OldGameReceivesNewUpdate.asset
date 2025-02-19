@@ -12,6 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92109ab8881064945aec6e7a2ed0e84a, type: 3}
   m_Name: OldGameReceivesNewUpdate
   m_EditorClassIdentifier: 
-  _choiceName: 
-  _choiceDescription: 
-  _statModifiers: []
+  _choiceName: Update game
+  _choiceDescription: It has been 10 years of Radio silence, and then, the bots attacked
+  _statModifiers:
+  - _statToModify: 3
+    _modificationToPerform: 0
+    _modificationValue: 2
+    _hiddenModification: 0

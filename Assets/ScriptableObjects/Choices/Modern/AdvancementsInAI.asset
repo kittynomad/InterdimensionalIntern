@@ -10,16 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 92109ab8881064945aec6e7a2ed0e84a, type: 3}
-  m_Name: HousingMarketCrash
+  m_Name: AdvancementsInAI
   m_EditorClassIdentifier: 
-  _choiceName: Crash the Housing Market
-  _choiceDescription: Buy! Buy! Buy!
+  _choiceName: Advancements In AI
+  _choiceDescription: "We will make a self-thinking robot from hit book: \u201CDo
+    Not Make A Self-Thinking Robot\u201D. What could go wrong? "
   _statModifiers:
   - _statToModify: 3
-    _modificationToPerform: 0
+    _modificationToPerform: 1
     _modificationValue: 3
     _hiddenModification: 0
-  - _statToModify: 4
+  - _statToModify: 0
     _modificationToPerform: 1
-    _modificationValue: 2
+    _modificationValue: 1
     _hiddenModification: 0

@@ -12,9 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92109ab8881064945aec6e7a2ed0e84a, type: 3}
   m_Name: MakeAPyramid
   m_EditorClassIdentifier: 
-  _choiceName: Pyramid
-  _choiceDescription: Building a new Pyramid! Because I said so!
+  _choiceName: Make Another Pyramid
+  _choiceDescription: Your civilians have been curious about the limitations of their
+    architectural abilities. Give them some inspiration from the ancients.
   _statModifiers:
   - _statToModify: 0
+    _modificationToPerform: 0
     _modificationValue: 1
     _hiddenModification: 0
