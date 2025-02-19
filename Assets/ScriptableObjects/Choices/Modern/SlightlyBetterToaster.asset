@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: SlightlyBetterToaster
   m_EditorClassIdentifier: 
   _choiceName: Improve the Toaster
-  _choiceDescription: How can you improve on perfection? Well, it happened anyway.
+  _choiceDescription: How can you improve on perfection? Well, [REDACTED] Co. just
+    did!
   _statModifiers:
   - _statToModify: 4
     _modificationToPerform: 0

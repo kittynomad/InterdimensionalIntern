@@ -13,13 +13,14 @@ MonoBehaviour:
   m_Name: MoreRenewableEnergy
   m_EditorClassIdentifier: 
   _choiceName: Greener Energy
-  _choiceDescription: Go Green for a brighter future
+  _choiceDescription: "The hippies are on us again about our \u201Cirreparably destructive
+    carbon footprint.\u201D Switch to renewable energy to get them off our backs!"
   _statModifiers:
-  - _statToModify: 1
-    _modificationToPerform: 0
-    _modificationValue: 4
+  - _statToModify: 2
+    _modificationToPerform: 1
+    _modificationValue: -2
     _hiddenModification: 0
   - _statToModify: 3
     _modificationToPerform: 0
-    _modificationValue: 1
+    _modificationValue: 2
     _hiddenModification: 0

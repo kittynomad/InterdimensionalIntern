@@ -1512,7 +1512,10 @@ MonoBehaviour:
   _choiceTexts:
   - {fileID: 425859578}
   - {fileID: 1256977512}
-  _choices: {fileID: 11400000, guid: 9a59f4269f6c7b040bffe23b01fe4dc9, type: 2}
+  _inputField: {fileID: 0}
+  _choices: {fileID: 11400000, guid: 5f43ec3a7b960ac4b9170bdfdb19a285, type: 2}
+  _retroMode: 0
+  _textSpeed: 0
 --- !u!1 &1003524899
 GameObject:
   m_ObjectHideFlags: 0
@@ -1746,8 +1749,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _population: 2
   _resources: 10.4
-  _popGrowthPerTick: 1.2
-  _happinessGrowthPerTick: 0.98
+  _popGrowthPercentPerTick: 100
+  _happinessGrowthPercentPerTick: 100
   _happiness: 100
   _tickTime: 1
   _choiceUIManager: {fileID: 982888351}
