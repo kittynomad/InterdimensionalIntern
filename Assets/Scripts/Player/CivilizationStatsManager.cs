@@ -18,6 +18,7 @@ public class CivilizationStatsManager : MonoBehaviour
     [SerializeField] private ChoiceUIManager _choiceUIManager;
     [SerializeField] private float _ticksBetweenChoices = 30f;
     [SerializeField] private float _ticksToChoose = 6f;
+    [SerializeField] private bool _autoChoose = false;
     [SerializeField] private LiveGraph _liveGraph;
     private bool advancingTick = true;
     private int tickCount = 0;
@@ -86,7 +87,7 @@ public class CivilizationStatsManager : MonoBehaviour
     {
         _choiceUIManager.gameObject.SetActive(true);
         yield return new WaitForSeconds(_ticksToChoose);
-        if (_choiceUIManager.gameObject.activeSelf) //If the player hasn't chosen yet
+        if (_autoChoose && _choiceUIManager.gameObject.activeSelf) //If the player hasn't chosen yet
         {
             int autoChoice = Random.Range(0, _choiceUIManager.Choices.Choices.Count());
             ApplyChoice(_choiceUIManager.Choices.Choices[autoChoice]);
