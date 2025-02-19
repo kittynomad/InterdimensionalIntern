@@ -9,8 +9,8 @@ public class CivilizationStatsManager : MonoBehaviour
     [Header("Civilization Stats")]
     [SerializeField] private int _population = 2;
     [SerializeField] private float _resources = 10.4f;
-    [SerializeField] private float _popGrowthPerTick = 1f;
-    [SerializeField] private float _happinessGrowthPerTick = 1f;
+    [SerializeField] private float _popGrowthPercentPerTick = 100f;
+    [SerializeField] private float _happinessGrowthPercentPerTick = 100f;
     [SerializeField] [Range(0.0f, 100.0f)] private float _happiness = 100f;
 
     [Header("Game Settings")]
@@ -49,7 +49,7 @@ public class CivilizationStatsManager : MonoBehaviour
     public void OnTick()
     {
         _population = Random.Range(0, 2) + 
-            (int)((float)_population * _popGrowthPerTick);
+            (int)((float)_population * (_popGrowthPercentPerTick / 100f));
 
         //changes the stage number and animation if population hits a certain number
         //if (_population > stageChangers[stage])
@@ -58,7 +58,7 @@ public class CivilizationStatsManager : MonoBehaviour
             //anim.SetInteger("curStage", stage);
         //}
 
-        Happiness *= _happinessGrowthPerTick;
+        Happiness *= (_happinessGrowthPercentPerTick / 100f);
         _liveGraph.UpdateLiveGraph();
         ChoiceDelay();
     }
@@ -129,13 +129,13 @@ public class CivilizationStatsManager : MonoBehaviour
                     Population = (int)m(Population, s.ModificationValue);
                     break;
                 case (Enums.ModifyableStats.populationGrowth):
-                    _popGrowthPerTick = m(_popGrowthPerTick, s.ModificationValue);
+                    _popGrowthPercentPerTick = m(_popGrowthPercentPerTick, s.ModificationValue);
                     break;
                 case (Enums.ModifyableStats.happiness):
                     _happiness = m(_happiness, s.ModificationValue);
                     break;
                 case (Enums.ModifyableStats.happinessGrowth):
-                    _happinessGrowthPerTick = m(_happinessGrowthPerTick, s.ModificationValue);
+                    _happinessGrowthPercentPerTick = m(_happinessGrowthPercentPerTick, s.ModificationValue);
                     break;
                 case (Enums.ModifyableStats.resources):
                     _resources = m(_resources, s.ModificationValue);
@@ -152,11 +152,11 @@ public class CivilizationStatsManager : MonoBehaviour
             case (Enums.ModifyableStats.happiness):
                 return _happiness;
             case (Enums.ModifyableStats.happinessGrowth):
-                return _happinessGrowthPerTick;
+                return _happinessGrowthPercentPerTick;
             case (Enums.ModifyableStats.population):
                 return _population;
             case (Enums.ModifyableStats.populationGrowth):
-                return _popGrowthPerTick;
+                return _popGrowthPercentPerTick;
             case (Enums.ModifyableStats.resources):
                 return _resources;
         }
