@@ -13,14 +13,14 @@ MonoBehaviour:
   m_Name: AdvancementsInAI
   m_EditorClassIdentifier: 
   _choiceName: Advancements In AI
-  _choiceDescription: "We will make a self-thinking robot from hit book: \u201CDo
-    Not Make A Self-Thinking Robot\u201D. What could go wrong? "
+  _choiceDescription: "If the movies have taught us one thing, it\u2019s that superintelligent
+    AI is the healthy next step for society! What could go wrong?"
   _statModifiers:
   - _statToModify: 3
     _modificationToPerform: 1
     _modificationValue: 3
     _hiddenModification: 0
-  - _statToModify: 0
+  - _statToModify: 1
     _modificationToPerform: 1
     _modificationValue: 1
     _hiddenModification: 0

@@ -14,9 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _choiceName: Celebrity Becomes Face Of Currency
   _choiceDescription: "The best way to prove that we are a \u201Chip\u201D company?
-    Find the most boring celebrity and put their face on money!"
+    Find the most boring celebrity and put their face on money! "
   _statModifiers:
   - _statToModify: 3
     _modificationToPerform: 0
+    _modificationValue: 1
+    _hiddenModification: 0
+  - _statToModify: 2
+    _modificationToPerform: 1
     _modificationValue: 1
     _hiddenModification: 0

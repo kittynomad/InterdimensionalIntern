@@ -15,11 +15,11 @@ MonoBehaviour:
   _choiceName: Crash the Housing Market
   _choiceDescription: Buy! Buy! Buy!
   _statModifiers:
-  - _statToModify: 3
+  - _statToModify: 2
     _modificationToPerform: 0
-    _modificationValue: 3
-    _hiddenModification: 0
-  - _statToModify: 4
-    _modificationToPerform: 1
     _modificationValue: 2
+    _hiddenModification: 0
+  - _statToModify: 1
+    _modificationToPerform: 1
+    _modificationValue: 4
     _hiddenModification: 0
