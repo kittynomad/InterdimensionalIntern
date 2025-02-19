@@ -579,6 +579,10 @@ MonoBehaviour:
   _happinessGrowthPerTick: 0.98
   _happiness: 100
   _tickTime: 1
+  _choiceUIManager: {fileID: 0}
+  _ticksBetweenChoices: 30
+  _ticksToChoose: 6
+  _liveGraph: {fileID: 0}
   stage: 0
   stageChangers: 64000000e8030000ffc99a3b
   anim: {fileID: 1802948203}
@@ -861,17 +865,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5667540318574485277, guid: 473d5054b365a804592a40d71965dfba, type: 3}
   m_PrefabInstance: {fileID: 761984156}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &761984158 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5802633802236077892, guid: 473d5054b365a804592a40d71965dfba, type: 3}
-  m_PrefabInstance: {fileID: 761984156}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3e5dac8fd84b5464ea12217fdf3bdc3c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &761984159 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3097966590239209967, guid: 473d5054b365a804592a40d71965dfba, type: 3}
@@ -902,9 +895,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   statsManager: {fileID: 504462878}
   gridRenderer: {fileID: 761984159}
-  lineRenderer: {fileID: 761984158}
-  _maxX: 20
-  _maxY: 1000
+  _liveStats: []
 --- !u!1 &919103796
 GameObject:
   m_ObjectHideFlags: 0

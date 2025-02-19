@@ -38,6 +38,8 @@ public class LiveGraph : MonoBehaviour
     [SerializeField] private UIGridRenderer gridRenderer;
     [SerializeField] private List<LiveStat> _liveStats = new List<LiveStat>();
 
+    public List<LiveStat> LiveStats { get => _liveStats; set => _liveStats = value; }
+
     private void Awake()
     {
         if (statsManager == null)

@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
+using System.Linq.Expressions;
 using UnityEngine;
 
 public class StageManager : MonoBehaviour
@@ -43,9 +45,27 @@ public class StageManager : MonoBehaviour
             Debug.Log("Not below maximum: " + !stages[curStage].CivilizationBelowMaximumStats(statsManager));
             curStage++;
         }
+
+        //UpdateLiveGraphY(stages[curStage].)
+
         Debug.Log("CurrentStage:" + stages[curStage].Phase);
     }
-
+    /// <summary>
+    /// Updates live graph population boundaries to coordinate for the minimum and maximum population for the stage
+    /// </summary>
+    /// <param name="minY"></param>
+    /// <param name="maxY"></param>
+    private void UpdateLiveGraphY(float minY, float maxY)
+    {
+        for (int index = 0; index < statsManager.LiveGraph.LiveStats.Count; index++)
+        {
+            if (statsManager.LiveGraph.LiveStats[index].Type != LiveStat.LiveStatType.POPULATION) //continues to next iteration if liveStat is not population
+                continue;
+            statsManager.LiveGraph.LiveStats[index].Min = new Vector2(statsManager.LiveGraph.LiveStats[index].Min.x, minY);
+            statsManager.LiveGraph.LiveStats[index].Max = new Vector2(statsManager.LiveGraph.LiveStats[index].Max.x, maxY);
+            break;
+        }
+    }
     void Update()
     {
         
