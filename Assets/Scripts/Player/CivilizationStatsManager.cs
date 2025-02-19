@@ -35,6 +35,8 @@ public class CivilizationStatsManager : MonoBehaviour
     public float Happiness { get => _happiness; set => _happiness = value; }
     public int Stage { get => stage; set => stage = value; }
     public float TickTime { get => _tickTime; set => _tickTime = value; }
+    public LiveGraph LiveGraph { get => _liveGraph; set => _liveGraph = value; }
+    public int[] StageChangers { get => stageChangers; set => stageChangers = value; }
 
     public void Start()
     {
