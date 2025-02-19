@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class StageManager : MonoBehaviour
@@ -43,9 +44,37 @@ public class StageManager : MonoBehaviour
             Debug.Log("Not below maximum: " + !stages[curStage].CivilizationBelowMaximumStats(statsManager));
             curStage++;
         }
+
+        UpdateLiveGraphY();
+
         Debug.Log("CurrentStage:" + stages[curStage].Phase);
     }
 
+    private void UpdateLiveGraphY()
+    {
+        float tempMinY = 0;
+        float tempMaxY = 100;
+        for (int index = 0; index < stages[curStage].MinStats.Count(); index++)
+        {
+            if (stages[curStage].MinStats[index].Stat != Enums.ModifyableStats.population)
+                continue;
+            tempMinY = stages[curStage].MinStats[index].Value;
+        }
+        for (int index = 0; index < stages[curStage].MaxStats.Count(); index++)
+        {
+            if (stages[curStage].MaxStats[index].Stat != Enums.ModifyableStats.population)
+                continue;
+            tempMaxY = stages[curStage].MaxStats[index].Value;
+        }
+        for (int index = 0; index < statsManager.LiveGraph.LiveStats.Count; index++)
+        {
+            if (statsManager.LiveGraph.LiveStats[index].Type != LiveStat.LiveStatType.POPULATION) //continues to next iteration if liveStat is not population
+                continue;
+            statsManager.LiveGraph.LiveStats[index].Min = new Vector2(statsManager.LiveGraph.LiveStats[index].Min.x, tempMinY);
+            statsManager.LiveGraph.LiveStats[index].Max = new Vector2(statsManager.LiveGraph.LiveStats[index].Max.x, tempMaxY);
+            break;
+        }
+    }
     void Update()
     {
         
