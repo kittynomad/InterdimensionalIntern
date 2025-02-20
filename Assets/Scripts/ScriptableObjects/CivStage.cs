@@ -14,6 +14,7 @@ public class CivStage : ScriptableObject
 
     public StatWithAssociatedValue[] MinStats { get => _minStats; set => _minStats = value; }
     public StatWithAssociatedValue[] MaxStats { get => _maxStats; set => _maxStats = value; }
+    public ChoiceSet[] ChoiceSets { get => _choiceSets; set => _choiceSets = value; }
 
     public bool CivilizationAboveMinimumStats(CivilizationStatsManager civ, bool requireAllStats = false)
     {
