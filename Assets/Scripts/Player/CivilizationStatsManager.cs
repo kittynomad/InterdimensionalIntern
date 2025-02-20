@@ -86,6 +86,7 @@ public class CivilizationStatsManager : MonoBehaviour
     IEnumerator ChoicePauseTimer()
     {
         _choiceUIManager.gameObject.SetActive(true);
+        _choiceUIManager.DisplayNewChoices();
         yield return new WaitForSeconds(_ticksToChoose);
         if (_autoChoose && _choiceUIManager.gameObject.activeSelf) //If the player hasn't chosen yet
         {

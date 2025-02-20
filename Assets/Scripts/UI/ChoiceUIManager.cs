@@ -22,8 +22,15 @@ public class ChoiceUIManager : MonoBehaviour
     {
         commands.Add("help", "help");
         commands.Add("choiceLookup", "?");
-        //foreach (TextMeshProUGUI t in _choiceTexts)
-        //t.text = "";
+        
+        
+    }
+
+    public void DisplayNewChoices()
+    {
+        foreach (TextMeshProUGUI t in _choiceTexts)
+            t.text = "";
+
         for (int i = 0; i < _choices.Choices.Length; i++)
         {
             if (!_retroMode)
