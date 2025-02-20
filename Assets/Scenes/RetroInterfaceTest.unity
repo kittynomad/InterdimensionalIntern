@@ -414,7 +414,7 @@ MonoBehaviour:
   _tickTime: 1
   _choiceUIManager: {fileID: 0}
   _ticksBetweenChoices: 30
-  _ticksToChoose: 6
+  _ticksToChoose: 99
   _autoChoose: 0
   _liveGraph: {fileID: 0}
   stage: 0
