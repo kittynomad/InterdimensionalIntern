@@ -181,6 +181,7 @@ public class ChoiceUIManager : MonoBehaviour
         {
             yield return new WaitForSeconds(1f);
             FindObjectOfType<CivilizationStatsManager>().ApplyChoice(_choices.Choices[choiceToApply]);
+            FindObjectOfType<StageManager>().OnChoice();
         }
     }
 }
