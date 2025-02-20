@@ -12,12 +12,15 @@ public class StageManager : MonoBehaviour
 
     private CivilizationStatsManager statsManager;
 
+    public int CurStage { get => curStage; set => curStage = value; }
+    public CivStage[] Stages { get => stages; set => stages = value; }
+
     void Start()
     {
         statsManager = FindAnyObjectByType<CivilizationStatsManager>();
         choiceCount = 0;
-        curStage = 0;
-        Debug.Log("Stages Length:" + (stages.Length - 1));
+        CurStage = 0;
+        Debug.Log("Stages Length:" + (Stages.Length - 1));
     }
 
     public void OnChoice()
@@ -26,7 +29,7 @@ public class StageManager : MonoBehaviour
         Debug.Log("Choice #:" + choiceCount);
         if (choiceCount >= _choicesUntilCivilizationShift)
         {
-            Debug.Log("Population: " + statsManager.Population + "\nMax " + stages[curStage].MaxStats[0].Stat + ": " + stages[curStage].MaxStats[0].Value + "\nCurrent Stage: " + curStage);
+            Debug.Log("Population: " + statsManager.Population + "\nMax " + Stages[CurStage].MaxStats[0].Stat + ": " + Stages[CurStage].MaxStats[0].Value + "\nCurrent Stage: " + CurStage);
             StageCheck();
             choiceCount = 0;
         }
@@ -34,37 +37,37 @@ public class StageManager : MonoBehaviour
 
     private void StageCheck()
     {
-        if (curStage > 0 && !stages[curStage].CivilizationAboveMinimumStats(statsManager))//statsManager.Population <= stages[curStage].MinPopulation)
+        if (CurStage > 0 && !Stages[CurStage].CivilizationAboveMinimumStats(statsManager))//statsManager.Population <= stages[curStage].MinPopulation)
         {
-            Debug.Log("Not above minimum:" + !stages[curStage].CivilizationAboveMinimumStats(statsManager));
-            curStage--;
+            Debug.Log("Not above minimum:" + !Stages[CurStage].CivilizationAboveMinimumStats(statsManager));
+            CurStage--;
         }
-        else if (curStage < stages.Length - 1 && !stages[curStage].CivilizationBelowMaximumStats(statsManager))//statsManager.Population >= stages[curStage].MaxPopulation)
+        else if (CurStage < Stages.Length - 1 && !Stages[CurStage].CivilizationBelowMaximumStats(statsManager))//statsManager.Population >= stages[curStage].MaxPopulation)
         {
-            Debug.Log("Not below maximum: " + !stages[curStage].CivilizationBelowMaximumStats(statsManager));
-            curStage++;
+            Debug.Log("Not below maximum: " + !Stages[CurStage].CivilizationBelowMaximumStats(statsManager));
+            CurStage++;
         }
 
         UpdateLiveGraphY();
 
-        Debug.Log("CurrentStage:" + stages[curStage].Phase);
+        Debug.Log("CurrentStage:" + Stages[CurStage].Phase);
     }
 
     private void UpdateLiveGraphY()
     {
         float tempMinY = 0;
         float tempMaxY = 100;
-        for (int index = 0; index < stages[curStage].MinStats.Count(); index++)
+        for (int index = 0; index < Stages[CurStage].MinStats.Count(); index++)
         {
-            if (stages[curStage].MinStats[index].Stat != Enums.ModifyableStats.population)
+            if (Stages[CurStage].MinStats[index].Stat != Enums.ModifyableStats.population)
                 continue;
-            tempMinY = stages[curStage].MinStats[index].Value;
+            tempMinY = Stages[CurStage].MinStats[index].Value;
         }
-        for (int index = 0; index < stages[curStage].MaxStats.Count(); index++)
+        for (int index = 0; index < Stages[CurStage].MaxStats.Count(); index++)
         {
-            if (stages[curStage].MaxStats[index].Stat != Enums.ModifyableStats.population)
+            if (Stages[CurStage].MaxStats[index].Stat != Enums.ModifyableStats.population)
                 continue;
-            tempMaxY = stages[curStage].MaxStats[index].Value;
+            tempMaxY = Stages[CurStage].MaxStats[index].Value;
         }
         for (int index = 0; index < statsManager.LiveGraph.LiveStats.Count; index++)
         {

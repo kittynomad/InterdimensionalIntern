@@ -8,11 +8,13 @@ public class CivStage : ScriptableObject
     [SerializeField] private Enums.CivilizationPhase _phase;
     [SerializeField] private StatWithAssociatedValue[] _minStats;
     [SerializeField] private StatWithAssociatedValue[] _maxStats;
+    [SerializeField] private ChoiceSet[] _choiceSets;
 
     public Enums.CivilizationPhase Phase { get => _phase; set { _phase = value; } }
 
     public StatWithAssociatedValue[] MinStats { get => _minStats; set => _minStats = value; }
     public StatWithAssociatedValue[] MaxStats { get => _maxStats; set => _maxStats = value; }
+    public ChoiceSet[] ChoiceSets { get => _choiceSets; set => _choiceSets = value; }
 
     public bool CivilizationAboveMinimumStats(CivilizationStatsManager civ, bool requireAllStats = false)
     {

@@ -72,9 +72,12 @@ public class CivilizationStatsManager : MonoBehaviour
     {
         if (tickCount >= _ticksBetweenChoices)
         {
-            advancingTick = false;
+            StopAllCoroutines();
             tickCount = 0;
-            StartCoroutine(ChoicePauseTimer());
+            _choiceUIManager.gameObject.SetActive(true);
+            _choiceUIManager.DisplayNewChoices();
+
+            //StartCoroutine(ChoicePauseTimer());
             return;
         }
         tickCount++;
@@ -85,14 +88,14 @@ public class CivilizationStatsManager : MonoBehaviour
     /// <returns></returns>
     IEnumerator ChoicePauseTimer()
     {
-        _choiceUIManager.gameObject.SetActive(true);
+        
         yield return new WaitForSeconds(_ticksToChoose);
         if (_autoChoose && _choiceUIManager.gameObject.activeSelf) //If the player hasn't chosen yet
         {
             int autoChoice = Random.Range(0, _choiceUIManager.Choices.Choices.Count());
             ApplyChoice(_choiceUIManager.Choices.Choices[autoChoice]);
         }
-        ContinueTickAdvance();
+        //ContinueTickAdvance();
     }
     /// <summary>
     /// Resumes the advance of ticks.
@@ -100,7 +103,6 @@ public class CivilizationStatsManager : MonoBehaviour
     public void ContinueTickAdvance()
     {
         _choiceUIManager.gameObject.SetActive(false);
-        advancingTick = true;
         StartCoroutine(tickAdvance());
     }
 

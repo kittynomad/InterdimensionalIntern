@@ -12,6 +12,7 @@ public class ChoiceUIManager : MonoBehaviour
     [SerializeField] private float _textSpeed;
 
     private bool isTyping;
+    private StageManager sm;
 
     Dictionary<string, string> commands = new Dictionary<string, string>();
 
@@ -22,8 +23,17 @@ public class ChoiceUIManager : MonoBehaviour
     {
         commands.Add("help", "help");
         commands.Add("choiceLookup", "?");
-        //foreach (TextMeshProUGUI t in _choiceTexts)
-        //t.text = "";
+        sm = FindObjectOfType<StageManager>();
+        
+        
+    }
+
+    public void DisplayNewChoices()
+    {
+        _choices = sm.Stages[sm.CurStage].ChoiceSets[(int)Random.Range(0, sm.Stages[sm.CurStage].ChoiceSets.Length - 1)];
+        foreach (TextMeshProUGUI t in _choiceTexts)
+            t.text = "";
+
         for (int i = 0; i < _choices.Choices.Length; i++)
         {
             if (!_retroMode)
@@ -43,8 +53,8 @@ public class ChoiceUIManager : MonoBehaviour
         
         try
         {
-            FindObjectOfType<CivilizationStatsManager>().ApplyChoice(_choices.Choices[choiceToApply]);
-            StartCoroutine(TypeAdditional("\nchose a thing"));
+            
+            StartCoroutine(TypeAdditional("\nchose a thing", choiceToApply));
         }
         catch
         {
@@ -144,7 +154,7 @@ public class ChoiceUIManager : MonoBehaviour
         }
     }
 
-    IEnumerator TypeAdditional(string sentence)
+    IEnumerator TypeAdditional(string sentence, int choiceToApply = -1)
     {
         _inputField.text = "";
         isTyping = true;
@@ -165,6 +175,13 @@ public class ChoiceUIManager : MonoBehaviour
 
             //wait pre-specified time until printing the next letter
             yield return new WaitForSeconds(_textSpeed);
+        }
+
+        if(choiceToApply != -1)
+        {
+            yield return new WaitForSeconds(1f);
+            FindObjectOfType<CivilizationStatsManager>().ApplyChoice(_choices.Choices[choiceToApply]);
+            FindObjectOfType<StageManager>().OnChoice();
         }
     }
 }

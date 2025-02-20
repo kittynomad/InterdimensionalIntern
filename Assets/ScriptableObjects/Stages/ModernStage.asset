@@ -19,3 +19,7 @@ MonoBehaviour:
   _maxStats:
   - _stat: 0
     _value: 10000
+  _choiceSets:
+  - {fileID: 11400000, guid: 38f9cf55fafb1c24db623a6675ec759d, type: 2}
+  - {fileID: 11400000, guid: 5f43ec3a7b960ac4b9170bdfdb19a285, type: 2}
+  - {fileID: 11400000, guid: d1689a5a920f38d4fbd9445c60e209e0, type: 2}
