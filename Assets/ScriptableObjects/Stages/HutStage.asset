@@ -19,3 +19,5 @@ MonoBehaviour:
   _maxStats:
   - _stat: 0
     _value: 50
+  _choiceSets:
+  - {fileID: 11400000, guid: 9a59f4269f6c7b040bffe23b01fe4dc9, type: 2}

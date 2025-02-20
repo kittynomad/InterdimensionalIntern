@@ -8,6 +8,7 @@ public class CivStage : ScriptableObject
     [SerializeField] private Enums.CivilizationPhase _phase;
     [SerializeField] private StatWithAssociatedValue[] _minStats;
     [SerializeField] private StatWithAssociatedValue[] _maxStats;
+    [SerializeField] private ChoiceSet[] _choiceSets;
 
     public Enums.CivilizationPhase Phase { get => _phase; set { _phase = value; } }
 
