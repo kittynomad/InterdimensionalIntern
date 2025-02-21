@@ -62,6 +62,7 @@ public class CivilizationStatsManager : MonoBehaviour
         //}
 
         Happiness *= (_happinessGrowthPercentPerTick / 100f);
+        if (_happiness >= 100f) _happiness = 100f;
         _liveGraph.UpdateLiveGraph();
         ChoiceDelay();
     }
