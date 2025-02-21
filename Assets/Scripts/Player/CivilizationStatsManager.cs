@@ -12,6 +12,8 @@ public class CivilizationStatsManager : MonoBehaviour
     [SerializeField] private float _popGrowthPercentPerTick = 100f;
     [SerializeField] private float _happinessGrowthPercentPerTick = 100f;
     [SerializeField] [Range(0.0f, 100.0f)] private float _happiness = 100f;
+    [SerializeField] private float _temperature = 70f;
+    [SerializeField] private float _tempGrowthPercentPerTick = 100f;
 
     [Header("Game Settings")]
     [SerializeField] private float _tickTime = 1f;
@@ -63,6 +65,9 @@ public class CivilizationStatsManager : MonoBehaviour
 
         Happiness *= (_happinessGrowthPercentPerTick / 100f);
         if (_happiness >= 100f) _happiness = 100f;
+
+        _temperature *= (_tempGrowthPercentPerTick / 100f);
+
         _liveGraph.UpdateLiveGraph();
         ChoiceDelay();
     }
@@ -145,6 +150,12 @@ public class CivilizationStatsManager : MonoBehaviour
                     break;
                 case (Enums.ModifyableStats.resources):
                     _resources = m(_resources, s.ModificationValue);
+                    break;
+                case (Enums.ModifyableStats.temperature):
+                    _temperature = m(_temperature, s.ModificationValue);
+                    break;
+                case (Enums.ModifyableStats.temperatureGrowth):
+                    _tempGrowthPercentPerTick = m(_tempGrowthPercentPerTick, s.ModificationValue);
                     break;
             }
         }

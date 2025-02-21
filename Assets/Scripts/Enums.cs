@@ -10,7 +10,9 @@ public class Enums : MonoBehaviour
         populationGrowth,
         resources,
         happiness,
-        happinessGrowth
+        happinessGrowth,
+        temperature,
+        temperatureGrowth
     }
 
     public enum StatOperators
