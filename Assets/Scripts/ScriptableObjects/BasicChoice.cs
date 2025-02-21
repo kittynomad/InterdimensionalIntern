@@ -19,7 +19,7 @@ public class BasicChoice : ScriptableObject
         foreach(StatModifier s in StatModifiers)
         {
             if(!s.HiddenModification)
-                output = output + s.StatToModify + " change by " + s.ModificationValue + "\n";
+                output = output + s.StatToModify + " " + s.ModificationToPerform + " " + s.ModificationValue + "\n";
         }
         return output;
     }
