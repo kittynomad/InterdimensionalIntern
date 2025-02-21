@@ -20,4 +20,6 @@ MonoBehaviour:
   - _stat: 0
     _value: 50
   _choiceSets:
-  - {fileID: 11400000, guid: 9a59f4269f6c7b040bffe23b01fe4dc9, type: 2}
+  - {fileID: 11400000, guid: 6570808d49541aa419ea7e79e8fe16e8, type: 2}
+  - {fileID: 11400000, guid: 84341045b803c284990f3efbcff63e11, type: 2}
+  - {fileID: 11400000, guid: 134dfdb06c7318745bed31ca8e8939ab, type: 2}
