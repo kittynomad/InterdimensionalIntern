@@ -410,7 +410,7 @@ MonoBehaviour:
   _resources: 10.4
   _popGrowthPercentPerTick: 100
   _happinessGrowthPercentPerTick: 100
-  _happiness: 100
+  _happiness: 20
   _tickTime: 1
   _choiceUIManager: {fileID: 0}
   _ticksBetweenChoices: 30
