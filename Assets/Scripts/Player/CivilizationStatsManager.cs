@@ -15,13 +15,16 @@ public class CivilizationStatsManager : MonoBehaviour
 
     [Header("Game Settings")]
     [SerializeField] private float _tickTime = 1f;
-    [SerializeField] private ChoiceUIManager _choiceUIManager;
-    [SerializeField] private float _ticksBetweenChoices = 30f;
-    [SerializeField] private float _ticksToChoose = 6f;
-    [SerializeField] private bool _autoChoose = false;
     [SerializeField] private LiveGraph _liveGraph;
     private bool advancingTick = true;
     private int tickCount = 0;
+    [SerializeField] private PopUpManager _popUpManager;
+
+    [Header("Choice Settings")]
+    [SerializeField] private ChoiceUIManager _choiceUIManager;
+    [SerializeField] private int _ticksBetweenChoices = 30;
+    [SerializeField] private int _ticksToChoose = 6;
+    [SerializeField] private bool _autoChoose = false;
 
     [Header("Stage Settings")]
     [SerializeField] private int stage = 0;
@@ -38,6 +41,7 @@ public class CivilizationStatsManager : MonoBehaviour
     public float TickTime { get => _tickTime; set => _tickTime = value; }
     public LiveGraph LiveGraph { get => _liveGraph; set => _liveGraph = value; }
     public int[] StageChangers { get => stageChangers; set => stageChangers = value; }
+    public int TicksBetweenChoices { get => _ticksBetweenChoices; set => _ticksBetweenChoices = value; }
 
     public void Start()
     {
@@ -46,6 +50,7 @@ public class CivilizationStatsManager : MonoBehaviour
         _choiceUIManager.gameObject.SetActive(false);
         if (_liveGraph == null)
             _liveGraph = GameObject.FindObjectOfType<LiveGraph>();
+
         StartCoroutine(tickAdvance());
     }
 
@@ -64,6 +69,7 @@ public class CivilizationStatsManager : MonoBehaviour
         Happiness *= (_happinessGrowthPercentPerTick / 100f);
         if (_happiness >= 100f) _happiness = 100f;
         _liveGraph.UpdateLiveGraph();
+        _popUpManager.UpdatePopUp();
         ChoiceDelay();
     }
     /// <summary>
@@ -148,6 +154,7 @@ public class CivilizationStatsManager : MonoBehaviour
                     break;
             }
         }
+        _popUpManager.NewPopUp();
         ContinueTickAdvance();
     }
 
