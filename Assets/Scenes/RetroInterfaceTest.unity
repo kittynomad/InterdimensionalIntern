@@ -451,6 +451,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 491cf11f28629054d92afb624723aa80, type: 2}
   - {fileID: 11400000, guid: 687d42c8acad0cc4999177ff6f5778ba, type: 2}
   _choicesUntilCivilizationShift: 3
+  _backgroundAnimator: {fileID: 1802948203}
 --- !u!224 &614448162 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8635179820406688416, guid: ceb95a8e74cc86948bbc98eb3a86d233, type: 3}
