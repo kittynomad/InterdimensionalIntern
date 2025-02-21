@@ -40,6 +40,7 @@ public class CivilizationStatsManager : MonoBehaviour
     public float TickTime { get => _tickTime; set => _tickTime = value; }
     public LiveGraph LiveGraph { get => _liveGraph; set => _liveGraph = value; }
     public int[] StageChangers { get => stageChangers; set => stageChangers = value; }
+    public float Temperature { get => _temperature; set => _temperature = value; }
 
     public void Start()
     {
@@ -66,7 +67,7 @@ public class CivilizationStatsManager : MonoBehaviour
         Happiness *= (_happinessGrowthPercentPerTick / 100f);
         if (_happiness >= 100f) _happiness = 100f;
 
-        _temperature *= (_tempGrowthPercentPerTick / 100f);
+        Temperature *= (_tempGrowthPercentPerTick / 100f);
 
         _liveGraph.UpdateLiveGraph();
         ChoiceDelay();
@@ -152,7 +153,7 @@ public class CivilizationStatsManager : MonoBehaviour
                     _resources = m(_resources, s.ModificationValue);
                     break;
                 case (Enums.ModifyableStats.temperature):
-                    _temperature = m(_temperature, s.ModificationValue);
+                    Temperature = m(Temperature, s.ModificationValue);
                     break;
                 case (Enums.ModifyableStats.temperatureGrowth):
                     _tempGrowthPercentPerTick = m(_tempGrowthPercentPerTick, s.ModificationValue);
