@@ -30,7 +30,8 @@ public class ChoiceUIManager : MonoBehaviour
 
     public void DisplayNewChoices()
     {
-        _choices = sm.Stages[sm.CurStage].ChoiceSets[(int)Random.Range(0, sm.Stages[sm.CurStage].ChoiceSets.Length - 1)];
+        print(sm.Stages[sm.CurStage].ChoiceSets.Length);
+        _choices = sm.Stages[sm.CurStage].ChoiceSets[(int)Random.Range(0, sm.Stages[sm.CurStage].ChoiceSets.Length)];
         foreach (TextMeshProUGUI t in _choiceTexts)
             t.text = "";
 
