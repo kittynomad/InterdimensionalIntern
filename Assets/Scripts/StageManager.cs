@@ -7,6 +7,7 @@ public class StageManager : MonoBehaviour
 {
     [SerializeField] private CivStage[] stages;
     [SerializeField] private int _choicesUntilCivilizationShift = 3;
+    [SerializeField] private Animator _backgroundAnimator;
     private int curStage;
     private int choiceCount;
 
@@ -41,11 +42,13 @@ public class StageManager : MonoBehaviour
         {
             Debug.Log("Not above minimum:" + !Stages[CurStage].CivilizationAboveMinimumStats(statsManager));
             CurStage--;
+            _backgroundAnimator.SetInteger("curStage", CurStage);
         }
         else if (CurStage < Stages.Length - 1 && !Stages[CurStage].CivilizationBelowMaximumStats(statsManager))//statsManager.Population >= stages[curStage].MaxPopulation)
         {
             Debug.Log("Not below maximum: " + !Stages[CurStage].CivilizationBelowMaximumStats(statsManager));
             CurStage++;
+            _backgroundAnimator.SetInteger("curStage", CurStage);
         }
 
         UpdateLiveGraphY();
