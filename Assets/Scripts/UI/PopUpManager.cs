@@ -60,7 +60,8 @@ public class PopUpManager : MonoBehaviour
         float borderX = (_popUpCanvas.gameObject.GetComponent<RectTransform>().rect.width / 2) - (_popUpPrefabs[popUpIndex].gameObject.GetComponent<RectTransform>().rect.width / 2);
         float borderY = (_popUpCanvas.gameObject.GetComponent<RectTransform>().rect.height / 2) - (_popUpPrefabs[popUpIndex].gameObject.GetComponent<RectTransform>().rect.height / 2);
         Vector2 position = new Vector2(Random.Range(-borderX, borderX), Random.Range(-borderY, borderY));
-        Instantiate(_popUpPrefabs[popUpIndex], new Vector3(position.x, position.y, 0), Quaternion.identity, _popUpCanvas.transform);
+        GameObject popUp = Instantiate(_popUpPrefabs[popUpIndex], _popUpCanvas.transform);
+        popUp.GetComponent<RectTransform>().localPosition = position;
         hasPlayedPopUp = true;
     }
 }
