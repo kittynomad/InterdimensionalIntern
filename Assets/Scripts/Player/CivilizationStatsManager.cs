@@ -50,7 +50,7 @@ public class CivilizationStatsManager : MonoBehaviour
         _choiceUIManager.gameObject.SetActive(false);
         if (_liveGraph == null)
             _liveGraph = GameObject.FindObjectOfType<LiveGraph>();
-
+        _popUpManager.NewPopUp();
         StartCoroutine(tickAdvance());
     }
 
