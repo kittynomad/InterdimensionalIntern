@@ -17,13 +17,16 @@ public class CivilizationStatsManager : MonoBehaviour
 
     [Header("Game Settings")]
     [SerializeField] private float _tickTime = 1f;
-    [SerializeField] private ChoiceUIManager _choiceUIManager;
-    [SerializeField] private float _ticksBetweenChoices = 30f;
-    [SerializeField] private float _ticksToChoose = 6f;
-    [SerializeField] private bool _autoChoose = false;
     [SerializeField] private LiveGraph _liveGraph;
     private bool advancingTick = true;
     private int tickCount = 0;
+    [SerializeField] private PopUpManager _popUpManager;
+
+    [Header("Choice Settings")]
+    [SerializeField] private ChoiceUIManager _choiceUIManager;
+    [SerializeField] private int _ticksBetweenChoices = 30;
+    [SerializeField] private int _ticksToChoose = 6;
+    [SerializeField] private bool _autoChoose = false;
 
     [Header("Stage Settings")]
     [SerializeField] private int stage = 0;
@@ -40,6 +43,7 @@ public class CivilizationStatsManager : MonoBehaviour
     public float TickTime { get => _tickTime; set => _tickTime = value; }
     public LiveGraph LiveGraph { get => _liveGraph; set => _liveGraph = value; }
     public int[] StageChangers { get => stageChangers; set => stageChangers = value; }
+    public int TicksBetweenChoices { get => _ticksBetweenChoices; set => _ticksBetweenChoices = value; }
     public float Temperature { get => _temperature; set => _temperature = value; }
 
     public void Start()
@@ -49,6 +53,7 @@ public class CivilizationStatsManager : MonoBehaviour
         _choiceUIManager.gameObject.SetActive(false);
         if (_liveGraph == null)
             _liveGraph = GameObject.FindObjectOfType<LiveGraph>();
+        _popUpManager.NewPopUp();
         StartCoroutine(tickAdvance());
     }
 
@@ -70,6 +75,7 @@ public class CivilizationStatsManager : MonoBehaviour
         Temperature *= (_tempGrowthPercentPerTick / 100f);
 
         _liveGraph.UpdateLiveGraph();
+        _popUpManager.UpdatePopUp();
         ChoiceDelay();
     }
     /// <summary>
@@ -160,6 +166,7 @@ public class CivilizationStatsManager : MonoBehaviour
                     break;
             }
         }
+        _popUpManager.NewPopUp();
         ContinueTickAdvance();
     }
 
