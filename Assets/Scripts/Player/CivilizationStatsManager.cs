@@ -41,6 +41,11 @@ public class CivilizationStatsManager : MonoBehaviour
     public float TickTime { get => _tickTime; set => _tickTime = value; }
     public LiveGraph LiveGraph { get => _liveGraph; set => _liveGraph = value; }
     public int[] StageChangers { get => stageChangers; set => stageChangers = value; }
+
+
+
+
+
     public int TicksBetweenChoices { get => _ticksBetweenChoices; set => _ticksBetweenChoices = value; }
 
     public void Start()
