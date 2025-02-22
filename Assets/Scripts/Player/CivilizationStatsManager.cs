@@ -14,6 +14,8 @@ public class CivilizationStatsManager : MonoBehaviour
     [SerializeField] [Range(0.0f, 100.0f)] private float _happiness = 100f;
     [SerializeField] private float _temperature = 70f;
     [SerializeField] private float _tempGrowthPercentPerTick = 100f;
+    [SerializeField] private Thermometer _thermometer;
+    [SerializeField] private float _thermometerMax = 120f;
 
     [Header("Game Settings")]
     [SerializeField] private float _tickTime = 1f;
@@ -45,6 +47,7 @@ public class CivilizationStatsManager : MonoBehaviour
     public int[] StageChangers { get => stageChangers; set => stageChangers = value; }
     public int TicksBetweenChoices { get => _ticksBetweenChoices; set => _ticksBetweenChoices = value; }
     public float Temperature { get => _temperature; set => _temperature = value; }
+    public float ThermometerMax { get => _thermometerMax; set => _thermometerMax = value; }
 
     public void Start()
     {
@@ -54,6 +57,7 @@ public class CivilizationStatsManager : MonoBehaviour
         if (_liveGraph == null)
             _liveGraph = GameObject.FindObjectOfType<LiveGraph>();
         _popUpManager.NewPopUp();
+        _thermometer.UpdateThermometer();
         StartCoroutine(tickAdvance());
     }
 
@@ -76,6 +80,7 @@ public class CivilizationStatsManager : MonoBehaviour
 
         _liveGraph.UpdateLiveGraph();
         _popUpManager.UpdatePopUp();
+        _thermometer.UpdateThermometer();
         ChoiceDelay();
     }
     /// <summary>
