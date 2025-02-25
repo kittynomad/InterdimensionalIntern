@@ -23,9 +23,12 @@ public class PopUpManager : MonoBehaviour
 
     public bool HasPlayedPopUp { get => hasPlayedPopUp; set => hasPlayedPopUp = value; }
 
+    private AudioSource source;
+
     private void Start()
     {
         maxTicksAfterChoice = _statsManager.TicksBetweenChoices - _minTicksBeforeNextChoice;
+        source = GetComponent<AudioSource>();
     }
     /// <summary>
     /// Creates a new popUp countdown
@@ -56,6 +59,7 @@ public class PopUpManager : MonoBehaviour
     /// </summary>
     public void SpawnPopUp()
     {
+        source.Play();
         int popUpIndex = Random.Range(0, _popUpPrefabs.Count);
         float borderX = (_popUpCanvas.gameObject.GetComponent<RectTransform>().rect.width / 2) - (_popUpPrefabs[popUpIndex].gameObject.GetComponent<RectTransform>().rect.width / 2);
         float borderY = (_popUpCanvas.gameObject.GetComponent<RectTransform>().rect.height / 2) - (_popUpPrefabs[popUpIndex].gameObject.GetComponent<RectTransform>().rect.height / 2);
