@@ -41,7 +41,7 @@ public class ChoiceUIManager : MonoBehaviour
     public void DisplayNewChoices()
     {
         print(sm.Stages[sm.CurStage].ChoiceSets.Length);
-        _choices = sm.Stages[sm.CurStage].ChoiceSets[(int)Random.Range(0, sm.Stages[sm.CurStage].ChoiceSets.Length)];
+        _choices = GetNextChoiceSet(false);
         foreach (TextMeshProUGUI t in _choiceTexts)
             t.text = "";
 
@@ -142,6 +142,14 @@ public class ChoiceUIManager : MonoBehaviour
     {
         StartCoroutine(TypeAdditional("\nType choice num. + \"?\" to display choice info \n(i.e. \"0?\" for choice 0)"
             +"\nType choice number to choose that option\n(i.e. type \"1\" for choice 1)"));
+    }
+
+    private ChoiceSet GetNextChoiceSet(bool weighted = true)
+    {
+        if (!weighted)
+            return sm.Stages[sm.CurStage].ChoiceSets[(int)Random.Range(0, sm.Stages[sm.CurStage].ChoiceSets.Length)];
+        else
+            return null;
     }
 
     IEnumerator TypeChoices(string sentence)

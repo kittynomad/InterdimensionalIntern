@@ -13,4 +13,5 @@ public class ChoiceSet : ScriptableObject
     public string ChoiceSetName { get => _choiceSetName; set => _choiceSetName = value; }
     public Enums.CivilizationPhase ChoicePhase { get => _choicePhase; set => _choicePhase = value; }
     public BasicChoice[] Choices { get => _choices; set => _choices = value; }
+    public float Weight { get => _weight; set => _weight = value; }
 }
