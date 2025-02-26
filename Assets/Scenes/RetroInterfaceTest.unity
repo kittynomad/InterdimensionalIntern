@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 250736992}
   - component: {fileID: 250736991}
   m_Layer: 5
-  m_Name: PopulationMiniGraphCanvas
+  m_Name: LiveGraphCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -241,7 +241,7 @@ GameObject:
   - component: {fileID: 467357085}
   - component: {fileID: 467357084}
   m_Layer: 0
-  m_Name: Line (1)
+  m_Name: ResourcesLine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -696,6 +696,10 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 0.5254902
       objectReference: {fileID: 0}
+    - target: {fileID: 4322368879752234505, guid: 473d5054b365a804592a40d71965dfba, type: 3}
+      propertyPath: m_Name
+      value: PopulationLine
+      objectReference: {fileID: 0}
     - target: {fileID: 5667540318574485277, guid: 473d5054b365a804592a40d71965dfba, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.3
@@ -811,11 +815,11 @@ MonoBehaviour:
     _min: {x: 0, y: 0}
     _max: {x: 20, y: 100}
   - _line: {fileID: 467357084}
-    _type: 1
+    _type: 2
     _min: {x: 0, y: 0}
     _max: {x: 20, y: 500}
   - _line: {fileID: 1469380904}
-    _type: 2
+    _type: 3
     _min: {x: 0, y: 0}
     _max: {x: 20, y: 100}
 --- !u!1 &831912073
@@ -1553,7 +1557,7 @@ GameObject:
   - component: {fileID: 1469380905}
   - component: {fileID: 1469380904}
   m_Layer: 0
-  m_Name: Line (2)
+  m_Name: HappinessLine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2429,6 +2433,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 9194696170251704258, guid: ceb95a8e74cc86948bbc98eb3a86d233, type: 3}
+      propertyPath: _statsManager
+      value: 
+      objectReference: {fileID: 504462878}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:

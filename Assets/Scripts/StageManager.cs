@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using UnityEditor.SceneManagement;
 using UnityEngine;
 
 public class StageManager : MonoBehaviour
@@ -56,29 +57,48 @@ public class StageManager : MonoBehaviour
         Debug.Log("CurrentStage:" + Stages[CurStage].Phase);
     }
 
+    //private void UpdateLiveGraphY2() //Update for all stats
+    //{
+    //    float tempMinY = 0;
+    //    float tempMaxY = 100;
+    //    for (int index = 0; index < Stages[CurStage].MinStats.Count(); index++)
+    //    {
+    //        if (Stages[CurStage].MinStats[index].Stat != Enums.ModifyableStats.population)
+    //            continue;
+    //        tempMinY = Stages[CurStage].MinStats[index].Value;
+    //    }
+    //    for (int index = 0; index < Stages[CurStage].MaxStats.Count(); index++)
+    //    {
+    //        if (Stages[CurStage].MaxStats[index].Stat != Enums.ModifyableStats.population)
+    //            continue;
+    //        tempMaxY = Stages[CurStage].MaxStats[index].Value;
+    //    }
+    //    for (int index = 0; index < statsManager.LiveGraph.LiveStats.Count; index++)
+    //    {
+    //        if (statsManager.LiveGraph.LiveStats[index].Type != LiveStat.LiveStatType.POPULATION) //continues to next iteration if liveStat is not population
+    //            continue;
+    //        statsManager.LiveGraph.LiveStats[index].Min = new Vector2(statsManager.LiveGraph.LiveStats[index].Min.x, tempMinY);
+    //        statsManager.LiveGraph.LiveStats[index].Max = new Vector2(statsManager.LiveGraph.LiveStats[index].Max.x, tempMaxY);
+    //        break;
+    //    }
+    //}
     private void UpdateLiveGraphY()
     {
-        float tempMinY = 0;
-        float tempMaxY = 100;
-        for (int index = 0; index < Stages[CurStage].MinStats.Count(); index++)
+        foreach (CivStage stage in  Stages)
         {
-            if (Stages[CurStage].MinStats[index].Stat != Enums.ModifyableStats.population)
-                continue;
-            tempMinY = Stages[CurStage].MinStats[index].Value;
-        }
-        for (int index = 0; index < Stages[CurStage].MaxStats.Count(); index++)
-        {
-            if (Stages[CurStage].MaxStats[index].Stat != Enums.ModifyableStats.population)
-                continue;
-            tempMaxY = Stages[CurStage].MaxStats[index].Value;
-        }
-        for (int index = 0; index < statsManager.LiveGraph.LiveStats.Count; index++)
-        {
-            if (statsManager.LiveGraph.LiveStats[index].Type != LiveStat.LiveStatType.POPULATION) //continues to next iteration if liveStat is not population
-                continue;
-            statsManager.LiveGraph.LiveStats[index].Min = new Vector2(statsManager.LiveGraph.LiveStats[index].Min.x, tempMinY);
-            statsManager.LiveGraph.LiveStats[index].Max = new Vector2(statsManager.LiveGraph.LiveStats[index].Max.x, tempMaxY);
-            break;
+            for (int index = 0; index < statsManager.LiveGraph.LiveStats.Count; index++)
+            {
+                for (int index2 = 0; index2 < stage.MinStats.Count(); index2++)
+                {
+                    if (statsManager.LiveGraph.LiveStats[index].Type == stage.MinStats[index2].Stat)
+                        statsManager.LiveGraph.LiveStats[index].Min = new Vector2(statsManager.LiveGraph.LiveStats[index].Min.x, stage.MinStats[index2].Value);
+                }
+                for (int index2 = 0; index2 < stage.MaxStats.Count(); index2++)
+                {
+                    if (statsManager.LiveGraph.LiveStats[index].Type == stage.MaxStats[index2].Stat)
+                        statsManager.LiveGraph.LiveStats[index].Max = new Vector2(statsManager.LiveGraph.LiveStats[index].Max.x, stage.MaxStats[index2].Value);
+                }
+            }
         }
     }
     void Update()
