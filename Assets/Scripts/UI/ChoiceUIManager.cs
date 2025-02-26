@@ -5,6 +5,8 @@ using TMPro;
 
 public class ChoiceUIManager : MonoBehaviour
 {
+    [SerializeField] private CivilizationStatsManager _statsManager;
+
     [SerializeField] private TextMeshProUGUI[] _choiceTexts;
     [SerializeField] private TMP_InputField _inputField;
     [SerializeField] private ChoiceSet _choices;
@@ -26,6 +28,14 @@ public class ChoiceUIManager : MonoBehaviour
         sm = FindObjectOfType<StageManager>();
         
         
+    }
+    private void OnEnable()
+    {
+        _statsManager.PopUpManager.gameObject.SetActive(false);
+    }
+    private void OnDisable()
+    {
+        _statsManager.PopUpManager.gameObject.SetActive(true);
     }
 
     public void DisplayNewChoices()

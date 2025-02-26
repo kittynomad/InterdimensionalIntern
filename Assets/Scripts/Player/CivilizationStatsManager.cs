@@ -48,6 +48,7 @@ public class CivilizationStatsManager : MonoBehaviour
     public int TicksBetweenChoices { get => _ticksBetweenChoices; set => _ticksBetweenChoices = value; }
     public float Temperature { get => _temperature; set => _temperature = value; }
     public float ThermometerMax { get => _thermometerMax; set => _thermometerMax = value; }
+    public PopUpManager PopUpManager { get => _popUpManager; set => _popUpManager = value; }
 
     public void Start()
     {

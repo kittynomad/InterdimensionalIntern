@@ -21,16 +21,19 @@ public class LiveStat
         HAPPINESS,
     }
     [SerializeField] private UILineRenderer _line;
-    [SerializeField] private LiveStatType _type;
+    //[SerializeField] private LiveStatType _type;
+    [SerializeField] private Enums.ModifyableStats _type;
     [SerializeField] private Vector2 _min = new Vector2(0, 0);
     [SerializeField] private Vector2 _max = new Vector2(20, 1000);
     private int tickCount = 0;
 
     public UILineRenderer Line { get => _line; set => _line = value; }
-    public LiveStatType Type { get => _type; set => _type = value; }
+    //public LiveStatType Type { get => _type; set => _type = value; }
+    public Enums.ModifyableStats Type { get => _type; set => _type = value; }
     public Vector2 Min { get => _min; set => _min = value; }
     public Vector2 Max { get => _max; set => _max = value; }
     public int TickCount { get => tickCount; set => tickCount = value; }
+
 }
 public class LiveGraph : MonoBehaviour
 {
@@ -54,9 +57,12 @@ public class LiveGraph : MonoBehaviour
             switch (liveStat.Type)
             {
                 default:
-                case LiveStat.LiveStatType.POPULATION: stat = (float)statsManager.Population; break;
-                case LiveStat.LiveStatType.RESOURCES: stat = (float)statsManager.Resources; break;
-                case LiveStat.LiveStatType.HAPPINESS: stat = (float)statsManager.Happiness; break;
+                case Enums.ModifyableStats.population: stat = (float)statsManager.Population; break;
+                case Enums.ModifyableStats.resources: stat = (float)statsManager.Resources; break;
+                case Enums.ModifyableStats.happiness: stat = (float)statsManager.Happiness; break;
+                    //case LiveStat.LiveStatType.POPULATION: stat = (float)statsManager.Population; break;
+                    //case LiveStat.LiveStatType.RESOURCES: stat = (float)statsManager.Resources; break;
+                    //case LiveStat.LiveStatType.HAPPINESS: stat = (float)statsManager.Happiness; break;
             }
             if (liveStat.Line.Points.Count >= liveStat.Max.x) //if the line has not reached the far right of the graph yet
             {
