@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[CreateAssetMenu]
 public class StatScalingChoiceSet : ChoiceSet
 {
     [SerializeField] private StatWithAssociatedValue[] _minimumValuestoScale;
