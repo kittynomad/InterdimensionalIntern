@@ -41,7 +41,7 @@ public class ChoiceUIManager : MonoBehaviour
     public void DisplayNewChoices()
     {
         print(sm.Stages[sm.CurStage].ChoiceSets.Length);
-        _choices = sm.Stages[sm.CurStage].ChoiceSets[(int)Random.Range(0, sm.Stages[sm.CurStage].ChoiceSets.Length)];
+        _choices = GetNextChoiceSet();
         foreach (TextMeshProUGUI t in _choiceTexts)
             t.text = "";
 
@@ -142,6 +142,30 @@ public class ChoiceUIManager : MonoBehaviour
     {
         StartCoroutine(TypeAdditional("\nType choice num. + \"?\" to display choice info \n(i.e. \"0?\" for choice 0)"
             +"\nType choice number to choose that option\n(i.e. type \"1\" for choice 1)"));
+    }
+
+    private ChoiceSet GetNextChoiceSet(bool weighted = true)
+    {
+        if (!weighted) //return truly random choiceSet if not accounting for weight
+            return sm.Stages[sm.CurStage].ChoiceSets[(int)Random.Range(0, sm.Stages[sm.CurStage].ChoiceSets.Length)];
+
+        float totalWeight = 0f;
+        CivStage stage = sm.Stages[sm.CurStage];
+
+        foreach (ChoiceSet c in stage.ChoiceSets)
+            totalWeight += c.Weight;
+
+        for(int i = 0; i < stage.ChoiceSets.Length - 1; i++)
+        {
+            if(Random.Range(0, totalWeight) < stage.ChoiceSets[i].Weight)
+            {
+                return stage.ChoiceSets[i];
+            }
+
+            totalWeight -= stage.ChoiceSets[i + 1].Weight;
+        }
+
+        return stage.ChoiceSets[stage.ChoiceSets.Length - 1];
     }
 
     IEnumerator TypeChoices(string sentence)
