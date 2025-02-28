@@ -21,4 +21,24 @@ public class DebugFunctions : MonoBehaviour
             "\nHappiness: " + stats.Happiness + "%" +
             "\nTemperature: " + stats.Temperature;
     }
+
+    public void IncreasePopulation(int popIncreaseAmount)
+    {
+        stats.Population += popIncreaseAmount;
+    }
+
+    public void IncreaseResources(float resourceIncreaseAmount)
+    {
+        stats.Resources += resourceIncreaseAmount;
+    }
+
+    public void IncreaseHappiness(float happinessIncreaseAmount)
+    {
+        stats.Happiness += happinessIncreaseAmount;
+    }
+
+    public void SetTickSpeed(float tickSpeed)
+    {
+        stats.TickTime = tickSpeed;
+    }
 }
