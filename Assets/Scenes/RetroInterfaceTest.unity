@@ -2143,7 +2143,7 @@ ParticleSystem:
         m_RotationOrder: 4
     randomizeRotationDirection: 0
     gravitySource: 1
-    maxNumParticles: 1000
+    maxNumParticles: 50000
     customEmitterVelocity: {x: 0, y: 0, z: 0}
     size3D: 0
     rotation3D: 0
@@ -7004,10 +7004,10 @@ Camera:
   m_LensShift: {x: 0, y: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0
+    x: 0.00078125007
     y: 0
-    width: 0.33333334
-    height: 0.44444445
+    width: 0.9984375
+    height: 1
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
