@@ -64,8 +64,18 @@ public class CivilizationStatsManager : MonoBehaviour
 
     public void OnTick()
     {
+        int popBeforeThisTick = _population;
         _population = Random.Range(0, 2) + 
             (int)((float)_population * (_popGrowthPercentPerTick / 100f));
+
+        try
+        {
+            FindObjectOfType<ParticlePeopleHandler>().SetPopChange(_population - popBeforeThisTick);
+        }
+        catch
+        {
+            Debug.LogWarning("no ParticlePeopleHandler found!");
+        }
 
         //changes the stage number and animation if population hits a certain number
         //if (_population > stageChangers[stage])
