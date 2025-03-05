@@ -23,12 +23,14 @@ public class CivilizationStatsManager : MonoBehaviour
     private bool advancingTick = true;
     private int tickCount = 0;
     [SerializeField] private PopUpManager _popUpManager;
+    [SerializeField] private GameObject _world;
 
     [Header("Choice Settings")]
     [SerializeField] private ChoiceUIManager _choiceUIManager;
     [SerializeField] private int _ticksBetweenChoices = 30;
     [SerializeField] private int _ticksToChoose = 6;
     [SerializeField] private bool _autoChoose = false;
+    [SerializeField] private float _choiceAnimationDelay = 1;
 
     [Header("Stage Settings")]
     [SerializeField] private int stage = 0;
@@ -183,7 +185,16 @@ public class CivilizationStatsManager : MonoBehaviour
             }
         }
         _popUpManager.NewPopUp();
+        if (choice.ChoiceAnimation != null)
+            StartCoroutine(PlayChoiceAnimation(choice.ChoiceAnimation));
         ContinueTickAdvance();
+    }
+
+    IEnumerator PlayChoiceAnimation(Animation animation)
+    {
+        yield return new WaitForSeconds(_choiceAnimationDelay);
+        Debug.Log("Playing animation...");
+        _world.GetComponent<Animator>().Play(animation.name);
     }
 
     public float GetStatFromModifyableStatsEnum(Enums.ModifyableStats s)

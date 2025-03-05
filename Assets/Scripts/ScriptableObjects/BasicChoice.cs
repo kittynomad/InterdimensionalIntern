@@ -10,8 +10,11 @@ public class BasicChoice : ScriptableObject
 
     [SerializeField] private StatModifier[] _statModifiers;
 
+    [SerializeField] private Animation _choiceAnimation;
+
     public StatModifier[] StatModifiers { get => _statModifiers; set => _statModifiers = value; }
     public string ChoiceName { get => _choiceName; set => _choiceName = value; }
+    public Animation ChoiceAnimation { get => _choiceAnimation; set => _choiceAnimation = value; }
 
     public override string ToString()
     {
