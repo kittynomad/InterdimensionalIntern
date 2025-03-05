@@ -20,9 +20,11 @@ public class BasicChoice : ScriptableObject
         {Enums.ModifyableStats.temperature, "purple" },
         {Enums.ModifyableStats.temperatureGrowth, "purple" },
     };
+    [SerializeField] private Animation _choiceAnimation;
 
     public StatModifier[] StatModifiers { get => _statModifiers; set => _statModifiers = value; }
     public string ChoiceName { get => _choiceName; set => _choiceName = value; }
+    public Animation ChoiceAnimation { get => _choiceAnimation; set => _choiceAnimation = value; }
 
     public override string ToString()
     {
