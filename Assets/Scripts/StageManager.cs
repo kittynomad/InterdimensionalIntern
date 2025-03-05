@@ -34,9 +34,20 @@ public class StageManager : MonoBehaviour
             Debug.Log("Population: " + statsManager.Population + "\nMax " + Stages[CurStage].MaxStats[0].Stat + ": " + Stages[CurStage].MaxStats[0].Value + "\nCurrent Stage: " + CurStage);
             StageCheck();
             choiceCount = 0;
+            NextPersonPause();
+
         }
     }
-
+    private void NextPersonPause()
+    {
+        statsManager.NextPersonCanvas.SetActive(true);
+        StopAllCoroutines();
+    }
+    public void NextPersonResume()
+    {
+        statsManager.NextPersonCanvas.SetActive(false);
+        statsManager.StartCoroutine(statsManager.tickAdvance());
+    }
     private void StageCheck()
     {
         if (CurStage > 0 && !Stages[CurStage].CivilizationAboveMinimumStats(statsManager))//statsManager.Population <= stages[curStage].MinPopulation)
