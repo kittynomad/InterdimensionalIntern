@@ -10,6 +10,8 @@ public class BasicChoice : ScriptableObject
 
     [SerializeField] private StatModifier[] _statModifiers;
 
+    Dictionary<Enums.ModifyableStats, string> statColors = new Dictionary<Enums.ModifyableStats, string>();
+
     public StatModifier[] StatModifiers { get => _statModifiers; set => _statModifiers = value; }
     public string ChoiceName { get => _choiceName; set => _choiceName = value; }
 
@@ -19,7 +21,7 @@ public class BasicChoice : ScriptableObject
         foreach(StatModifier s in StatModifiers)
         {
             if(!s.HiddenModification)
-                output = output + s.StatToModify + " " + s.ModificationToPerform + " " + s.ModificationValue + "\n";
+                output = output + "<color=green>" + s.StatToModify + "</color> " + s.ModificationToPerform + " " + s.ModificationValue + "\n";
         }
         return output;
     }
