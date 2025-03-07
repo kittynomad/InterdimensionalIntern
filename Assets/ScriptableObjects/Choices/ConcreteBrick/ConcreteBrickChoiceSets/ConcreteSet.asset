@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e97403ba7267f32419a10c3b58cef336, type: 3}
   m_Name: ConcreteSet
   m_EditorClassIdentifier: 
-  _choiceSetName: 
+  _choiceSetName: Concrete/Brick Set
   _choicePhase: 3
   _choices:
-  - {fileID: 11400000, guid: 675a9f4e2fce9d7478ee2338d98f8b6e, type: 2}
-  - {fileID: 11400000, guid: 657a4aa877cb83e4697d987cdcbc56e9, type: 2}
-  - {fileID: 11400000, guid: b186196e3f4be3f499c67b2773455308, type: 2}
+  - {fileID: 11400000, guid: d939a178a6a75964ba8be37828b85fb7, type: 2}
+  - {fileID: 11400000, guid: 955145c276845504382f4e675bfaf1f8, type: 2}
+  - {fileID: 11400000, guid: 3a4f4b8fa93db5243a9c28efefa4eb7b, type: 2}
   _weight: 1
