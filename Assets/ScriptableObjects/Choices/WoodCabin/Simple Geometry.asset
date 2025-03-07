@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92109ab8881064945aec6e7a2ed0e84a, type: 3}
+  m_Name: Simple Geometry
+  m_EditorClassIdentifier: 
+  _choiceName: Simpe Geometry
+  _choiceDescription: "First the wheel, and now this? What\u2019s next, triangles?
+    God forbid squares?! "
+  _statModifiers:
+  - _statToModify: 3
+    _modificationToPerform: 0
+    _modificationValue: -2
+    _hiddenModification: 0
+  - _statToModify: 1
+    _modificationToPerform: 0
+    _modificationValue: 1
+    _hiddenModification: 0
