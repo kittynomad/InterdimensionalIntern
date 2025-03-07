@@ -34,9 +34,20 @@ public class StageManager : MonoBehaviour
             Debug.Log("Population: " + statsManager.Population + "\nMax " + Stages[CurStage].MaxStats[0].Stat + ": " + Stages[CurStage].MaxStats[0].Value + "\nCurrent Stage: " + CurStage);
             StageCheck();
             choiceCount = 0;
+            NextPersonPause();
+
         }
     }
-
+    private void NextPersonPause()
+    {
+        statsManager.NextPersonCanvas.SetActive(true);
+        StopAllCoroutines();
+    }
+    public void NextPersonResume()
+    {
+        statsManager.NextPersonCanvas.SetActive(false);
+        statsManager.StartCoroutine(statsManager.tickAdvance());
+    }
     private void StageCheck()
     {
         if (CurStage > 0 && !Stages[CurStage].CivilizationAboveMinimumStats(statsManager))//statsManager.Population <= stages[curStage].MinPopulation)
@@ -84,20 +95,17 @@ public class StageManager : MonoBehaviour
     //}
     private void UpdateLiveGraphY()
     {
-        foreach (CivStage stage in  Stages)
+        for (int index = 0; index < statsManager.LiveGraph.LiveStats.Count; index++)
         {
-            for (int index = 0; index < statsManager.LiveGraph.LiveStats.Count; index++)
+            for (int index2 = 0; index2 < stages[curStage].MinStats.Count(); index2++)
             {
-                for (int index2 = 0; index2 < stage.MinStats.Count(); index2++)
-                {
-                    if (statsManager.LiveGraph.LiveStats[index].Type == stage.MinStats[index2].Stat)
-                        statsManager.LiveGraph.LiveStats[index].Min = new Vector2(statsManager.LiveGraph.LiveStats[index].Min.x, stage.MinStats[index2].Value);
-                }
-                for (int index2 = 0; index2 < stage.MaxStats.Count(); index2++)
-                {
-                    if (statsManager.LiveGraph.LiveStats[index].Type == stage.MaxStats[index2].Stat)
-                        statsManager.LiveGraph.LiveStats[index].Max = new Vector2(statsManager.LiveGraph.LiveStats[index].Max.x, stage.MaxStats[index2].Value);
-                }
+                if (statsManager.LiveGraph.LiveStats[index].Type == stages[curStage].MinStats[index2].Stat)
+                    statsManager.LiveGraph.LiveStats[index].Min = new Vector2(statsManager.LiveGraph.LiveStats[index].Min.x, stages[curStage].MinStats[index2].Value);
+            }
+            for (int index2 = 0; index2 < stages[curStage].MaxStats.Count(); index2++)
+            {
+                if (statsManager.LiveGraph.LiveStats[index].Type == stages[curStage].MaxStats[index2].Stat)
+                    statsManager.LiveGraph.LiveStats[index].Max = new Vector2(statsManager.LiveGraph.LiveStats[index].Max.x, stages[curStage].MaxStats[index2].Value);
             }
         }
     }

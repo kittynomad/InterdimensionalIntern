@@ -172,6 +172,7 @@ public class ChoiceUIManager : MonoBehaviour
     {
         _inputField.text = "";
         isTyping = true;
+        bool isTag = false;
 
         _choiceTexts[0].maxVisibleCharacters = 0;
         _choiceTexts[0].text = sentence;
@@ -181,8 +182,13 @@ public class ChoiceUIManager : MonoBehaviour
         {
             char letter = sentenceCharArray[i];
 
-            _choiceTexts[0].maxVisibleCharacters++;
+            if (letter.ToString().Equals("<"))
+                isTag = true;
+            if (letter.ToString().Equals(">"))
+                isTag = false;
 
+            if(!isTag)
+                _choiceTexts[0].maxVisibleCharacters++;
 
             //wait pre-specified time until printing the next letter
             yield return new WaitForSeconds(_textSpeed);
@@ -193,10 +199,11 @@ public class ChoiceUIManager : MonoBehaviour
     {
         _inputField.text = "";
         isTyping = true;
+        bool isTag = false;
 
         char[] oldSentenceCharArray = _choiceTexts[0].text.ToCharArray();
 
-        _choiceTexts[0].maxVisibleCharacters = oldSentenceCharArray.Length;
+        _choiceTexts[0].maxVisibleCharacters = _choiceTexts[0].maxVisibleCharacters;
         _choiceTexts[0].text = _choiceTexts[0].text + sentence;
 
         char[] sentenceCharArray = sentence.ToCharArray();
@@ -205,8 +212,13 @@ public class ChoiceUIManager : MonoBehaviour
         {
             char letter = sentenceCharArray[i];
 
-            _choiceTexts[0].maxVisibleCharacters++;
+            if (letter.ToString().Equals("<"))
+                isTag = true;
+            if (letter.ToString().Equals(">"))
+                isTag = false;
 
+            if(!isTag)
+                _choiceTexts[0].maxVisibleCharacters++;
 
             //wait pre-specified time until printing the next letter
             yield return new WaitForSeconds(_textSpeed);

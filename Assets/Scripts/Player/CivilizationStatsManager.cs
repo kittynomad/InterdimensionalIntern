@@ -23,12 +23,15 @@ public class CivilizationStatsManager : MonoBehaviour
     private bool advancingTick = true;
     private int tickCount = 0;
     [SerializeField] private PopUpManager _popUpManager;
+    [SerializeField] private GameObject _world;
+    [SerializeField] private GameObject _nextPersonCanvas;
 
     [Header("Choice Settings")]
     [SerializeField] private ChoiceUIManager _choiceUIManager;
     [SerializeField] private int _ticksBetweenChoices = 30;
     [SerializeField] private int _ticksToChoose = 6;
     [SerializeField] private bool _autoChoose = false;
+    [SerializeField] private float _choiceAnimationDelay = 1;
 
     [Header("Stage Settings")]
     [SerializeField] private int stage = 0;
@@ -49,6 +52,7 @@ public class CivilizationStatsManager : MonoBehaviour
     public float Temperature { get => _temperature; set => _temperature = value; }
     public float ThermometerMax { get => _thermometerMax; set => _thermometerMax = value; }
     public PopUpManager PopUpManager { get => _popUpManager; set => _popUpManager = value; }
+    public GameObject NextPersonCanvas { get => _nextPersonCanvas; set => _nextPersonCanvas = value; }
 
     public void Start()
     {
@@ -64,8 +68,18 @@ public class CivilizationStatsManager : MonoBehaviour
 
     public void OnTick()
     {
+        int popBeforeThisTick = _population;
         _population = Random.Range(0, 2) + 
             (int)((float)_population * (_popGrowthPercentPerTick / 100f));
+
+        try
+        {
+            FindObjectOfType<ParticlePeopleHandler>().SetPopChange(_population - popBeforeThisTick);
+        }
+        catch
+        {
+            Debug.LogWarning("no ParticlePeopleHandler found!");
+        }
 
         //changes the stage number and animation if population hits a certain number
         //if (_population > stageChangers[stage])
@@ -96,7 +110,6 @@ public class CivilizationStatsManager : MonoBehaviour
             _choiceUIManager.gameObject.SetActive(true);
             _choiceUIManager.DisplayNewChoices();
 
-            //StartCoroutine(ChoicePauseTimer());
             return;
         }
         tickCount++;
@@ -114,7 +127,6 @@ public class CivilizationStatsManager : MonoBehaviour
             int autoChoice = Random.Range(0, _choiceUIManager.Choices.Choices.Count());
             ApplyChoice(_choiceUIManager.Choices.Choices[autoChoice]);
         }
-        //ContinueTickAdvance();
     }
     /// <summary>
     /// Resumes the advance of ticks.
@@ -173,7 +185,16 @@ public class CivilizationStatsManager : MonoBehaviour
             }
         }
         _popUpManager.NewPopUp();
+        if (choice.ChoiceAnimation != null)
+            StartCoroutine(PlayChoiceAnimation(choice.ChoiceAnimation));
         ContinueTickAdvance();
+    }
+
+    IEnumerator PlayChoiceAnimation(Animation animation)
+    {
+        yield return new WaitForSeconds(_choiceAnimationDelay);
+        Debug.Log("Playing animation...");
+        _world.GetComponent<Animator>().Play(animation.name);
     }
 
     public float GetStatFromModifyableStatsEnum(Enums.ModifyableStats s)
