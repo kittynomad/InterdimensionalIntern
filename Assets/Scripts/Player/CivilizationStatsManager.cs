@@ -51,7 +51,7 @@ public class CivilizationStatsManager : MonoBehaviour
     {
         if (_choiceUIManager == null)
             _choiceUIManager = GameObject.FindObjectOfType<ChoiceUIManager>();
-        _choiceUIManager.gameObject.SetActive(false);
+        //_choiceUIManager.gameObject.SetActive(false);
         if (_liveGraph == null)
             _liveGraph = GameObject.FindObjectOfType<LiveGraph>();
         _popUpManager.NewPopUp();
@@ -126,7 +126,7 @@ public class CivilizationStatsManager : MonoBehaviour
     /// </summary>
     public void ContinueTickAdvance()
     {
-        _choiceUIManager.gameObject.SetActive(false);
+        //_choiceUIManager.gameObject.SetActive(false);
         StartCoroutine(tickAdvance());
     }
 

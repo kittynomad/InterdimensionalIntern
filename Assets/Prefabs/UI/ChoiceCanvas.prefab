@@ -1731,7 +1731,7 @@ Canvas:
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_TargetDisplay: 0
+  m_TargetDisplay: 1
 --- !u!114 &1362448482066991130
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1784,6 +1784,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b798a96c48144b844a998193df1e9b1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _statsManager: {fileID: 0}
   _choiceTexts:
   - {fileID: 6259160068411908084}
   - {fileID: 7713523353992157830}

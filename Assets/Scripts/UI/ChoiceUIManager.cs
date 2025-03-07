@@ -26,6 +26,8 @@ public class ChoiceUIManager : MonoBehaviour
         commands.Add("help", "help");
         commands.Add("choiceLookup", "?");
         sm = FindObjectOfType<StageManager>();
+        _choiceTexts[0].text = "";
+        StartCoroutine(TypeAdditional("type help for commands"));
         
         
     }
@@ -227,6 +229,7 @@ public class ChoiceUIManager : MonoBehaviour
         if(choiceToApply != -1)
         {
             yield return new WaitForSeconds(1f);
+            _choices = null;
             FindObjectOfType<CivilizationStatsManager>().ApplyChoice(_choices.Choices[choiceToApply]);
             FindObjectOfType<StageManager>().OnChoice();
         }
