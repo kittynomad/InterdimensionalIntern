@@ -602,7 +602,7 @@ MonoBehaviour:
   _thermometerMax: 120
   _tickTime: 1
   _liveGraph: {fileID: 761984161}
-  _popUpManager: {fileID: 1117119336}
+  _popUpManager: {fileID: 504462881}
   _world: {fileID: 831570100}
   _nextPersonCanvas: {fileID: 1482494685}
   _choiceUIManager: {fileID: 0}
@@ -610,9 +610,6 @@ MonoBehaviour:
   _ticksToChoose: 99
   _autoChoose: 0
   _choiceAnimationDelay: 0
-  stage: 0
-  stageChangers: 64000000e8030000ffc99a3b
-  anim: {fileID: 1802948203}
 --- !u!4 &504462879
 Transform:
   m_ObjectHideFlags: 0
@@ -6950,7 +6947,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1117119337}
-  - component: {fileID: 1117119336}
   - component: {fileID: 1117119335}
   - component: {fileID: 1117119334}
   - component: {fileID: 1117119333}
@@ -7025,24 +7021,6 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 5
   m_TargetDisplay: 0
---- !u!114 &1117119336
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1117119332}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3c4cc270d5bc3014d9347b5cdce9c569, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _statsManager: {fileID: 504462878}
-  _popUpCanvas: {fileID: 1117119332}
-  _popUpPrefabs:
-  - {fileID: 8493980593666451712, guid: f9c6162aad0568848ae4bd04fa44a6e4, type: 3}
-  _minTicksAfterChoice: 5
-  _minTicksBeforeNextChoice: 5
 --- !u!224 &1117119337
 RectTransform:
   m_ObjectHideFlags: 0
