@@ -97,7 +97,7 @@ public class ChoiceUIManager : MonoBehaviour
     private void InputTextHandler(string t)
     {
         //add entered text to output text
-        _choiceTexts[0].maxVisibleCharacters += (t.Length + commands["userInputIndicator"].Length + 1);
+        //_choiceTexts[0].maxVisibleCharacters += (t.Length + commands["userInputIndicator"].Length + 1);
         _choiceTexts[0].text += "\n" + commands["userInputIndicator"] + t;
 
         if(t.Equals(commands["help"])) //display commands
@@ -204,15 +204,16 @@ public class ChoiceUIManager : MonoBehaviour
         char[] oldSentenceCharArray = _choiceTexts[0].text.ToCharArray();
 
         _choiceTexts[0].maxVisibleCharacters = GetStringLengthWithoutRichText(_choiceTexts[0].text);
+        int oldLength = _choiceTexts[0].maxVisibleCharacters;
         _choiceTexts[0].text = _choiceTexts[0].text + sentence;
 
         char[] sentenceCharArray = sentence.ToCharArray();
 
         int length = GetStringLengthWithoutRichText(_choiceTexts[0].text);
 
-        for (int i = 0; i < length; i++)
+        for (int i = oldLength; i < length; i++)
         {
-            char letter = sentenceCharArray[i];
+            //char letter = sentenceCharArray[i];
 
             _choiceTexts[0].maxVisibleCharacters++;
 
@@ -252,6 +253,9 @@ public class ChoiceUIManager : MonoBehaviour
             if (!isTag)
                 output++;
         }
+
+        Debug.Log("Total Length: " + sentenceCharArray.Length
+            + "\nCalculated Length: " + output);
 
         return output;
 
