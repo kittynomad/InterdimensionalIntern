@@ -33,21 +33,14 @@ public class CivilizationStatsManager : MonoBehaviour
     [SerializeField] private bool _autoChoose = false;
     [SerializeField] private float _choiceAnimationDelay = 1;
 
-    [Header("Stage Settings")]
-    [SerializeField] private int stage = 0;
-    [SerializeField] private int[] stageChangers;
-    [SerializeField] private Animator anim;
-
     delegate float modifierDelegate(float modifiedVar, float modValue);
 
 
     public int Population { get => _population; set => _population = value; }
     public float Resources { get => _resources; set => _resources = value; }
     public float Happiness { get => _happiness; set => _happiness = value; }
-    public int Stage { get => stage; set => stage = value; }
     public float TickTime { get => _tickTime; set => _tickTime = value; }
     public LiveGraph LiveGraph { get => _liveGraph; set => _liveGraph = value; }
-    public int[] StageChangers { get => stageChangers; set => stageChangers = value; }
     public int TicksBetweenChoices { get => _ticksBetweenChoices; set => _ticksBetweenChoices = value; }
     public float Temperature { get => _temperature; set => _temperature = value; }
     public float ThermometerMax { get => _thermometerMax; set => _thermometerMax = value; }

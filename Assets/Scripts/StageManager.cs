@@ -68,32 +68,6 @@ public class StageManager : MonoBehaviour
 
         Debug.Log("CurrentStage:" + Stages[CurStage].Phase);
     }
-
-    //private void UpdateLiveGraphY2() //Update for all stats
-    //{
-    //    float tempMinY = 0;
-    //    float tempMaxY = 100;
-    //    for (int index = 0; index < Stages[CurStage].MinStats.Count(); index++)
-    //    {
-    //        if (Stages[CurStage].MinStats[index].Stat != Enums.ModifyableStats.population)
-    //            continue;
-    //        tempMinY = Stages[CurStage].MinStats[index].Value;
-    //    }
-    //    for (int index = 0; index < Stages[CurStage].MaxStats.Count(); index++)
-    //    {
-    //        if (Stages[CurStage].MaxStats[index].Stat != Enums.ModifyableStats.population)
-    //            continue;
-    //        tempMaxY = Stages[CurStage].MaxStats[index].Value;
-    //    }
-    //    for (int index = 0; index < statsManager.LiveGraph.LiveStats.Count; index++)
-    //    {
-    //        if (statsManager.LiveGraph.LiveStats[index].Type != LiveStat.LiveStatType.POPULATION) //continues to next iteration if liveStat is not population
-    //            continue;
-    //        statsManager.LiveGraph.LiveStats[index].Min = new Vector2(statsManager.LiveGraph.LiveStats[index].Min.x, tempMinY);
-    //        statsManager.LiveGraph.LiveStats[index].Max = new Vector2(statsManager.LiveGraph.LiveStats[index].Max.x, tempMaxY);
-    //        break;
-    //    }
-    //}
     private void UpdateLiveGraphY()
     {
         for (int index = 0; index < statsManager.LiveGraph.LiveStats.Count; index++)
