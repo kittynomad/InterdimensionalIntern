@@ -12,6 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92109ab8881064945aec6e7a2ed0e84a, type: 3}
   m_Name: ImproveFireSafety
   m_EditorClassIdentifier: 
-  _choiceName: 
-  _choiceDescription: 
-  _statModifiers: []
+  _choiceName: Improve Fire Safety
+  _choiceDescription: Something about frequent and devastating housefires really
+    motivates people to innovate.
+  _statModifiers:
+  - _statToModify: 3
+    _modificationToPerform: 0
+    _modificationValue: 2
+    _hiddenModification: 0
+  - _statToModify: 1
+    _modificationToPerform: 0
+    _modificationValue: 3
+    _hiddenModification: 0
+  _choiceAnimation: {fileID: 0}

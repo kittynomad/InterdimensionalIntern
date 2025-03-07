@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: MixChemicalsTogether
   m_EditorClassIdentifier: 
   _choiceName: Mixing one volitile substance with another, what could go wrong?
-  _choiceDescription: 
+  _choiceDescription: Nothing bad can happen by mixing two volitile chemicals together.
   _statModifiers:
   - _statToModify: 0
     _modificationToPerform: 0
@@ -27,3 +27,4 @@ MonoBehaviour:
     _modificationToPerform: 0
     _modificationValue: 2
     _hiddenModification: 0
+  _choiceAnimation: {fileID: 0}

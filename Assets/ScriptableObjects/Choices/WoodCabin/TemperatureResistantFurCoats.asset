@@ -12,6 +12,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92109ab8881064945aec6e7a2ed0e84a, type: 3}
   m_Name: TemperatureResistantFurCoats
   m_EditorClassIdentifier: 
-  _choiceName: 
-  _choiceDescription: 
-  _statModifiers: []
+  _choiceName: Temperature-Resistant Fur Coats
+  _choiceDescription: "Not only are these lavish trappings the height of luxury,
+    but they\u2019ll keep you good and toasty in those long winter Not only are these
+    lavish trappings the height of luxury, but they\u2019ll keep you good and toasty
+    in those long winter months. . "
+  _statModifiers:
+  - _statToModify: 0
+    _modificationToPerform: 0
+    _modificationValue: 0
+    _hiddenModification: 0
+  - _statToModify: 0
+    _modificationToPerform: 0
+    _modificationValue: 0
+    _hiddenModification: 0
+  _choiceAnimation: {fileID: 0}
