@@ -25,6 +25,7 @@ public class ChoiceUIManager : MonoBehaviour
     {
         commands.Add("help", "help");
         commands.Add("choiceLookup", "?");
+        commands.Add("userInputIndicator", ">");
         sm = FindObjectOfType<StageManager>();
         _choiceTexts[0].text = "";
         _choiceTexts[0].maxVisibleCharacters = 0;
@@ -96,8 +97,8 @@ public class ChoiceUIManager : MonoBehaviour
     private void InputTextHandler(string t)
     {
         //add entered text to output text
-        _choiceTexts[0].maxVisibleCharacters += t.Length;
-        _choiceTexts[0].text += "\n>" + t;
+        _choiceTexts[0].maxVisibleCharacters += (t.Length + commands["userInputIndicator"].Length + 1);
+        _choiceTexts[0].text += "\n" + commands["userInputIndicator"] + t;
 
         if(t.Equals(commands["help"])) //display commands
         {
@@ -196,6 +197,8 @@ public class ChoiceUIManager : MonoBehaviour
             //wait pre-specified time until printing the next letter
             yield return new WaitForSeconds(_textSpeed);
         }
+
+        _inputField.Select();
     }
 
     IEnumerator TypeAdditional(string sentence, int choiceToApply = -1)
@@ -227,7 +230,9 @@ public class ChoiceUIManager : MonoBehaviour
             yield return new WaitForSeconds(_textSpeed);
         }
 
-        if(choiceToApply != -1)
+        _inputField.Select();
+
+        if (choiceToApply != -1)
         {
             yield return new WaitForSeconds(1f);
             _choices = null;
