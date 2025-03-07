@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e97403ba7267f32419a10c3b58cef336, type: 3}
-  m_Name: FutureSet
+  m_Name: ModernSet 7
   m_EditorClassIdentifier: 
-  _choiceSetName: Future
-  _choicePhase: 5
+  _choiceSetName: Modern Set
+  _choicePhase: 4
   _choices:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 11400000, guid: 71f4cc88b3fc39f4191ab85ceac46253, type: 2}
+  - {fileID: 11400000, guid: 0f311e71a5607f145a8ecf0d6179ab56, type: 2}
+  - {fileID: 11400000, guid: 1fff2eab3a2ec1c47ba996622d6fe369, type: 2}
   _weight: 1

@@ -12,7 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e97403ba7267f32419a10c3b58cef336, type: 3}
   m_Name: FutureSet 2
   m_EditorClassIdentifier: 
-  _choiceSetName: 
+  _choiceSetName: Future
   _choicePhase: 5
-  _choices: []
+  _choices:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   _weight: 1

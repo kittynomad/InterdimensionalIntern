@@ -12,7 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e97403ba7267f32419a10c3b58cef336, type: 3}
   m_Name: StoneSet 1
   m_EditorClassIdentifier: 
-  _choiceSetName: 
-  _choicePhase: 0
-  _choices: []
+  _choiceSetName: Stone Set
+  _choicePhase: 2
+  _choices:
+  - {fileID: 11400000, guid: 793028acd20218c48af40d2ffb74a5c4, type: 2}
+  - {fileID: 11400000, guid: d5d6fca03517e7c4989fcc3f28fac99c, type: 2}
+  - {fileID: 11400000, guid: b7437830853eee346ab210b0e75673ba, type: 2}
   _weight: 1

@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e97403ba7267f32419a10c3b58cef336, type: 3}
   m_Name: ModernSet 2
   m_EditorClassIdentifier: 
-  _choiceSetName: 
+  _choiceSetName: Modern Set
   _choicePhase: 4
   _choices:
-  - {fileID: 11400000, guid: 713abd9287c1cae4a8dbc96d143fc3cf, type: 2}
-  - {fileID: 11400000, guid: 0bc2655037393cd4facfca02c7ad73da, type: 2}
-  - {fileID: 11400000, guid: c266c6e8f29fdce40976d5b87af7dce8, type: 2}
+  - {fileID: 11400000, guid: 1ce3c35f5b577a445967225f49866ad5, type: 2}
+  - {fileID: 11400000, guid: e6cd5eb9fe1c1ef43952dff76aabb053, type: 2}
+  - {fileID: 11400000, guid: e71b7d4319475db4f8549ed85d4b7245, type: 2}
+  _weight: 1

@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e97403ba7267f32419a10c3b58cef336, type: 3}
-  m_Name: FutureSet
+  m_Name: WoodSet 3
   m_EditorClassIdentifier: 
-  _choiceSetName: Future
-  _choicePhase: 5
+  _choiceSetName: Cabin Set
+  _choicePhase: 1
   _choices:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 11400000, guid: 8c70c84cacf02a147b72bee23dafa587, type: 2}
+  - {fileID: 11400000, guid: e0ad57ed4588e4d48a32f7a290ea7cca, type: 2}
+  - {fileID: 11400000, guid: 64aa3bb569830dd4e84c95b65798ff4a, type: 2}
   _weight: 1
