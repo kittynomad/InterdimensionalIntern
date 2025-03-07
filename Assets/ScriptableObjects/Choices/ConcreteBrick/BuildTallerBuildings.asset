@@ -10,17 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 92109ab8881064945aec6e7a2ed0e84a, type: 3}
-  m_Name: AdvancementsInAI
+  m_Name: BuildTallerBuildings
   m_EditorClassIdentifier: 
-  _choiceName: Advancements In AI
-  _choiceDescription: "If the movies have taught us one thing, it\u2019s that superintelligent
-    AI is the healthy next step for society! What could go wrong?"
+  _choiceName: Build Taller Buildings
+  _choiceDescription: Shatter that glass ceiling and replace it with another, even
+    higher glass ceiling!
   _statModifiers:
-  - _statToModify: 3
+  - _statToModify: 0
     _modificationToPerform: 1
-    _modificationValue: 2
+    _modificationValue: 100
     _hiddenModification: 0
-  - _statToModify: 5
+  - _statToModify: 3
     _modificationToPerform: 0
-    _modificationValue: 3
+    _modificationValue: 1
     _hiddenModification: 0

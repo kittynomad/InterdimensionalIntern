@@ -10,12 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 92109ab8881064945aec6e7a2ed0e84a, type: 3}
-  m_Name: GeneticallyEngineeredFoodIncreaseFoodSupply
+  m_Name: CentralizeTheEconomy
   m_EditorClassIdentifier: 
-  _choiceName: Genetically Engineered Food Increases Supply
-  _choiceDescription: Spit in the face of the natural order with an 11 pound Kiwi!
-  _statModifiers:
-  - _statToModify: 1
-    _modificationToPerform: 0
-    _modificationValue: 5
-    _hiddenModification: 0
+  _choiceName: 
+  _choiceDescription: 
+  _statModifiers: []

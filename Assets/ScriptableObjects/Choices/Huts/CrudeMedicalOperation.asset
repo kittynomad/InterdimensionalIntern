@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92109ab8881064945aec6e7a2ed0e84a, type: 3}
   m_Name: CrudeMedicalOperation
   m_EditorClassIdentifier: 
-  _choiceName: 'Crude medical operation.e head  '
+  _choiceName: Crude Medical Operation
   _choiceDescription: We got the evil spirit out of your head at least.
   _statModifiers:
   - _statToModify: 0

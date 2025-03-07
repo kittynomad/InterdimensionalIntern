@@ -10,17 +10,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 92109ab8881064945aec6e7a2ed0e84a, type: 3}
-  m_Name: AdvancementsInAI
+  m_Name: DestroyAnotherAnimalHabitat
   m_EditorClassIdentifier: 
-  _choiceName: Advancements In AI
-  _choiceDescription: "If the movies have taught us one thing, it\u2019s that superintelligent
-    AI is the healthy next step for society! What could go wrong?"
+  _choiceName: Destroy Another Animal Habitat
+  _choiceDescription: These animals maybe cute, but its survival of the fittest and
+    we need more fancy hats!
   _statModifiers:
   - _statToModify: 3
     _modificationToPerform: 1
-    _modificationValue: 2
+    _modificationValue: 3
     _hiddenModification: 0
   - _statToModify: 5
     _modificationToPerform: 0
-    _modificationValue: 3
+    _modificationValue: 4
+    _hiddenModification: 0
+  - _statToModify: 2
+    _modificationToPerform: 0
+    _modificationValue: 6
     _hiddenModification: 0

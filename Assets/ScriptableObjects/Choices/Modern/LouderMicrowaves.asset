@@ -13,14 +13,14 @@ MonoBehaviour:
   m_Name: LouderMicrowaves
   m_EditorClassIdentifier: 
   _choiceName: Microwaves are even louder
-  _choiceDescription: "Our new mission statement? \u201CYour neighbors should be
-    able to hear you making Ramen at 3 AM.\u201D "
+  _choiceDescription: Your neighbor should be able to hear you making Ramen at 3
+    A.M.
   _statModifiers:
   - _statToModify: 3
     _modificationToPerform: 1
-    _modificationValue: 6
+    _modificationValue: 8
     _hiddenModification: 0
-  - _statToModify: 2
-    _modificationToPerform: 0
-    _modificationValue: 3
+  - _statToModify: 0
+    _modificationToPerform: 1
+    _modificationValue: -1
     _hiddenModification: 0

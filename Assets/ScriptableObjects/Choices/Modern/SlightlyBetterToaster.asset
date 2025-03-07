@@ -13,10 +13,14 @@ MonoBehaviour:
   m_Name: SlightlyBetterToaster
   m_EditorClassIdentifier: 
   _choiceName: Improve the Toaster
-  _choiceDescription: How can you improve on perfection? Well, [REDACTED] Co. just
-    did!
+  _choiceDescription: Your at-home toast making appliance is now a blender, a dishwasher,
+    and licensed therapist.
   _statModifiers:
   - _statToModify: 4
     _modificationToPerform: 0
-    _modificationValue: 3
+    _modificationValue: 7
+    _hiddenModification: 0
+  - _statToModify: 5
+    _modificationToPerform: 0
+    _modificationValue: 2
     _hiddenModification: 0

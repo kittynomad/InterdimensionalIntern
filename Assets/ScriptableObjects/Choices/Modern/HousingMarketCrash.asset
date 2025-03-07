@@ -13,13 +13,14 @@ MonoBehaviour:
   m_Name: HousingMarketCrash
   m_EditorClassIdentifier: 
   _choiceName: Crash the Housing Market
-  _choiceDescription: Buy! Buy! Buy!
+  _choiceDescription: Homes are too expensive right now for consumers. Lets fix that
+    in the fastest way possible.
   _statModifiers:
-  - _statToModify: 2
-    _modificationToPerform: 0
-    _modificationValue: 2
-    _hiddenModification: 0
   - _statToModify: 1
     _modificationToPerform: 1
     _modificationValue: 4
+    _hiddenModification: 0
+  - _statToModify: 3
+    _modificationToPerform: 1
+    _modificationValue: 2
     _hiddenModification: 0

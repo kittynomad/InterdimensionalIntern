@@ -13,14 +13,15 @@ MonoBehaviour:
   m_Name: GeneticallyModifyMoreStuff
   m_EditorClassIdentifier: 
   _choiceName: Genetically Modify New Things
-  _choiceDescription: "[REDACTED] Co.\u2019s new 11 Pound Kiwi is an affront to god
-    and a slap in the face to the natural order!"
+  _choiceDescription: "What new things? It doesn't matter! Just toss your hat into
+    the ring and play by experimenting with genetic engineering.] Co.\u2019s new
+    11 Pound Kiwi is an affront to god and a slap in the face to the natural order!"
   _statModifiers:
   - _statToModify: 3
-    _modificationToPerform: 1
-    _modificationValue: 2
-    _hiddenModification: 0
-  - _statToModify: 1
     _modificationToPerform: 0
-    _modificationValue: 5
+    _modificationValue: 1
+    _hiddenModification: 0
+  - _statToModify: 0
+    _modificationToPerform: 0
+    _modificationValue: 2000
     _hiddenModification: 0

@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e97403ba7267f32419a10c3b58cef336, type: 3}
+  m_Name: ConcreteSet
+  m_EditorClassIdentifier: 
+  _choiceSetName: 
+  _choicePhase: 3
+  _choices:
+  - {fileID: 11400000, guid: 675a9f4e2fce9d7478ee2338d98f8b6e, type: 2}
+  - {fileID: 11400000, guid: 657a4aa877cb83e4697d987cdcbc56e9, type: 2}
+  - {fileID: 11400000, guid: b186196e3f4be3f499c67b2773455308, type: 2}
+  _weight: 1
