@@ -571,6 +571,7 @@ GameObject:
   - component: {fileID: 504462879}
   - component: {fileID: 504462878}
   - component: {fileID: 504462880}
+  - component: {fileID: 504462881}
   m_Layer: 0
   m_Name: CivManager
   m_TagString: Untagged
@@ -644,6 +645,24 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 687d42c8acad0cc4999177ff6f5778ba, type: 2}
   _choicesUntilCivilizationShift: 3
   _backgroundAnimator: {fileID: 1802948203}
+--- !u!114 &504462881
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 504462877}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c4cc270d5bc3014d9347b5cdce9c569, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _statsManager: {fileID: 504462878}
+  _popUpCanvas: {fileID: 1117119332}
+  _popUpPrefabs:
+  - {fileID: 8493980593666451712, guid: f9c6162aad0568848ae4bd04fa44a6e4, type: 3}
+  _minTicksAfterChoice: 5
+  _minTicksBeforeNextChoice: 5
 --- !u!1 &519199089
 GameObject:
   m_ObjectHideFlags: 0
@@ -7008,7 +7027,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1117119332}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3c4cc270d5bc3014d9347b5cdce9c569, type: 3}
   m_Name: 
