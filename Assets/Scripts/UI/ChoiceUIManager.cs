@@ -25,7 +25,11 @@ public class ChoiceUIManager : MonoBehaviour
     {
         commands.Add("help", "help");
         commands.Add("choiceLookup", "?");
+        commands.Add("userInputIndicator", ">");
         sm = FindObjectOfType<StageManager>();
+        _choiceTexts[0].text = "";
+        _choiceTexts[0].maxVisibleCharacters = 0;
+        StartCoroutine(TypeAdditional("type help for commands"));
         
         
     }
@@ -93,8 +97,8 @@ public class ChoiceUIManager : MonoBehaviour
     private void InputTextHandler(string t)
     {
         //add entered text to output text
-        _choiceTexts[0].maxVisibleCharacters += t.Length;
-        _choiceTexts[0].text += "\n>" + t;
+        //_choiceTexts[0].maxVisibleCharacters += (t.Length + commands["userInputIndicator"].Length + 1);
+        _choiceTexts[0].text += "\n" + commands["userInputIndicator"] + t;
 
         if(t.Equals(commands["help"])) //display commands
         {
@@ -172,27 +176,23 @@ public class ChoiceUIManager : MonoBehaviour
     {
         _inputField.text = "";
         isTyping = true;
-        bool isTag = false;
 
         _choiceTexts[0].maxVisibleCharacters = 0;
         _choiceTexts[0].text = sentence;
         char[] sentenceCharArray = sentence.ToCharArray();
 
-        for (int i = 0; i < sentenceCharArray.Length; i++)
+        int length = GetStringLengthWithoutRichText(_choiceTexts[0].text);
+
+        for (int i = 0; i < length; i++)
         {
-            char letter = sentenceCharArray[i];
-
-            if (letter.ToString().Equals("<"))
-                isTag = true;
-            if (letter.ToString().Equals(">"))
-                isTag = false;
-
-            if(!isTag)
-                _choiceTexts[0].maxVisibleCharacters++;
+            
+            _choiceTexts[0].maxVisibleCharacters++;
 
             //wait pre-specified time until printing the next letter
             yield return new WaitForSeconds(_textSpeed);
         }
+
+        _inputField.Select();
     }
 
     IEnumerator TypeAdditional(string sentence, int choiceToApply = -1)
@@ -203,12 +203,45 @@ public class ChoiceUIManager : MonoBehaviour
 
         char[] oldSentenceCharArray = _choiceTexts[0].text.ToCharArray();
 
-        _choiceTexts[0].maxVisibleCharacters = _choiceTexts[0].maxVisibleCharacters;
+        _choiceTexts[0].maxVisibleCharacters = GetStringLengthWithoutRichText(_choiceTexts[0].text);
+        int oldLength = _choiceTexts[0].maxVisibleCharacters;
         _choiceTexts[0].text = _choiceTexts[0].text + sentence;
 
         char[] sentenceCharArray = sentence.ToCharArray();
 
-        for (int i = 0; i < sentenceCharArray.Length; i++)
+        int length = GetStringLengthWithoutRichText(_choiceTexts[0].text);
+
+        for (int i = oldLength; i < length; i++)
+        {
+            //char letter = sentenceCharArray[i];
+
+            _choiceTexts[0].maxVisibleCharacters++;
+
+            //wait pre-specified time until printing the next letter
+            yield return new WaitForSeconds(_textSpeed);
+        }
+
+        _inputField.Select();
+
+        if (choiceToApply != -1)
+        {
+            yield return new WaitForSeconds(1f);
+            _choices = null;
+            FindObjectOfType<CivilizationStatsManager>().ApplyChoice(_choices.Choices[choiceToApply]);
+            FindObjectOfType<StageManager>().OnChoice();
+        }
+
+        
+    }
+
+    private int GetStringLengthWithoutRichText(string t)
+    {
+        int output = 0;
+        bool isTag = false;
+
+        char[] sentenceCharArray = t.ToCharArray();
+
+        for(int i = 0; i < sentenceCharArray.Length; i++)
         {
             char letter = sentenceCharArray[i];
 
@@ -217,18 +250,15 @@ public class ChoiceUIManager : MonoBehaviour
             if (letter.ToString().Equals(">"))
                 isTag = false;
 
-            if(!isTag)
-                _choiceTexts[0].maxVisibleCharacters++;
-
-            //wait pre-specified time until printing the next letter
-            yield return new WaitForSeconds(_textSpeed);
+            if (!isTag)
+                output++;
         }
 
-        if(choiceToApply != -1)
-        {
-            yield return new WaitForSeconds(1f);
-            FindObjectOfType<CivilizationStatsManager>().ApplyChoice(_choices.Choices[choiceToApply]);
-            FindObjectOfType<StageManager>().OnChoice();
-        }
+        Debug.Log("Total Length: " + sentenceCharArray.Length
+            + "\nCalculated Length: " + output);
+
+        return output;
+
     }
+
 }
