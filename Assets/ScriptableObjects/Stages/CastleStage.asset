@@ -10,22 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c59ac08da7614d84d8a2c5a14d7c72e3, type: 3}
-  m_Name: ModernStage
+  m_Name: CastleStage
   m_EditorClassIdentifier: 
-  _phase: 4
+  _phase: 2
   _minStats:
   - _stat: 0
-    _value: 2501
-  - _stat: 2
     _value: 1001
   _maxStats:
   - _stat: 0
-    _value: 10000
-  - _stat: 2
     _value: 5000
-  - _stat: 3
-    _value: 50
+  - _stat: 2
+    _value: 100
   _choiceSets:
-  - {fileID: 11400000, guid: 38f9cf55fafb1c24db623a6675ec759d, type: 2}
-  - {fileID: 11400000, guid: 5f43ec3a7b960ac4b9170bdfdb19a285, type: 2}
-  - {fileID: 11400000, guid: d1689a5a920f38d4fbd9445c60e209e0, type: 2}
+  - {fileID: 11400000, guid: cf6733e8726ea2b4893804862e715f1e, type: 2}
+  - {fileID: 11400000, guid: 6849536c8e8a03f4e9a1c93385316e9a, type: 2}
+  - {fileID: 11400000, guid: 061e064f393bce847882638ddef27465, type: 2}

@@ -10,22 +10,22 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c59ac08da7614d84d8a2c5a14d7c72e3, type: 3}
-  m_Name: ModernStage
+  m_Name: FutureStage
   m_EditorClassIdentifier: 
-  _phase: 4
+  _phase: 5
   _minStats:
   - _stat: 0
-    _value: 2501
+    _value: 10001
   - _stat: 2
-    _value: 1001
+    _value: 5001
   _maxStats:
   - _stat: 0
-    _value: 10000
+    _value: 50000
   - _stat: 2
-    _value: 5000
+    _value: 25000
   - _stat: 3
-    _value: 50
+    _value: 75
   _choiceSets:
-  - {fileID: 11400000, guid: 38f9cf55fafb1c24db623a6675ec759d, type: 2}
-  - {fileID: 11400000, guid: 5f43ec3a7b960ac4b9170bdfdb19a285, type: 2}
-  - {fileID: 11400000, guid: d1689a5a920f38d4fbd9445c60e209e0, type: 2}
+  - {fileID: 11400000, guid: cd66bce1291367f45b3828d436b864aa, type: 2}
+  - {fileID: 11400000, guid: 2420389df0723b04e8614ad76e947725, type: 2}
+  - {fileID: 11400000, guid: f270cdbfe73894d47b0039383e498946, type: 2}

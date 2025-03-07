@@ -10,22 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c59ac08da7614d84d8a2c5a14d7c72e3, type: 3}
-  m_Name: ModernStage
+  m_Name: CabinStage
   m_EditorClassIdentifier: 
-  _phase: 4
+  _phase: 1
   _minStats:
   - _stat: 0
-    _value: 2501
-  - _stat: 2
-    _value: 1001
+    _value: 51
   _maxStats:
   - _stat: 0
-    _value: 10000
-  - _stat: 2
-    _value: 5000
-  - _stat: 3
-    _value: 50
+    _value: 1000
   _choiceSets:
-  - {fileID: 11400000, guid: 38f9cf55fafb1c24db623a6675ec759d, type: 2}
-  - {fileID: 11400000, guid: 5f43ec3a7b960ac4b9170bdfdb19a285, type: 2}
-  - {fileID: 11400000, guid: d1689a5a920f38d4fbd9445c60e209e0, type: 2}
+  - {fileID: 11400000, guid: b1605f025d4cb554398a40941368a0c1, type: 2}
+  - {fileID: 11400000, guid: 11d3e15f31b6d8d4c897cc8a340ad09b, type: 2}
+  - {fileID: 11400000, guid: f2ba77cd4e3400f47bf2c97e1f69b561, type: 2}

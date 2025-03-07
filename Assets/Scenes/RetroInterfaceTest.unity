@@ -642,7 +642,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stages:
   - {fileID: 11400000, guid: 491cf11f28629054d92afb624723aa80, type: 2}
+  - {fileID: 11400000, guid: 8a24fc661a385e84fac83749316f6d39, type: 2}
+  - {fileID: 11400000, guid: f1e4ce2917034ad4aa8bc47ec1e893ab, type: 2}
+  - {fileID: 11400000, guid: e9f1a64a4c5491448b6ae7fe6100a60b, type: 2}
   - {fileID: 11400000, guid: 687d42c8acad0cc4999177ff6f5778ba, type: 2}
+  - {fileID: 11400000, guid: e4f71c782c4c8974b919c3e71dadf87f, type: 2}
+  - {fileID: 11400000, guid: 15bc27bf376500b4490984486214c22a, type: 2}
   _choicesUntilCivilizationShift: 3
   _backgroundAnimator: {fileID: 1802948203}
 --- !u!114 &504462881

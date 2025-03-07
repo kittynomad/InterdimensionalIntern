@@ -8,10 +8,12 @@ public class DebugFunctions : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _debugInfoDisplay;
 
     private CivilizationStatsManager stats;
+    private StageManager sm;
 
     public void Start()
     {
         stats = FindObjectOfType<CivilizationStatsManager>();
+        sm = FindObjectOfType<StageManager>();
     }
 
     public void Update()
@@ -19,7 +21,8 @@ public class DebugFunctions : MonoBehaviour
         _debugInfoDisplay.text = "pop: " + stats.Population +
             "\nResources: " + stats.Resources + 
             "\nHappiness: " + stats.Happiness + "%" +
-            "\nTemperature: " + stats.Temperature;
+            "\nTemperature: " + stats.Temperature + 
+            "\nStage: " + sm.Stages[sm.CurStage];
     }
 
     public void IncreasePopulation(int popIncreaseAmount)
