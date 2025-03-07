@@ -176,23 +176,17 @@ public class ChoiceUIManager : MonoBehaviour
     {
         _inputField.text = "";
         isTyping = true;
-        bool isTag = false;
 
         _choiceTexts[0].maxVisibleCharacters = 0;
         _choiceTexts[0].text = sentence;
         char[] sentenceCharArray = sentence.ToCharArray();
 
-        for (int i = 0; i < sentenceCharArray.Length; i++)
+        int length = GetStringLengthWithoutRichText(_choiceTexts[0].text);
+
+        for (int i = 0; i < length; i++)
         {
-            char letter = sentenceCharArray[i];
-
-            if (letter.ToString().Equals("<"))
-                isTag = true;
-            if (letter.ToString().Equals(">"))
-                isTag = false;
-
-            if(!isTag)
-                _choiceTexts[0].maxVisibleCharacters++;
+            
+            _choiceTexts[0].maxVisibleCharacters++;
 
             //wait pre-specified time until printing the next letter
             yield return new WaitForSeconds(_textSpeed);
@@ -209,22 +203,18 @@ public class ChoiceUIManager : MonoBehaviour
 
         char[] oldSentenceCharArray = _choiceTexts[0].text.ToCharArray();
 
-        _choiceTexts[0].maxVisibleCharacters = _choiceTexts[0].maxVisibleCharacters;
+        _choiceTexts[0].maxVisibleCharacters = GetStringLengthWithoutRichText(_choiceTexts[0].text);
         _choiceTexts[0].text = _choiceTexts[0].text + sentence;
 
         char[] sentenceCharArray = sentence.ToCharArray();
 
-        for (int i = 0; i < sentenceCharArray.Length; i++)
+        int length = GetStringLengthWithoutRichText(_choiceTexts[0].text);
+
+        for (int i = 0; i < length; i++)
         {
             char letter = sentenceCharArray[i];
 
-            if (letter.ToString().Equals("<"))
-                isTag = true;
-            if (letter.ToString().Equals(">"))
-                isTag = false;
-
-            if(!isTag)
-                _choiceTexts[0].maxVisibleCharacters++;
+            _choiceTexts[0].maxVisibleCharacters++;
 
             //wait pre-specified time until printing the next letter
             yield return new WaitForSeconds(_textSpeed);
@@ -239,5 +229,32 @@ public class ChoiceUIManager : MonoBehaviour
             FindObjectOfType<CivilizationStatsManager>().ApplyChoice(_choices.Choices[choiceToApply]);
             FindObjectOfType<StageManager>().OnChoice();
         }
+
+        
     }
+
+    private int GetStringLengthWithoutRichText(string t)
+    {
+        int output = 0;
+        bool isTag = false;
+
+        char[] sentenceCharArray = t.ToCharArray();
+
+        for(int i = 0; i < sentenceCharArray.Length; i++)
+        {
+            char letter = sentenceCharArray[i];
+
+            if (letter.ToString().Equals("<"))
+                isTag = true;
+            if (letter.ToString().Equals(">"))
+                isTag = false;
+
+            if (!isTag)
+                output++;
+        }
+
+        return output;
+
+    }
+
 }
