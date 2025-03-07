@@ -602,7 +602,7 @@ MonoBehaviour:
   _thermometerMax: 120
   _tickTime: 1
   _liveGraph: {fileID: 761984161}
-  _popUpManager: {fileID: 0}
+  _popUpManager: {fileID: 504462881}
   _world: {fileID: 831570100}
   _nextPersonCanvas: {fileID: 1482494685}
   _choiceUIManager: {fileID: 0}
