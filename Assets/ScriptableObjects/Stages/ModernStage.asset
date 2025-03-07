@@ -15,10 +15,16 @@ MonoBehaviour:
   _phase: 4
   _minStats:
   - _stat: 0
-    _value: 51
+    _value: 2501
+  - _stat: 2
+    _value: 1001
   _maxStats:
   - _stat: 0
     _value: 10000
+  - _stat: 2
+    _value: 5000
+  - _stat: 3
+    _value: 50
   _choiceSets:
   - {fileID: 11400000, guid: 38f9cf55fafb1c24db623a6675ec759d, type: 2}
   - {fileID: 11400000, guid: 5f43ec3a7b960ac4b9170bdfdb19a285, type: 2}

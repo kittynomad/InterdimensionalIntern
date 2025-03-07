@@ -12,7 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c59ac08da7614d84d8a2c5a14d7c72e3, type: 3}
   m_Name: CabinStage
   m_EditorClassIdentifier: 
-  _phase: 0
-  _minStats: []
-  _maxStats: []
-  _choiceSets: []
+  _phase: 1
+  _minStats:
+  - _stat: 0
+    _value: 51
+  _maxStats:
+  - _stat: 0
+    _value: 1000
+  _choiceSets:
+  - {fileID: 11400000, guid: b1605f025d4cb554398a40941368a0c1, type: 2}
+  - {fileID: 11400000, guid: 11d3e15f31b6d8d4c897cc8a340ad09b, type: 2}
+  - {fileID: 11400000, guid: f2ba77cd4e3400f47bf2c97e1f69b561, type: 2}

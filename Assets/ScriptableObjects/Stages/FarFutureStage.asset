@@ -12,7 +12,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c59ac08da7614d84d8a2c5a14d7c72e3, type: 3}
   m_Name: FarFutureStage
   m_EditorClassIdentifier: 
-  _phase: 0
-  _minStats: []
-  _maxStats: []
-  _choiceSets: []
+  _phase: 6
+  _minStats:
+  - _stat: 0
+    _value: 50001
+  - _stat: 2
+    _value: 25000
+  _maxStats:
+  - _stat: 0
+    _value: 999999
+  - _stat: 2
+    _value: 999999
+  - _stat: 3
+    _value: 90
+  _choiceSets:
+  - {fileID: 11400000, guid: 8d663dc61f92332468568aeb8a078bb1, type: 2}
+  - {fileID: 11400000, guid: 4ae83e804c9d8f34cb9e6b160b131ec7, type: 2}
+  - {fileID: 11400000, guid: 7227aff53c718a3469d91013ac24b974, type: 2}

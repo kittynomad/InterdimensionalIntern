@@ -12,7 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c59ac08da7614d84d8a2c5a14d7c72e3, type: 3}
   m_Name: CastleStage
   m_EditorClassIdentifier: 
-  _phase: 0
-  _minStats: []
-  _maxStats: []
-  _choiceSets: []
+  _phase: 2
+  _minStats:
+  - _stat: 0
+    _value: 1001
+  _maxStats:
+  - _stat: 0
+    _value: 5000
+  - _stat: 2
+    _value: 100
+  _choiceSets:
+  - {fileID: 11400000, guid: cf6733e8726ea2b4893804862e715f1e, type: 2}
+  - {fileID: 11400000, guid: 6849536c8e8a03f4e9a1c93385316e9a, type: 2}
+  - {fileID: 11400000, guid: 061e064f393bce847882638ddef27465, type: 2}
