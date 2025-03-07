@@ -27,6 +27,7 @@ public class ChoiceUIManager : MonoBehaviour
         commands.Add("choiceLookup", "?");
         sm = FindObjectOfType<StageManager>();
         _choiceTexts[0].text = "";
+        _choiceTexts[0].maxVisibleCharacters = 0;
         StartCoroutine(TypeAdditional("type help for commands"));
         
         
