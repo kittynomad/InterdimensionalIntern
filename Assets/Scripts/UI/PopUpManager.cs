@@ -22,6 +22,7 @@ public class PopUpManager : MonoBehaviour
     private bool hasPlayedPopUp = false;
 
     public bool HasPlayedPopUp { get => hasPlayedPopUp; set => hasPlayedPopUp = value; }
+    public GameObject PopUpCanvas { get => _popUpCanvas; set => _popUpCanvas = value; }
 
     private AudioSource source;
 
@@ -59,7 +60,8 @@ public class PopUpManager : MonoBehaviour
     /// </summary>
     public void SpawnPopUp()
     {
-        source.Play();
+        //source.Play();
+        _popUpCanvas.GetComponent<AudioSource>().Play();
         int popUpIndex = Random.Range(0, _popUpPrefabs.Count);
         float borderX = (_popUpCanvas.gameObject.GetComponent<RectTransform>().rect.width / 2) - (_popUpPrefabs[popUpIndex].gameObject.GetComponent<RectTransform>().rect.width / 2);
         float borderY = (_popUpCanvas.gameObject.GetComponent<RectTransform>().rect.height / 2) - (_popUpPrefabs[popUpIndex].gameObject.GetComponent<RectTransform>().rect.height / 2);

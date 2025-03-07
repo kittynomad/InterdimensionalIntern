@@ -35,16 +35,17 @@ public class StageManager : MonoBehaviour
             StageCheck();
             choiceCount = 0;
             NextPersonPause();
-
         }
     }
     private void NextPersonPause()
     {
+        statsManager.PopUpManager.PopUpCanvas.SetActive(false);
         statsManager.NextPersonCanvas.SetActive(true);
         StopAllCoroutines();
     }
     public void NextPersonResume()
     {
+        statsManager.PopUpManager.PopUpCanvas.SetActive(true);
         statsManager.NextPersonCanvas.SetActive(false);
         statsManager.StartCoroutine(statsManager.tickAdvance());
     }
@@ -108,9 +109,5 @@ public class StageManager : MonoBehaviour
                     statsManager.LiveGraph.LiveStats[index].Max = new Vector2(statsManager.LiveGraph.LiveStats[index].Max.x, stages[curStage].MaxStats[index2].Value);
             }
         }
-    }
-    void Update()
-    {
-        
     }
 }
