@@ -31,11 +31,11 @@ public class ChoiceUIManager : MonoBehaviour
     }
     private void OnEnable()
     {
-        _statsManager.PopUpManager.gameObject.SetActive(false);
+        _statsManager.PopUpManager.PopUpCanvas.gameObject.SetActive(false);
     }
     private void OnDisable()
     {
-        _statsManager.PopUpManager.gameObject.SetActive(true);
+        _statsManager.PopUpManager.PopUpCanvas.gameObject.SetActive(true);
     }
 
     public void DisplayNewChoices()
