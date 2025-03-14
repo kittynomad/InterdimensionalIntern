@@ -250,6 +250,7 @@ public class ChoiceUIManager : MonoBehaviour
             if (letter.ToString().Equals(">"))
             {
                 isTag = false;
+                output += 1;
                 continue;
             }
             if (!isTag)
