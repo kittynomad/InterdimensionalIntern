@@ -248,8 +248,10 @@ public class ChoiceUIManager : MonoBehaviour
             if (letter.ToString().Equals("<"))
                 isTag = true;
             if (letter.ToString().Equals(">"))
+            {
                 isTag = false;
-
+                continue;
+            }
             if (!isTag)
                 output++;
         }
