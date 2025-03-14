@@ -10,17 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 92109ab8881064945aec6e7a2ed0e84a, type: 3}
-  m_Name: InsightWitchHunt
+  m_Name: ResurrecDinosaurs
   m_EditorClassIdentifier: 
-  _choiceName: Incite Witch Hunt
-  _choiceDescription: 'Set her on fire, if she survives, she''s a witch! '
+  _choiceName: Resurrect The Dinosaurs
+  _choiceDescription: Just like in the movies
   _statModifiers:
   - _statToModify: 0
     _modificationToPerform: 1
-    _modificationValue: 30
+    _modificationValue: 10
     _hiddenModification: 0
   - _statToModify: 3
-    _modificationToPerform: 0
+    _modificationToPerform: 1
     _modificationValue: 1
     _hiddenModification: 0
   _choiceAnimation: {fileID: 0}

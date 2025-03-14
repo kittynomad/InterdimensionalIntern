@@ -10,17 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 92109ab8881064945aec6e7a2ed0e84a, type: 3}
-  m_Name: InsightWitchHunt
+  m_Name: KickstartAFamine
   m_EditorClassIdentifier: 
-  _choiceName: Incite Witch Hunt
-  _choiceDescription: 'Set her on fire, if she survives, she''s a witch! '
+  _choiceName: Kickstart a Famine
+  _choiceDescription: 'Lets get those summer bodies ready just in time for the enlightenment! '
   _statModifiers:
   - _statToModify: 0
     _modificationToPerform: 1
-    _modificationValue: 30
-    _hiddenModification: 0
-  - _statToModify: 3
-    _modificationToPerform: 0
-    _modificationValue: 1
+    _modificationValue: 100
     _hiddenModification: 0
   _choiceAnimation: {fileID: 0}
