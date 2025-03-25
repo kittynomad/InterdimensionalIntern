@@ -15,17 +15,25 @@ public class ChoiceUIManager : MonoBehaviour
 
     private bool isTyping;
     private StageManager sm;
+    private CivilizationStatsManager csm;
+    private int secretFinders = 0;
 
-    Dictionary<string, string> commands = new Dictionary<string, string>();
+    Dictionary<string, string> commands = new Dictionary<string, string>() 
+    {
+        {"choiceLookup", "?"},
+        {"userInputIndicator", ">"},
+        {"checkCivStats", "?civStats" },
+    };
+
+    Dictionary<string, System.Action> commandActions = new Dictionary<string, System.Action>();
 
 
     public ChoiceSet Choices { get => _choices; set => _choices = value; }
 
     public void Start()
     {
-        commands.Add("help", "help");
-        commands.Add("choiceLookup", "?");
-        commands.Add("userInputIndicator", ">");
+        SetUpCommands();
+        csm = FindObjectOfType<CivilizationStatsManager>();
         sm = FindObjectOfType<StageManager>();
         _choiceTexts[0].text = "";
         _choiceTexts[0].maxVisibleCharacters = 0;
@@ -40,6 +48,21 @@ public class ChoiceUIManager : MonoBehaviour
     private void OnDisable()
     {
         _statsManager.PopUpManager.PopUpCanvas.gameObject.SetActive(true);
+    }
+
+    //commands have to be set up during runtime which is why commandActions isn't instatiated w/ these entries
+    private void SetUpCommands()
+    {
+        commandActions.Add("help", DisplayCommands);
+        commandActions.Add("?civStats", DisplayCurrentStats);
+        commandActions.Add("bored", DisplayWhatToDo);
+        commandActions.Add("funCommand", DisplayFunCommand);
+        commandActions.Add("animal", DisplayAnimal);
+        commandActions.Add("credits", DisplayCredits);
+        commandActions.Add("frown", FrownCommand);
+        commandActions.Add("rapture", RaptureCommand);
+        commandActions.Add("waste", WasteCommand);
+        commandActions.Add("cow", WarmCommand);
     }
 
     public void DisplayNewChoices()
@@ -74,7 +97,7 @@ public class ChoiceUIManager : MonoBehaviour
         catch
         {
             StartCoroutine(TypeAdditional("\nInvalid choice!"));
-            _inputField.Select();
+            
         }
         
     }
@@ -98,13 +121,21 @@ public class ChoiceUIManager : MonoBehaviour
     {
         //add entered text to output text
         //_choiceTexts[0].maxVisibleCharacters += (t.Length + commands["userInputIndicator"].Length + 1);
-        _choiceTexts[0].text += "\n" + commands["userInputIndicator"] + t;
+        _choiceTexts[0].text += "\n" + commands["userInputIndicator"] + t + "\n";
 
-        if(t.Equals(commands["help"])) //display commands
+        try
         {
-            DisplayCommands();
-            return;
+            if (commandActions.ContainsKey(t)) //display commands
+            {
+                commandActions[t]();
+                return;
+            }
         }
+        catch
+        {
+
+        }
+        
 
         if (t.Substring(t.Length - 1).Equals(commands["choiceLookup"])) //display info about a choice
         {
@@ -136,6 +167,8 @@ public class ChoiceUIManager : MonoBehaviour
         
     }
 
+    #region commandFunctions
+
     private void InvalidInputHandler()
     {
         StopAllCoroutines();
@@ -145,8 +178,81 @@ public class ChoiceUIManager : MonoBehaviour
     private void DisplayCommands()
     {
         StartCoroutine(TypeAdditional("\nType choice num. + \"?\" to display choice info \n(i.e. \"0?\" for choice 0)"
-            +"\nType choice number to choose that option\n(i.e. type \"1\" for choice 1)"));
+            +"\nType choice number to choose that option\n(i.e. type \"1\" for choice 1)"
+            +"\nType ?civStats to see exact current stats of civilization"
+            +"\nIf you have idle hands, you could try typing 'bored'...? "
+            +"\n(NOTE: all commands are case sensitive)"));
     }
+
+    private void DisplayCurrentStats()
+    {
+        StartCoroutine(TypeAdditional(csm.ToString()));
+    }
+
+    private void DisplayWhatToDo()
+    {
+        string s = "\nNO IDLE HANDS, INTERN!\n" 
+            +"----------------------------------\n"
+            +"If you're out of things to do, try entering random words/phrases into the terminal.\n"
+            +"There are several hidden commands, which do a variety of random things.\n"
+            +"If you find a 'funCommand', write it down on a sticky note for future interns!";
+
+        StartCoroutine(TypeAdditional(s));
+    }
+
+    private void DisplayFunCommand()
+    {
+        secretFinders++;
+        string s = "CONGRATS, INTERN! YOU FOUND A HIDDEN COMMAND!"
+            + "\nYou are Intern #" + secretFinders + " to use this command.";
+        StartCoroutine(TypeAdditional(s));
+    }
+
+    private void DisplayAnimal()
+    {
+        string[] animals = { "Dog!\nDog says 'Woof, Woof!'", "Cat!\nCat says 'Meow, Meow!'", "Bird!\nBird says 'Tweet, Tweet!'" };
+
+        string s = "TODAY'S ANIMAL IS: " + animals[(int)Random.Range(0, animals.Length)];
+
+        StartCoroutine(TypeAdditional(s));
+    }
+
+    private void DisplayCredits()
+    {
+        string s = "CREDITS WIP";
+        StartCoroutine(TypeAdditional(s));
+    }
+
+    private void FrownCommand()
+    {
+        csm.Happiness -= 1;
+        string s = "Someone, somewhere, is now having a very bad day...\n(Happiness lowered by 1%)";
+        StartCoroutine(TypeAdditional(s));
+    }
+
+    private void RaptureCommand()
+    {
+        csm.Population -= 1;
+        string s = "One of your citizens have just been raptured!\n(Population lowered by 1)";
+        StartCoroutine(TypeAdditional(s));
+    }
+
+    private void WasteCommand()
+    {
+        csm.Resources -= 1;
+        string s = "Did someone's house just get robbed??\n(Resources lowered by 1)";
+        StartCoroutine(TypeAdditional(s));
+    }
+
+    private void WarmCommand()
+    {
+        csm.Temperature += 1;
+        string s = "A cow somewhere is... oh...\n(Temperature increased by 1Z)";
+
+        StartCoroutine(TypeAdditional(s));
+    }
+
+    #endregion
 
     private ChoiceSet GetNextChoiceSet(bool weighted = true)
     {
@@ -174,6 +280,7 @@ public class ChoiceUIManager : MonoBehaviour
 
     IEnumerator TypeChoices(string sentence)
     {
+        _inputField.DeactivateInputField();
         _inputField.text = "";
         isTyping = true;
 
@@ -191,15 +298,15 @@ public class ChoiceUIManager : MonoBehaviour
             //wait pre-specified time until printing the next letter
             yield return new WaitForSeconds(_textSpeed);
         }
-
+        _inputField.ActivateInputField();
         _inputField.Select();
     }
 
     IEnumerator TypeAdditional(string sentence, int choiceToApply = -1)
     {
+        _inputField.DeactivateInputField();
         _inputField.text = "";
         isTyping = true;
-        bool isTag = false;
 
         char[] oldSentenceCharArray = _choiceTexts[0].text.ToCharArray();
 
@@ -221,7 +328,6 @@ public class ChoiceUIManager : MonoBehaviour
             yield return new WaitForSeconds(_textSpeed);
         }
 
-        _inputField.Select();
 
         if (choiceToApply != -1)
         {
@@ -230,8 +336,8 @@ public class ChoiceUIManager : MonoBehaviour
             _choices = null;
             FindObjectOfType<StageManager>().OnChoice();
         }
-
-        
+        _inputField.ActivateInputField();
+        _inputField.Select();
     }
 
     private int GetStringLengthWithoutRichText(string t)
@@ -250,6 +356,7 @@ public class ChoiceUIManager : MonoBehaviour
             if (letter.ToString().Equals(">"))
             {
                 isTag = false;
+                output += 1;
                 continue;
             }
             if (!isTag)
