@@ -35,6 +35,8 @@ public class ChoiceUIManager : MonoBehaviour
         commandActions.Add("?civStats", DisplayCurrentStats);
         commandActions.Add("bored", DisplayWhatToDo);
         commandActions.Add("funCommand", DisplayFunCommand);
+        commandActions.Add("animal", DisplayAnimal);
+
         sm = FindObjectOfType<StageManager>();
         _choiceTexts[0].text = "";
         _choiceTexts[0].maxVisibleCharacters = 0;
@@ -178,6 +180,7 @@ public class ChoiceUIManager : MonoBehaviour
     private void DisplayWhatToDo()
     {
         string s = "\nNO IDLE HANDS, INTERN!\n" 
+            +"----------------------------------\n"
             +"If you're out of things to do, try entering random words/phrases into the terminal.\n"
             +"There are several hidden commands, which do a variety of random things.\n"
             +"If you find a 'funCommand', write it down on a sticky note for future interns!";
@@ -190,6 +193,15 @@ public class ChoiceUIManager : MonoBehaviour
         secretFinders++;
         string s = "CONGRATS, INTERN! YOU FOUND A HIDDEN COMMAND!"
             + "\nYou are Intern #" + secretFinders + " to use this command.";
+        StartCoroutine(TypeAdditional(s));
+    }
+
+    private void DisplayAnimal()
+    {
+        string[] animals = { "Dog!\nDog says 'Woof, Woof!'", "Cat!\nCat says 'Meow, Meow!'" };
+
+        string s = "TODAY'S ANIMAL IS: " + animals[(int)Random.Range(0, animals.Length)];
+
         StartCoroutine(TypeAdditional(s));
     }
 
