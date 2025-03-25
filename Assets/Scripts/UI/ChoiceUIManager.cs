@@ -159,7 +159,9 @@ public class ChoiceUIManager : MonoBehaviour
     private void DisplayCommands()
     {
         StartCoroutine(TypeAdditional("\nType choice num. + \"?\" to display choice info \n(i.e. \"0?\" for choice 0)"
-            +"\nType choice number to choose that option\n(i.e. type \"1\" for choice 1)"));
+            +"\nType choice number to choose that option\n(i.e. type \"1\" for choice 1)"
+            +"\nType ?civStats to see exact current stats of civilization"
+            +"\n(NOTE: all commands are case sensitive)"));
     }
 
     private void DisplayCurrentStats()
