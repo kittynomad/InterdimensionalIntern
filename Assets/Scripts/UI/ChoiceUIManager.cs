@@ -15,6 +15,7 @@ public class ChoiceUIManager : MonoBehaviour
 
     private bool isTyping;
     private StageManager sm;
+    private int secretFinders = 0;
 
     Dictionary<string, string> commands = new Dictionary<string, string>() 
     {
@@ -32,6 +33,8 @@ public class ChoiceUIManager : MonoBehaviour
     {
         commandActions.Add("help", DisplayCommands);
         commandActions.Add("?civStats", DisplayCurrentStats);
+        commandActions.Add("bored", DisplayWhatToDo);
+        commandActions.Add("funCommand", DisplayFunCommand);
         sm = FindObjectOfType<StageManager>();
         _choiceTexts[0].text = "";
         _choiceTexts[0].maxVisibleCharacters = 0;
@@ -161,12 +164,31 @@ public class ChoiceUIManager : MonoBehaviour
         StartCoroutine(TypeAdditional("\nType choice num. + \"?\" to display choice info \n(i.e. \"0?\" for choice 0)"
             +"\nType choice number to choose that option\n(i.e. type \"1\" for choice 1)"
             +"\nType ?civStats to see exact current stats of civilization"
+            +"\nIf you have idle hands, you could try typing 'bored'...? "
             +"\n(NOTE: all commands are case sensitive)"));
     }
 
     private void DisplayCurrentStats()
     {
         StartCoroutine(TypeAdditional(FindObjectOfType<CivilizationStatsManager>().ToString()));
+    }
+
+    private void DisplayWhatToDo()
+    {
+        string s = "\nNO IDLE HANDS, INTERN!\n" 
+            +"If you're out of things to do, try entering random words/phrases into the terminal.\n"
+            +"There are several hidden commands, which do a variety of random things.\n"
+            +"If you find a 'funCommand', write it down on a sticky note for future interns!";
+
+        StartCoroutine(TypeAdditional(s));
+    }
+
+    private void DisplayFunCommand()
+    {
+        secretFinders++;
+        string s = "CONGRATS, INTERN! YOU FOUND A HIDDEN COMMAND!"
+            + "\nYou are Intern #" + secretFinders + " to use this command.";
+        StartCoroutine(TypeAdditional(s));
     }
 
     private ChoiceSet GetNextChoiceSet(bool weighted = true)
