@@ -16,16 +16,18 @@ public class ChoiceUIManager : MonoBehaviour
     private bool isTyping;
     private StageManager sm;
 
-    Dictionary<string, string> commands = new Dictionary<string, string>();
+    Dictionary<string, string> commands = new Dictionary<string, string>() 
+    {
+        { "help", "help"},
+        {"choiceLookup", "?"},
+        {"userInputIndicator", ">"},
+    };
 
 
     public ChoiceSet Choices { get => _choices; set => _choices = value; }
 
     public void Start()
     {
-        commands.Add("help", "help");
-        commands.Add("choiceLookup", "?");
-        commands.Add("userInputIndicator", ">");
         sm = FindObjectOfType<StageManager>();
         _choiceTexts[0].text = "";
         _choiceTexts[0].maxVisibleCharacters = 0;
