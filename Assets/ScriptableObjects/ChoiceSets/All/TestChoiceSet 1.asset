@@ -10,11 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e97403ba7267f32419a10c3b58cef336, type: 3}
-  m_Name: FutureSet 1
+  m_Name: TestChoiceSet 1
   m_EditorClassIdentifier: 
-  _choiceSetName: Future
-  _choicePhase: 5
+  _choiceSetName: Test Choices
+  _choicePhase: 0
   _choices:
-  - {fileID: 0}
-  - {fileID: 0}
-  _weight: 1
+  - {fileID: 11400000, guid: 9c577a7ee30efbb44a03d3d7db01a3f9, type: 2}
+  - {fileID: 11400000, guid: d3d39a31467a17a4a9f61e2859d1b6fb, type: 2}

@@ -15,5 +15,13 @@ MonoBehaviour:
   _choiceName: Traces of Ancient Civilization
   _choiceDescription: "Oh yeah! I remember looking over this civilization way back
     when. Hopefully this current one fares better\u2026"
-  _statModifiers: []
+  _statModifiers:
+  - _statToModify: 0
+    _modificationToPerform: 0
+    _modificationValue: 0
+    _hiddenModification: 0
+  - _statToModify: 0
+    _modificationToPerform: 0
+    _modificationValue: 0
+    _hiddenModification: 0
   _choiceAnimation: {fileID: 0}

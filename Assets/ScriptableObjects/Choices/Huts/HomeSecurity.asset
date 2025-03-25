@@ -14,5 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _choiceName: Implement Home Security
   _choiceDescription: Pit of spikes by the door, oldest trick in the book!
-  _statModifiers: []
+  _statModifiers:
+  - _statToModify: 0
+    _modificationToPerform: 0
+    _modificationValue: 0
+    _hiddenModification: 0
+  - _statToModify: 0
+    _modificationToPerform: 0
+    _modificationValue: 0
+    _hiddenModification: 0
   _choiceAnimation: {fileID: 0}

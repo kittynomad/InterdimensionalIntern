@@ -19,3 +19,8 @@ MonoBehaviour:
     _modificationToPerform: 0
     _modificationValue: 3
     _hiddenModification: 0
+  - _statToModify: 1
+    _modificationToPerform: 0
+    _modificationValue: 3
+    _hiddenModification: 0
+  _choiceAnimation: {fileID: 0}
