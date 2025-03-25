@@ -15,6 +15,7 @@ public class ChoiceUIManager : MonoBehaviour
 
     private bool isTyping;
     private StageManager sm;
+    private CivilizationStatsManager csm;
     private int secretFinders = 0;
 
     Dictionary<string, string> commands = new Dictionary<string, string>() 
@@ -31,13 +32,8 @@ public class ChoiceUIManager : MonoBehaviour
 
     public void Start()
     {
-        commandActions.Add("help", DisplayCommands);
-        commandActions.Add("?civStats", DisplayCurrentStats);
-        commandActions.Add("bored", DisplayWhatToDo);
-        commandActions.Add("funCommand", DisplayFunCommand);
-        commandActions.Add("animal", DisplayAnimal);
-        commandActions.Add("credits", DisplayCredits);
-
+        SetUpCommands();
+        csm = FindObjectOfType<CivilizationStatsManager>();
         sm = FindObjectOfType<StageManager>();
         _choiceTexts[0].text = "";
         _choiceTexts[0].maxVisibleCharacters = 0;
@@ -52,6 +48,19 @@ public class ChoiceUIManager : MonoBehaviour
     private void OnDisable()
     {
         _statsManager.PopUpManager.PopUpCanvas.gameObject.SetActive(true);
+    }
+
+    //commands have to be set up during runtime which is why commandActions isn't instatiated w/ these entries
+    private void SetUpCommands()
+    {
+        commandActions.Add("help", DisplayCommands);
+        commandActions.Add("?civStats", DisplayCurrentStats);
+        commandActions.Add("bored", DisplayWhatToDo);
+        commandActions.Add("funCommand", DisplayFunCommand);
+        commandActions.Add("animal", DisplayAnimal);
+        commandActions.Add("credits", DisplayCredits);
+        commandActions.Add("frown", FrownCommand);
+        commandActions.Add("rapture", RaptureCommand);
     }
 
     public void DisplayNewChoices()
@@ -175,7 +184,7 @@ public class ChoiceUIManager : MonoBehaviour
 
     private void DisplayCurrentStats()
     {
-        StartCoroutine(TypeAdditional(FindObjectOfType<CivilizationStatsManager>().ToString()));
+        StartCoroutine(TypeAdditional(csm.ToString()));
     }
 
     private void DisplayWhatToDo()
@@ -209,6 +218,20 @@ public class ChoiceUIManager : MonoBehaviour
     private void DisplayCredits()
     {
         string s = "CREDITS WIP";
+        StartCoroutine(TypeAdditional(s));
+    }
+
+    private void FrownCommand()
+    {
+        csm.Happiness -= 1;
+        string s = "Someone, somewhere, is now having a very bad day...\n(Happiness lowered by 1)";
+        StartCoroutine(TypeAdditional(s));
+    }
+
+    private void RaptureCommand()
+    {
+        csm.Population -= 1;
+        string s = "One of your citizens have just been raptured!\n(Population lowered by 1)";
         StartCoroutine(TypeAdditional(s));
     }
 
@@ -267,7 +290,6 @@ public class ChoiceUIManager : MonoBehaviour
         _inputField.DeactivateInputField();
         _inputField.text = "";
         isTyping = true;
-        bool isTag = false;
 
         char[] oldSentenceCharArray = _choiceTexts[0].text.ToCharArray();
 
