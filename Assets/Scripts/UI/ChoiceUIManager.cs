@@ -61,6 +61,8 @@ public class ChoiceUIManager : MonoBehaviour
         commandActions.Add("credits", DisplayCredits);
         commandActions.Add("frown", FrownCommand);
         commandActions.Add("rapture", RaptureCommand);
+        commandActions.Add("waste", WasteCommand);
+        commandActions.Add("cow", WarmCommand);
     }
 
     public void DisplayNewChoices()
@@ -224,7 +226,7 @@ public class ChoiceUIManager : MonoBehaviour
     private void FrownCommand()
     {
         csm.Happiness -= 1;
-        string s = "Someone, somewhere, is now having a very bad day...\n(Happiness lowered by 1)";
+        string s = "Someone, somewhere, is now having a very bad day...\n(Happiness lowered by 1%)";
         StartCoroutine(TypeAdditional(s));
     }
 
@@ -232,6 +234,21 @@ public class ChoiceUIManager : MonoBehaviour
     {
         csm.Population -= 1;
         string s = "One of your citizens have just been raptured!\n(Population lowered by 1)";
+        StartCoroutine(TypeAdditional(s));
+    }
+
+    private void WasteCommand()
+    {
+        csm.Resources -= 1;
+        string s = "Did someone's house just get robbed??\n(Resources lowered by 1)";
+        StartCoroutine(TypeAdditional(s));
+    }
+
+    private void WarmCommand()
+    {
+        csm.Temperature += 1;
+        string s = "A cow somewhere is... oh...\n(Temperature increased by 1Z)";
+
         StartCoroutine(TypeAdditional(s));
     }
 
