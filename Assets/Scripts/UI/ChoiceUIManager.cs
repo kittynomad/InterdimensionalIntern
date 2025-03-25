@@ -74,7 +74,7 @@ public class ChoiceUIManager : MonoBehaviour
         catch
         {
             StartCoroutine(TypeAdditional("\nInvalid choice!"));
-            _inputField.Select();
+            
         }
         
     }
@@ -174,6 +174,7 @@ public class ChoiceUIManager : MonoBehaviour
 
     IEnumerator TypeChoices(string sentence)
     {
+        _inputField.DeactivateInputField();
         _inputField.text = "";
         isTyping = true;
 
@@ -191,12 +192,13 @@ public class ChoiceUIManager : MonoBehaviour
             //wait pre-specified time until printing the next letter
             yield return new WaitForSeconds(_textSpeed);
         }
-
+        _inputField.ActivateInputField();
         _inputField.Select();
     }
 
     IEnumerator TypeAdditional(string sentence, int choiceToApply = -1)
     {
+        _inputField.DeactivateInputField();
         _inputField.text = "";
         isTyping = true;
         bool isTag = false;
@@ -221,7 +223,6 @@ public class ChoiceUIManager : MonoBehaviour
             yield return new WaitForSeconds(_textSpeed);
         }
 
-        _inputField.Select();
 
         if (choiceToApply != -1)
         {
@@ -230,8 +231,8 @@ public class ChoiceUIManager : MonoBehaviour
             _choices = null;
             FindObjectOfType<StageManager>().OnChoice();
         }
-
-        
+        _inputField.ActivateInputField();
+        _inputField.Select();
     }
 
     private int GetStringLengthWithoutRichText(string t)
