@@ -219,6 +219,12 @@ public class CivilizationStatsManager : MonoBehaviour
         
     }
 
+    public override string ToString()
+    {
+        string output = "CURRENT CIV STATS\nPOPULATION: " + Population + "\nPOP GROWTH: " + (_popGrowthPercentPerTick - 100) + "%/t";
+        return output;
+    }
+
     //basic math for delegate
     private float Add(float fOne, float fTwo) { return fOne + fTwo; }
     private float Subtract(float fOne, float fTwo) { return fOne - fTwo; }

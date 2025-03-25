@@ -18,7 +18,6 @@ public class ChoiceUIManager : MonoBehaviour
 
     Dictionary<string, string> commands = new Dictionary<string, string>() 
     {
-        { "help", "help"},
         {"choiceLookup", "?"},
         {"userInputIndicator", ">"},
         {"checkCivStats", "?civStats" },
@@ -32,6 +31,7 @@ public class ChoiceUIManager : MonoBehaviour
     public void Start()
     {
         commandActions.Add("help", DisplayCommands);
+        commandActions.Add("?civStats", DisplayCurrentStats);
         sm = FindObjectOfType<StageManager>();
         _choiceTexts[0].text = "";
         _choiceTexts[0].maxVisibleCharacters = 0;
@@ -104,11 +104,11 @@ public class ChoiceUIManager : MonoBehaviour
     {
         //add entered text to output text
         //_choiceTexts[0].maxVisibleCharacters += (t.Length + commands["userInputIndicator"].Length + 1);
-        _choiceTexts[0].text += "\n" + commands["userInputIndicator"] + t;
+        _choiceTexts[0].text += "\n" + commands["userInputIndicator"] + t + "\n";
 
         try
         {
-            if (commandActions.ContainsKey(commands[t])) //display commands
+            if (commandActions.ContainsKey(t)) //display commands
             {
                 commandActions[t]();
                 return;
@@ -160,6 +160,11 @@ public class ChoiceUIManager : MonoBehaviour
     {
         StartCoroutine(TypeAdditional("\nType choice num. + \"?\" to display choice info \n(i.e. \"0?\" for choice 0)"
             +"\nType choice number to choose that option\n(i.e. type \"1\" for choice 1)"));
+    }
+
+    private void DisplayCurrentStats()
+    {
+        StartCoroutine(TypeAdditional(FindObjectOfType<CivilizationStatsManager>().ToString()));
     }
 
     private ChoiceSet GetNextChoiceSet(bool weighted = true)
