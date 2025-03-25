@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e97403ba7267f32419a10c3b58cef336, type: 3}
-  m_Name: ModernSet 1
+  m_Name: ModernSet 10
   m_EditorClassIdentifier: 
   _choiceSetName: Modern Set
   _choicePhase: 4
   _choices:
-  - {fileID: 11400000, guid: 1ce3c35f5b577a445967225f49866ad5, type: 2}
-  - {fileID: 11400000, guid: 1d8c9f45ff2478d4b8939e349ab0a42f, type: 2}
+  - {fileID: 11400000, guid: d19cb7201ca97c644a4e9c41f7b59a09, type: 2}
+  - {fileID: 11400000, guid: 1c04dbcf0d328264eb8ee74b300dbc5e, type: 2}
   _weight: 1
