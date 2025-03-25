@@ -21,13 +21,17 @@ public class ChoiceUIManager : MonoBehaviour
         { "help", "help"},
         {"choiceLookup", "?"},
         {"userInputIndicator", ">"},
+        {"checkCivStats", "?civStats" },
     };
+
+    Dictionary<string, System.Action> commandActions = new Dictionary<string, System.Action>();
 
 
     public ChoiceSet Choices { get => _choices; set => _choices = value; }
 
     public void Start()
     {
+        commandActions.Add("help", DisplayCommands);
         sm = FindObjectOfType<StageManager>();
         _choiceTexts[0].text = "";
         _choiceTexts[0].maxVisibleCharacters = 0;
@@ -102,11 +106,19 @@ public class ChoiceUIManager : MonoBehaviour
         //_choiceTexts[0].maxVisibleCharacters += (t.Length + commands["userInputIndicator"].Length + 1);
         _choiceTexts[0].text += "\n" + commands["userInputIndicator"] + t;
 
-        if(t.Equals(commands["help"])) //display commands
+        try
         {
-            DisplayCommands();
-            return;
+            if (commandActions.ContainsKey(commands[t])) //display commands
+            {
+                commandActions[t]();
+                return;
+            }
         }
+        catch
+        {
+
+        }
+        
 
         if (t.Substring(t.Length - 1).Equals(commands["choiceLookup"])) //display info about a choice
         {
