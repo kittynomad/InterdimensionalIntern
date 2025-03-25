@@ -204,6 +204,10 @@ public class CivilizationStatsManager : MonoBehaviour
                 return _popGrowthPercentPerTick;
             case (Enums.ModifyableStats.resources):
                 return _resources;
+            case (Enums.ModifyableStats.temperature):
+                return _temperature;
+            case (Enums.ModifyableStats.temperatureGrowth):
+                return _tempGrowthPercentPerTick;
         }
 
         return -1f;
@@ -221,7 +225,9 @@ public class CivilizationStatsManager : MonoBehaviour
 
     public override string ToString()
     {
-        string output = "CURRENT CIV STATS\nPOPULATION: " + Population + "\nPOP GROWTH: " + (_popGrowthPercentPerTick - 100) + "%/t";
+        string output = "CURRENT CIV STATS\nPOPULATION: " + Population + "\nPOP GROWTH: " + (_popGrowthPercentPerTick - 100) + "%/t"
+            +"\nRESOURCES: " + _resources + "\nHAPPINESS: " + _happiness + "\nHAPPINESS GROWTH: " + (_happinessGrowthPercentPerTick - 100) + "%/t"
+            +"\nTEMPERATURE: " + _temperature + "Z\n" + "TEMPERATURE GROWTH: " + (_tempGrowthPercentPerTick - 100) + "Z/t";
         return output;
     }
 
