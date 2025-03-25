@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e97403ba7267f32419a10c3b58cef336, type: 3}
-  m_Name: HutSet
+  m_Name: HutSet2
   m_EditorClassIdentifier: 
-  _choiceSetName: 
+  _choiceSetName: HutSet2
   _choicePhase: 0
   _choices:
-  - {fileID: 11400000, guid: 562c43bff0fbba242a0db9759bdc0d86, type: 2}
+  - {fileID: 11400000, guid: 197c6b8e932af1d4e9f590ad09d20a16, type: 2}
   - {fileID: 11400000, guid: 8f0699352a02c7a4cab7dcc7a2e4ee54, type: 2}
-  - {fileID: 11400000, guid: 8cd33e647532b1e40be68e65f6c5e4f5, type: 2}
+  _weight: 1
