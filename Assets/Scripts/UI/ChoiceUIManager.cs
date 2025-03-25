@@ -36,6 +36,7 @@ public class ChoiceUIManager : MonoBehaviour
         commandActions.Add("bored", DisplayWhatToDo);
         commandActions.Add("funCommand", DisplayFunCommand);
         commandActions.Add("animal", DisplayAnimal);
+        commandActions.Add("credits", DisplayCredits);
 
         sm = FindObjectOfType<StageManager>();
         _choiceTexts[0].text = "";
@@ -198,10 +199,16 @@ public class ChoiceUIManager : MonoBehaviour
 
     private void DisplayAnimal()
     {
-        string[] animals = { "Dog!\nDog says 'Woof, Woof!'", "Cat!\nCat says 'Meow, Meow!'" };
+        string[] animals = { "Dog!\nDog says 'Woof, Woof!'", "Cat!\nCat says 'Meow, Meow!'", "Bird!\nBird says 'Tweet, Tweet!'" };
 
         string s = "TODAY'S ANIMAL IS: " + animals[(int)Random.Range(0, animals.Length)];
 
+        StartCoroutine(TypeAdditional(s));
+    }
+
+    private void DisplayCredits()
+    {
+        string s = "CREDITS WIP";
         StartCoroutine(TypeAdditional(s));
     }
 
