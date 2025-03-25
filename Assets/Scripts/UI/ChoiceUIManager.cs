@@ -153,6 +153,8 @@ public class ChoiceUIManager : MonoBehaviour
         
     }
 
+    #region commandFunctions
+
     private void InvalidInputHandler()
     {
         StopAllCoroutines();
@@ -190,6 +192,8 @@ public class ChoiceUIManager : MonoBehaviour
             + "\nYou are Intern #" + secretFinders + " to use this command.";
         StartCoroutine(TypeAdditional(s));
     }
+
+    #endregion
 
     private ChoiceSet GetNextChoiceSet(bool weighted = true)
     {
