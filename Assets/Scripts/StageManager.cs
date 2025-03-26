@@ -36,11 +36,12 @@ public class StageManager : MonoBehaviour
             Debug.Log("Population: " + statsManager.Population + "\nMax " + Stages[CurStage].MaxStats[0].Stat + ": " + Stages[CurStage].MaxStats[0].Value + "\nCurrent Stage: " + CurStage);
             StageCheck();
             choiceCount = 0;
-            NextPersonPause();
+            StartCoroutine(NextPersonPause(2));
         }
     }
-    private void NextPersonPause()
+    IEnumerator NextPersonPause(int delay)
     {
+        yield return new WaitForSeconds(delay);
         statsManager.PopUpManager.PopUpCanvas.SetActive(false);
         statsManager.NextPersonCanvas.SetActive(true);
         StopAllCoroutines();
