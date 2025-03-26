@@ -7,6 +7,8 @@ using UnityEngine;
 public class StageManager : MonoBehaviour
 {
     [SerializeField] private CivStage[] stages;
+    [SerializeField] private Transform _buildingsSprite1Parent;
+    [SerializeField] private Transform _buildingsSprite2Parent;
     [SerializeField] private int _choicesUntilCivilizationShift = 3;
     [SerializeField] private Animator _backgroundAnimator;
     private int curStage;
@@ -65,9 +67,28 @@ public class StageManager : MonoBehaviour
         }
 
         UpdateLiveGraphY();
+        UpdateBuildingSprites();
 
         Debug.Log("CurrentStage:" + Stages[CurStage].Phase);
     }
+    private void UpdateBuildingSprites()
+    {
+        if (stages[curStage].BuildingSprite1 != null)
+        {
+            for (int index = 0; index < _buildingsSprite1Parent.childCount; index++)
+            {
+                _buildingsSprite1Parent.GetChild(index).GetComponent<SpriteRenderer>().sprite = stages[curStage].BuildingSprite1;
+            }
+            for (int index = 0; index < _buildingsSprite2Parent.childCount; index++)
+            {
+                if (stages[curStage].BuildingSprite2 != null)
+                    _buildingsSprite2Parent.GetChild(index).GetComponent<SpriteRenderer>().sprite = stages[curStage].BuildingSprite2;
+                else
+                    _buildingsSprite2Parent.GetChild(index).GetComponent<SpriteRenderer>().sprite = stages[curStage].BuildingSprite1;
+            }
+        }
+    }
+
     private void UpdateLiveGraphY()
     {
         for (int index = 0; index < statsManager.LiveGraph.LiveStats.Count; index++)
