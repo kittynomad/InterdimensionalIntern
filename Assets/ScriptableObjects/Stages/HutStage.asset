@@ -23,5 +23,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 6570808d49541aa419ea7e79e8fe16e8, type: 2}
   - {fileID: 11400000, guid: 84341045b803c284990f3efbcff63e11, type: 2}
   - {fileID: 11400000, guid: 134dfdb06c7318745bed31ca8e8939ab, type: 2}
-  _buildingSprite1: {fileID: 21300000, guid: 9c3ac87d3e3d8534a8ccea4f21fb57c0, type: 3}
-  _buildingSprite2: {fileID: 21300000, guid: 72e1d4d355f9e57409bd6e8c2dc6c15e, type: 3}
+  _buildings:
+  - {fileID: 21300000, guid: 72e1d4d355f9e57409bd6e8c2dc6c15e, type: 3}
+  - {fileID: 21300000, guid: 9c3ac87d3e3d8534a8ccea4f21fb57c0, type: 3}
