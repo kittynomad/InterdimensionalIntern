@@ -12,7 +12,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92109ab8881064945aec6e7a2ed0e84a, type: 3}
   m_Name: FeedTheEntity
   m_EditorClassIdentifier: 
-  _choiceName: 
-  _choiceDescription: 
-  _statModifiers: []
+  _choiceName: Feed the entity another city
+  _choiceDescription: We found the entity and it looked hungry. REALLY hungry. We
+    had to, ok?
+  _statModifiers:
+  - _statToModify: 0
+    _modificationToPerform: 1
+    _modificationValue: 4
+    _hiddenModification: 0
+  - _statToModify: 3
+    _modificationToPerform: 1
+    _modificationValue: 3
+    _hiddenModification: 0
+  - _statToModify: 5
+    _modificationToPerform: 1
+    _modificationValue: 1
+    _hiddenModification: 0
   _choiceAnimation: {fileID: 0}
