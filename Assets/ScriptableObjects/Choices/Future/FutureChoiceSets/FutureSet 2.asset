@@ -15,6 +15,6 @@ MonoBehaviour:
   _choiceSetName: Future
   _choicePhase: 5
   _choices:
-  - {fileID: 0}
+  - {fileID: 11400000, guid: ffec2f32828320c4e96d96615c5b7fd9, type: 2}
   - {fileID: 0}
   _weight: 1
