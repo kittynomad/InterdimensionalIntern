@@ -63,6 +63,8 @@ public class ChoiceUIManager : MonoBehaviour
         commandActions.Add("rapture", RaptureCommand);
         commandActions.Add("waste", WasteCommand);
         commandActions.Add("cow", WarmCommand);
+        commandActions.Add("wasd", WASDCommand);
+        commandActions.Add("qwerty", QWERTYCommand);
     }
 
     public void DisplayNewChoices()
@@ -249,6 +251,18 @@ public class ChoiceUIManager : MonoBehaviour
         csm.Temperature += 1;
         string s = "A cow somewhere is... oh...\n(Temperature increased by 1Z)";
 
+        StartCoroutine(TypeAdditional(s));
+    }
+
+    private void WASDCommand()
+    {
+        string s = "!!WARNING!! GAMER DETECTED!\nAPPROPRIATE AUTHORITIES HAVE BEEN NOTIFIED";
+        StartCoroutine(TypeAdditional(s));
+    }
+
+    private void QWERTYCommand()
+    {
+        string s = "Running out of ideas?\n";
         StartCoroutine(TypeAdditional(s));
     }
 
