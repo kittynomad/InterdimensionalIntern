@@ -15,7 +15,6 @@ MonoBehaviour:
   _choiceSetName: Modern Set
   _choicePhase: 4
   _choices:
-  - {fileID: 11400000, guid: c58fc42f79c0ba24faa405ae4adf0ac5, type: 2}
-  - {fileID: 11400000, guid: 2fd255d6f0d618b4280dc8fe113f7334, type: 2}
-  - {fileID: 11400000, guid: 8ce079a187f5b2a47b9cdbad66e52c41, type: 2}
+  - {fileID: 11400000, guid: 0a83785bb2c821b4fa7b1de7765fd5ec, type: 2}
+  - {fileID: 11400000, guid: 0187e0cd1f6cb194bb8539958cdaa6e4, type: 2}
   _weight: 1

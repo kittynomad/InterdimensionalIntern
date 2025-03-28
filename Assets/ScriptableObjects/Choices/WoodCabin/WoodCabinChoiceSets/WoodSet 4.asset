@@ -15,7 +15,6 @@ MonoBehaviour:
   _choiceSetName: Cabin Set
   _choicePhase: 1
   _choices:
-  - {fileID: 11400000, guid: 4e95ab8da74747f49bbf82eb2b3bff0e, type: 2}
-  - {fileID: 11400000, guid: b10d6011b79b96042953378c8e14246b, type: 2}
-  - {fileID: 11400000, guid: cd811a68e6176e343b3b1e3f4e1db1b6, type: 2}
+  - {fileID: 11400000, guid: 3e54d3712bd2f8f418362903e110f74d, type: 2}
+  - {fileID: 11400000, guid: 7f39377df15d3a5448fdf5f5cc08fd19, type: 2}
   _weight: 1
