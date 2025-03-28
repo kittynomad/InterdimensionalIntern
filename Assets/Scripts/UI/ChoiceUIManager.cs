@@ -43,11 +43,11 @@ public class ChoiceUIManager : MonoBehaviour
     }
     private void OnEnable()
     {
-        _statsManager.PopUpManager.PopUpCanvas.gameObject.SetActive(false);
+        //_statsManager.PopUpManager.PopUpCanvas.gameObject.SetActive(false);
     }
     private void OnDisable()
     {
-        _statsManager.PopUpManager.PopUpCanvas.gameObject.SetActive(true);
+        //_statsManager.PopUpManager.PopUpCanvas.gameObject.SetActive(true);
     }
 
     //commands have to be set up during runtime which is why commandActions isn't instatiated w/ these entries
