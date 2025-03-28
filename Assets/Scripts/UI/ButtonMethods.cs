@@ -9,6 +9,10 @@ using UnityEngine;
 
 public class ButtonMethods : MonoBehaviour
 {
+    private void OnEnable()
+    {
+        transform.GetChild(0).GetComponent<Animator>().Play("ENABLE");
+    }
     public void Button_Close(GameObject popUp)
     {
         Destroy(popUp);
