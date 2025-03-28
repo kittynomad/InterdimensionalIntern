@@ -56,6 +56,8 @@ public class ChoiceUIManager : MonoBehaviour
         commandActions.Add("help", DisplayCommands);
         commandActions.Add("?civStats", DisplayCurrentStats);
         commandActions.Add("bored", DisplayWhatToDo);
+        commandActions.Add("bored1", DisplayWhatToDo);
+        commandActions.Add("bored2", InputTipsCommand);
         commandActions.Add("funCommand", DisplayFunCommand);
         commandActions.Add("animal", DisplayAnimal);
         commandActions.Add("credits", DisplayCredits);
@@ -197,7 +199,8 @@ public class ChoiceUIManager : MonoBehaviour
             +"----------------------------------\n"
             +"If you're out of things to do, try entering random words/phrases into the terminal.\n"
             +"There are several hidden commands, which do a variety of random things.\n"
-            +"If you find a 'funCommand', write it down on a sticky note for future interns!";
+            +"If you find a 'funCommand', write it down on a sticky note for future interns!" +
+            "\n(bored 1/2)";
 
         StartCoroutine(TypeAdditional(s));
     }
@@ -263,6 +266,16 @@ public class ChoiceUIManager : MonoBehaviour
     private void QWERTYCommand()
     {
         string s = "Running out of ideas?\n";
+        StartCoroutine(TypeAdditional(s));
+    }
+
+    private void InputTipsCommand()
+    {
+        string s = "*Most commands use camelCase capitalization. (no spaces, second word onward capitalized" +
+            "\n*Most commands are case sensitive, so keep the above tip in mind." +
+            "\n*Observe your surroundings for inspiration for words/phrases to try." +
+            "\n*All commands/output will be interrupted when a choice is ready to be made." +
+            "\n(bored 2/2)";
         StartCoroutine(TypeAdditional(s));
     }
 
