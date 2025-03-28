@@ -15,7 +15,6 @@ MonoBehaviour:
   _choiceSetName: Concrete/Brick Set
   _choicePhase: 3
   _choices:
+  - {fileID: 11400000, guid: 92347caee6ca1534c9830d471f5ee0d0, type: 2}
   - {fileID: 11400000, guid: 1776de0280db0974487b7375dc8ca544, type: 2}
-  - {fileID: 11400000, guid: f832dd858b26927429b98289607abeac, type: 2}
-  - {fileID: 11400000, guid: 365bf4bf6895dc44383c9c0823561746, type: 2}
   _weight: 1

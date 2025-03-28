@@ -12,7 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92109ab8881064945aec6e7a2ed0e84a, type: 3}
   m_Name: AILiveForYou
   m_EditorClassIdentifier: 
-  _choiceName: 
-  _choiceDescription: 
-  _statModifiers: []
+  _choiceName: AI can now live your life for you
+  _choiceDescription: Become an android for the low, low, price of your soul and
+    any semblance of human emotion!
+  _statModifiers:
+  - _statToModify: 0
+    _modificationToPerform: 0
+    _modificationValue: 8
+    _hiddenModification: 0
+  - _statToModify: 3
+    _modificationToPerform: 1
+    _modificationValue: 5
+    _hiddenModification: 0
   _choiceAnimation: {fileID: 0}

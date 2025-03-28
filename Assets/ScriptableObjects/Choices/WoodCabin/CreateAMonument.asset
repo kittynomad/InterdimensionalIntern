@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92109ab8881064945aec6e7a2ed0e84a, type: 3}
+  m_Name: CreateAMonument
+  m_EditorClassIdentifier: 
+  _choiceName: Start making monuments
+  _choiceDescription: 'We could house the homeless, OR construct a massive bronze
+    statue of a government official. Priorities. '
+  _statModifiers:
+  - _statToModify: 1
+    _modificationToPerform: 0
+    _modificationValue: 1
+    _hiddenModification: 0
+  - _statToModify: 3
+    _modificationToPerform: 1
+    _modificationValue: 3
+    _hiddenModification: 0
+  - _statToModify: 2
+    _modificationToPerform: 1
+    _modificationValue: 2
+    _hiddenModification: 0
+  _choiceAnimation: {fileID: 0}

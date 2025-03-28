@@ -12,7 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92109ab8881064945aec6e7a2ed0e84a, type: 3}
   m_Name: GlueInvented
   m_EditorClassIdentifier: 
-  _choiceName: 
-  _choiceDescription: 
-  _statModifiers: []
+  _choiceName: Glue Invented
+  _choiceDescription: "On this planet, this was somehow never invented\u2026 "
+  _statModifiers:
+  - _statToModify: 2
+    _modificationToPerform: 0
+    _modificationValue: 5
+    _hiddenModification: 0
+  - _statToModify: 3
+    _modificationToPerform: 0
+    _modificationValue: 2
+    _hiddenModification: 0
   _choiceAnimation: {fileID: 0}

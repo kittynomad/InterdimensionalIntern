@@ -12,7 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92109ab8881064945aec6e7a2ed0e84a, type: 3}
   m_Name: SpaceElevatorConstructed
   m_EditorClassIdentifier: 
-  _choiceName: 
-  _choiceDescription: 
-  _statModifiers: []
+  _choiceName: Space elevator constructed
+  _choiceDescription: 'Questions can be raised about the practicality, but nobody
+    can deny it sure looks cool. '
+  _statModifiers:
+  - _statToModify: 1
+    _modificationToPerform: 0
+    _modificationValue: 3
+    _hiddenModification: 0
+  - _statToModify: 5
+    _modificationToPerform: 0
+    _modificationValue: 2
+    _hiddenModification: 0
   _choiceAnimation: {fileID: 0}

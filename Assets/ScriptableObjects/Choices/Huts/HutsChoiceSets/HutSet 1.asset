@@ -15,6 +15,6 @@ MonoBehaviour:
   _choiceSetName: 
   _choicePhase: 0
   _choices:
-  - {fileID: 11400000, guid: e07559c326e8e114c93fa1f03912f902, type: 2}
-  - {fileID: 11400000, guid: 3d817bbe9eb48d14d8bb2d6a0a388afe, type: 2}
-  - {fileID: 11400000, guid: ef4f37bac42760343ae69a9198a871ad, type: 2}
+  - {fileID: 11400000, guid: 8f0699352a02c7a4cab7dcc7a2e4ee54, type: 2}
+  - {fileID: 11400000, guid: 197c6b8e932af1d4e9f590ad09d20a16, type: 2}
+  _weight: 1

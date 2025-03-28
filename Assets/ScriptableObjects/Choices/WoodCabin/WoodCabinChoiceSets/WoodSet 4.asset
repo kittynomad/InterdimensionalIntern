@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e97403ba7267f32419a10c3b58cef336, type: 3}
+  m_Name: WoodSet 4
+  m_EditorClassIdentifier: 
+  _choiceSetName: Cabin Set
+  _choicePhase: 1
+  _choices:
+  - {fileID: 11400000, guid: 4e95ab8da74747f49bbf82eb2b3bff0e, type: 2}
+  - {fileID: 11400000, guid: b10d6011b79b96042953378c8e14246b, type: 2}
+  - {fileID: 11400000, guid: cd811a68e6176e343b3b1e3f4e1db1b6, type: 2}
+  _weight: 1

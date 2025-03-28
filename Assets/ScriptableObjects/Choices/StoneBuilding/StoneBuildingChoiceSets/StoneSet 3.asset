@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e97403ba7267f32419a10c3b58cef336, type: 3}
+  m_Name: StoneSet 3
+  m_EditorClassIdentifier: 
+  _choiceSetName: Stone Set
+  _choicePhase: 2
+  _choices:
+  - {fileID: 11400000, guid: 5b0d2e91af2d2e444b85d21e6625fc91, type: 2}
+  - {fileID: 11400000, guid: b710e7d4ddc6e5c4e9e20d9a75c58e61, type: 2}
+  _weight: 1

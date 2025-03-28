@@ -12,7 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92109ab8881064945aec6e7a2ed0e84a, type: 3}
   m_Name: MakeSpaceBikesEvenFaster
   m_EditorClassIdentifier: 
-  _choiceName: 
-  _choiceDescription: 
-  _statModifiers: []
+  _choiceName: Space Bikes Are Even Faster
+  _choiceDescription: "Even in space, bikers are still the most insufferable people
+    on the planet, and now they\u2019re faster. Great. "
+  _statModifiers:
+  - _statToModify: 0
+    _modificationToPerform: 1
+    _modificationValue: 2
+    _hiddenModification: 0
+  - _statToModify: 3
+    _modificationToPerform: 0
+    _modificationValue: 3
+    _hiddenModification: 0
   _choiceAnimation: {fileID: 0}

@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: OrganizedMilitia
   m_EditorClassIdentifier: 
   _choiceName: Organized Militia
-  _choiceDescription: Now everybody doesn't need to know how to use weapons, not
-    very fun but it sure is safer.
+  _choiceDescription: 'Someone left berries in a jar for too long and discovered
+    fermentation. Why they then decided to drink it remains a mystery. '
   _statModifiers:
   - _statToModify: 3
     _modificationToPerform: 1
@@ -24,3 +24,4 @@ MonoBehaviour:
     _modificationToPerform: 0
     _modificationValue: 2
     _hiddenModification: 0
+  _choiceAnimation: {fileID: 0}

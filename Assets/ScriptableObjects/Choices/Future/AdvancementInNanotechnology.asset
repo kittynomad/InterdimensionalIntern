@@ -12,7 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92109ab8881064945aec6e7a2ed0e84a, type: 3}
   m_Name: AdvancementInNanotechnology
   m_EditorClassIdentifier: 
-  _choiceName: 
-  _choiceDescription: 
-  _statModifiers: []
+  _choiceName: Advancements in nanotechnology
+  _choiceDescription: 'The nanobots have learned how to make their own nanobots.
+    Incredible. '
+  _statModifiers:
+  - _statToModify: 1
+    _modificationToPerform: 0
+    _modificationValue: 3
+    _hiddenModification: 0
+  - _statToModify: 2
+    _modificationToPerform: 0
+    _modificationValue: 2
+    _hiddenModification: 0
   _choiceAnimation: {fileID: 0}

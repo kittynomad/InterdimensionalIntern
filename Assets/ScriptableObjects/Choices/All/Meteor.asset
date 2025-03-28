@@ -15,11 +15,12 @@ MonoBehaviour:
   _choiceName: Goodness Gracious Great Ball Of Fire
   _choiceDescription: I lost the bet, better hold up my bargain and put on a show.
   _statModifiers:
+  - _statToModify: 1
+    _modificationToPerform: 1
+    _modificationValue: 4
+    _hiddenModification: 0
   - _statToModify: 0
     _modificationToPerform: 1
-    _modificationValue: 1e+9
+    _modificationValue: 4
     _hiddenModification: 0
-  - _statToModify: 3
-    _modificationToPerform: 1
-    _modificationValue: 1e+9
-    _hiddenModification: 0
+  _choiceAnimation: {fileID: 0}

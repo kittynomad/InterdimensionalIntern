@@ -12,7 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92109ab8881064945aec6e7a2ed0e84a, type: 3}
   m_Name: Teleportation
   m_EditorClassIdentifier: 
-  _choiceName: 
-  _choiceDescription: 
-  _statModifiers: []
+  _choiceName: Teleportation
+  _choiceDescription: 'Why walk when you can rip a hole in space-time? '
+  _statModifiers:
+  - _statToModify: 1
+    _modificationToPerform: 0
+    _modificationValue: 3
+    _hiddenModification: 1
+  - _statToModify: 5
+    _modificationToPerform: 0
+    _modificationValue: 3
+    _hiddenModification: 0
   _choiceAnimation: {fileID: 0}
