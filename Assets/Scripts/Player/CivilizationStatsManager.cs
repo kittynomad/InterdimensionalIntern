@@ -25,6 +25,7 @@ public class CivilizationStatsManager : MonoBehaviour
     [SerializeField] private PopUpManager _popUpManager;
     [SerializeField] private GameObject _world;
     [SerializeField] private GameObject _nextPersonCanvas;
+    [SerializeField] private ParticlePeopleHandler _particlePeopleHandler;
 
     [Header("Choice Settings")]
     [SerializeField] private ChoiceUIManager _choiceUIManager;
@@ -98,7 +99,7 @@ public class CivilizationStatsManager : MonoBehaviour
     {
         if (tickCount >= _ticksBetweenChoices)
         {
-            StopAllCoroutines();
+            PauseGame();
             tickCount = 0;
             _choiceUIManager.gameObject.SetActive(true);
             _choiceUIManager.DisplayNewChoices();
@@ -180,7 +181,7 @@ public class CivilizationStatsManager : MonoBehaviour
         _popUpManager.NewPopUp();
         if (choice.ChoiceAnimation != null)
             StartCoroutine(PlayChoiceAnimation(choice.ChoiceAnimation));
-        ContinueTickAdvance();
+        ResumeGame();
     }
 
     IEnumerator PlayChoiceAnimation(Animation animation)
@@ -223,6 +224,18 @@ public class CivilizationStatsManager : MonoBehaviour
         
     }
 
+    public void PauseGame()
+    {
+        ParallaxBackground.PauseAllParallax();
+        _particlePeopleHandler.Ps.Pause();
+        StopAllCoroutines();
+    }
+    public void ResumeGame()
+    {
+        ParallaxBackground.ResumeAllParallax();
+        _particlePeopleHandler.Ps.Play();
+        ContinueTickAdvance();
+    }
     public override string ToString()
     {
         string output = "CURRENT CIV STATS\nPOPULATION: " + Population + "\nPOP GROWTH: " + (_popGrowthPercentPerTick - 100) + "%/t"
