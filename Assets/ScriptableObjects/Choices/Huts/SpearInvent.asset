@@ -14,5 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _choiceName: Spear Invented
   _choiceDescription: Now you can poke things from a safe distance. Revolutionary!
-  _statModifiers: []
+  _statModifiers:
+  - _statToModify: 0
+    _modificationToPerform: 0
+    _modificationValue: 0
+    _hiddenModification: 0
+  - _statToModify: 0
+    _modificationToPerform: 0
+    _modificationValue: 0
+    _hiddenModification: 0
   _choiceAnimation: {fileID: 0}

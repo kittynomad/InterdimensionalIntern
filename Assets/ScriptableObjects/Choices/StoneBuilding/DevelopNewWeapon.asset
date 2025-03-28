@@ -15,5 +15,13 @@ MonoBehaviour:
   _choiceName: Develop New Weapon
   _choiceDescription: 'The trebuchet has served society well, but its time for an
     upgrade. '
-  _statModifiers: []
+  _statModifiers:
+  - _statToModify: 0
+    _modificationToPerform: 0
+    _modificationValue: 0
+    _hiddenModification: 0
+  - _statToModify: 0
+    _modificationToPerform: 0
+    _modificationValue: 0
+    _hiddenModification: 0
   _choiceAnimation: {fileID: 0}

@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e97403ba7267f32419a10c3b58cef336, type: 3}
+  m_Name: HutSet4
+  m_EditorClassIdentifier: 
+  _choiceSetName: HutSet4
+  _choicePhase: 0
+  _choices:
+  - {fileID: 11400000, guid: dd1c29d3c4847764fa247d228a8902d8, type: 2}
+  - {fileID: 11400000, guid: a6140634089123c4fa021ab1523d3e73, type: 2}
+  _weight: 1

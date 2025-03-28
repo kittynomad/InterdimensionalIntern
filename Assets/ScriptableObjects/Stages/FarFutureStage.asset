@@ -29,3 +29,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 8d663dc61f92332468568aeb8a078bb1, type: 2}
   - {fileID: 11400000, guid: 4ae83e804c9d8f34cb9e6b160b131ec7, type: 2}
   - {fileID: 11400000, guid: 7227aff53c718a3469d91013ac24b974, type: 2}
+  _buildings:
+  - {fileID: 21300000, guid: 99fb4be2f69e27a4786dd92376b1f11e, type: 3}
+  - {fileID: 21300000, guid: 99fb4be2f69e27a4786dd92376b1f11e, type: 3}
+  - {fileID: 21300000, guid: 99fb4be2f69e27a4786dd92376b1f11e, type: 3}

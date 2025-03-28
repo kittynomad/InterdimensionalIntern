@@ -6,15 +6,11 @@ public class ParallaxBackground : MonoBehaviour
     [SerializeField] private float _scrollSpeed;
     public void FixedUpdate()
     {
-        Vector3 pos = transform.position;
-        pos.x -= _scrollSpeed * Time.deltaTime;
+        Vector3 position = transform.position;
+        position.x -= _scrollSpeed * Time.deltaTime;
         if(transform.position.x < -SCROLL_WIDTH)
-            Offscreen(ref pos);
-        transform.position = pos;
-    }
-    public virtual void Offscreen(ref Vector3 pos)
-    {
-        pos.x += (2*SCROLL_WIDTH);
-
+            gameObject.transform.position = new Vector3(SCROLL_WIDTH, transform.position.y, transform.position.z);
+        else
+            transform.position = position;
     }
 }

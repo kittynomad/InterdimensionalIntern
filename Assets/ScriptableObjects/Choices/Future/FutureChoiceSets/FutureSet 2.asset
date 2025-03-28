@@ -17,5 +17,4 @@ MonoBehaviour:
   _choices:
   - {fileID: 0}
   - {fileID: 0}
-  - {fileID: 0}
   _weight: 1

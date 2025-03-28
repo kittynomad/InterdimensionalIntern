@@ -9,12 +9,16 @@ public class CivStage : ScriptableObject
     [SerializeField] private StatWithAssociatedValue[] _minStats;
     [SerializeField] private StatWithAssociatedValue[] _maxStats;
     [SerializeField] private ChoiceSet[] _choiceSets;
+    [SerializeField] private List<Sprite> _buildings;
+    //[SerializeField] private Sprite _buildingSprite1;
+    //[SerializeField] private Sprite _buildingSprite2;
 
     public Enums.CivilizationPhase Phase { get => _phase; set { _phase = value; } }
 
     public StatWithAssociatedValue[] MinStats { get => _minStats; set => _minStats = value; }
     public StatWithAssociatedValue[] MaxStats { get => _maxStats; set => _maxStats = value; }
     public ChoiceSet[] ChoiceSets { get => _choiceSets; set => _choiceSets = value; }
+    public List<Sprite> Buildings { get => _buildings; set => _buildings = value; }
 
     public bool CivilizationAboveMinimumStats(CivilizationStatsManager civ, bool requireAllStats = false)
     {
