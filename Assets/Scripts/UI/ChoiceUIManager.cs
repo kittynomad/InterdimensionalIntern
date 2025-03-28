@@ -279,6 +279,12 @@ public class ChoiceUIManager : MonoBehaviour
         StartCoroutine(TypeAdditional(s));
     }
 
+    private void StaticClearCommand()
+    {
+        string s = "Whoops, spaced out for a moment there.\nSystem Restored";
+        StartCoroutine(TypeAdditional(s));
+    }
+
     #endregion
 
     private ChoiceSet GetNextChoiceSet(bool weighted = true)
