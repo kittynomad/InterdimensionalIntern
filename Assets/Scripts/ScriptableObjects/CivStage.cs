@@ -9,9 +9,14 @@ public class CivStage : ScriptableObject
     [SerializeField] private StatWithAssociatedValue[] _minStats;
     [SerializeField] private StatWithAssociatedValue[] _maxStats;
     [SerializeField] private ChoiceSet[] _choiceSets;
+
+    [Header("StageSprites")]
     [SerializeField] private List<Sprite> _buildings;
-    //[SerializeField] private Sprite _buildingSprite1;
-    //[SerializeField] private Sprite _buildingSprite2;
+    [SerializeField] private Sprite _foreground;
+    [SerializeField] private Sprite _foregroundDetails;
+    [SerializeField] private Sprite _background;
+    [SerializeField] private Sprite _skyDetails;
+    [SerializeField] private Sprite _sky;
 
     public Enums.CivilizationPhase Phase { get => _phase; set { _phase = value; } }
 
@@ -19,6 +24,11 @@ public class CivStage : ScriptableObject
     public StatWithAssociatedValue[] MaxStats { get => _maxStats; set => _maxStats = value; }
     public ChoiceSet[] ChoiceSets { get => _choiceSets; set => _choiceSets = value; }
     public List<Sprite> Buildings { get => _buildings; set => _buildings = value; }
+    public Sprite Foreground { get => _foreground; set => _foreground = value; }
+    public Sprite Background { get => _background; set => _background = value; }
+    public Sprite SkyDetails { get => _skyDetails; set => _skyDetails = value; }
+    public Sprite Sky { get => _sky; set => _sky = value; }
+    public Sprite ForegroundDetails { get => _foregroundDetails; set => _foregroundDetails = value; }
 
     public bool CivilizationAboveMinimumStats(CivilizationStatsManager civ, bool requireAllStats = false)
     {

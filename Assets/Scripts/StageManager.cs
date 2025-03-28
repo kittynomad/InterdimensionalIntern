@@ -69,7 +69,7 @@ public class StageManager : MonoBehaviour
             _backgroundAnimator.SetInteger("curStage", CurStage);
         }
         UpdateLiveGraphY();
-        UpdateBuildingSprites();
+        UpdateStageSprites();
 
         Debug.Log("CurrentStage:" + Stages[CurStage].Phase);
     }
@@ -78,6 +78,26 @@ public class StageManager : MonoBehaviour
         Debug.Log("Civ reset");
         curStage = 0;
         _backgroundAnimator.SetInteger("curStage", CurStage);
+    }
+    private void UpdateStageSprites()
+    {
+        foreach (ParallaxBackground parallaxBackground in GameObject.FindObjectsOfType<ParallaxBackground>())
+        {
+            switch (parallaxBackground.SpriteType)
+            {
+                case ParallaxBackground.ParallaxType.Foreground:
+                    parallaxBackground.GetComponent<SpriteRenderer>().sprite = Stages[curStage].Foreground; break;
+                case ParallaxBackground.ParallaxType.ForegroundDetails:
+                    parallaxBackground.GetComponent<SpriteRenderer>().sprite = Stages[curStage].ForegroundDetails; break;
+                case ParallaxBackground.ParallaxType.Background:
+                    parallaxBackground.GetComponent<SpriteRenderer>().sprite = Stages[curStage].Background; break;
+                case ParallaxBackground.ParallaxType.SkyDetails:
+                    parallaxBackground.GetComponentInChildren<SpriteRenderer>().sprite = Stages[curStage].SkyDetails; break;
+                case ParallaxBackground.ParallaxType.Sky:
+                    parallaxBackground.GetComponent<SpriteRenderer>().sprite = Stages[curStage].Sky; break;
+            }
+        }
+        UpdateBuildingSprites();
     }
     private void UpdateBuildingSprites()
     {

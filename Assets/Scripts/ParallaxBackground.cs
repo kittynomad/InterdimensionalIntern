@@ -2,9 +2,22 @@ using UnityEngine;
 
 public class ParallaxBackground : MonoBehaviour
 {
+    public enum ParallaxType
+    {
+        None,
+        Foreground,
+        ForegroundDetails,
+        Background,
+        SkyDetails,
+        Sky,
+    }
     [SerializeField]  float SCROLL_WIDTH = 45f;
     [SerializeField] private float _scrollSpeed;
+    [SerializeField] private ParallaxType _spriteType;
     private float savedSpeed = 0;
+
+    public ParallaxType SpriteType { get => _spriteType; set => _spriteType = value; }
+
     public void FixedUpdate()
     {
         Vector3 position = transform.position;
