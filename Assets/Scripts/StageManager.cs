@@ -17,6 +17,7 @@ public class StageManager : MonoBehaviour
 
     public int CurStage { get => curStage; set => curStage = value; }
     public CivStage[] Stages { get => stages; set => stages = value; }
+    public Transform BuildingsParent { get => _buildingsParent; set => _buildingsParent = value; }
 
     void Start()
     {
@@ -78,6 +79,7 @@ public class StageManager : MonoBehaviour
         Debug.Log("Civ reset");
         curStage = 0;
         _backgroundAnimator.SetInteger("curStage", CurStage);
+        StartCoroutine(statsManager.CivRestartManager.ShowCivRestartScreen());
     }
     private void UpdateStageSprites()
     {

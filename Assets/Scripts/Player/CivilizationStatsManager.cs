@@ -26,6 +26,7 @@ public class CivilizationStatsManager : MonoBehaviour
     [SerializeField] private GameObject _world;
     [SerializeField] private GameObject _nextPersonCanvas;
     [SerializeField] private ParticlePeopleHandler _particlePeopleHandler;
+    [SerializeField] private CivRestartManager _civRestartManager;
 
     [Header("Choice Settings")]
     [SerializeField] private ChoiceUIManager _choiceUIManager;
@@ -47,6 +48,7 @@ public class CivilizationStatsManager : MonoBehaviour
     public float ThermometerMax { get => _thermometerMax; set => _thermometerMax = value; }
     public PopUpManager PopUpManager { get => _popUpManager; set => _popUpManager = value; }
     public GameObject NextPersonCanvas { get => _nextPersonCanvas; set => _nextPersonCanvas = value; }
+    public CivRestartManager CivRestartManager { get => _civRestartManager; set => _civRestartManager = value; }
 
     public void Start()
     {
@@ -221,11 +223,11 @@ public class CivilizationStatsManager : MonoBehaviour
             yield return new WaitForSeconds(_tickTime);
             OnTick();
         }
-        
     }
 
     public void PauseGame()
     {
+        Debug.Log("Pause");
         ParallaxBackground.PauseAllParallax();
         _particlePeopleHandler.Ps.Pause();
         StopAllCoroutines();
