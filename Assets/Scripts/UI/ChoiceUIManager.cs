@@ -46,11 +46,11 @@ public class ChoiceUIManager : MonoBehaviour
     private void SetUpCommands()
     {
         commandActions.Add("help", DisplayCommands);
-        commandActions.Add("?civStats", DisplayCurrentStats);
+        commandActions.Add("?civstats", DisplayCurrentStats);
         commandActions.Add("bored", DisplayWhatToDo);
         commandActions.Add("bored1", DisplayWhatToDo);
-        commandActions.Add("bored2", InputTipsCommand);
-        commandActions.Add("funCommand", DisplayFunCommand);
+        //commandActions.Add("bored2", InputTipsCommand);
+        commandActions.Add("funcommand", DisplayFunCommand);
         commandActions.Add("animal", DisplayAnimal);
         commandActions.Add("credits", DisplayCredits);
         commandActions.Add("frown", FrownCommand);
@@ -121,9 +121,9 @@ public class ChoiceUIManager : MonoBehaviour
 
         try
         {
-            if (commandActions.ContainsKey(t)) //display commands
+            if (commandActions.ContainsKey(t.ToLower())) //display commands
             {
-                commandActions[t]();
+                commandActions[t.ToLower()]();
                 return;
             }
         }
@@ -176,8 +176,7 @@ public class ChoiceUIManager : MonoBehaviour
         StartCoroutine(TypeAdditional("\nType choice num. + \"?\" to display choice info \n(i.e. \"0?\" for choice 0)"
             +"\nType choice number to choose that option\n(i.e. type \"1\" for choice 1)"
             +"\nType ?civStats to see exact current stats of civilization"
-            +"\nIf you have idle hands, you could try typing 'bored'...? "
-            +"\n(NOTE: all commands are case sensitive)"));
+            +"\nIf you have idle hands, you could try typing 'bored'...? "));
     }
 
     private void DisplayCurrentStats()
@@ -187,12 +186,12 @@ public class ChoiceUIManager : MonoBehaviour
 
     private void DisplayWhatToDo()
     {
-        string s = "\nNO IDLE HANDS, INTERN!\n" 
-            +"----------------------------------\n"
-            +"If you're out of things to do, try entering random words/phrases into the terminal.\n"
-            +"There are several hidden commands, which do a variety of random things.\n"
-            +"If you find a 'funCommand', write it down on a sticky note for future interns!" +
-            "\n(bored 1/2)";
+        string s = "\nNO IDLE HANDS, INTERN!\n"
+            + "----------------------------------\n"
+            + "If you're out of things to do, try entering random words/phrases into the terminal.\n"
+            + "There are several hidden commands, which do a variety of random things.\n"
+            + "If you find a 'funCommand', write it down on a sticky note for future interns!"; //+
+            //"\n(bored 1/2)";
 
         StartCoroutine(TypeAdditional(s));
     }
@@ -261,7 +260,7 @@ public class ChoiceUIManager : MonoBehaviour
         StartCoroutine(TypeAdditional(s));
     }
 
-    private void InputTipsCommand()
+    /*private void InputTipsCommand()
     {
         string s = "*Most commands use camelCase capitalization. (no spaces, second word onward capitalized" +
             "\n*Most commands are case sensitive, so keep the above tip in mind." +
@@ -269,7 +268,7 @@ public class ChoiceUIManager : MonoBehaviour
             "\n*All commands/output will be interrupted when a choice is ready to be made." +
             "\n(bored 2/2)";
         StartCoroutine(TypeAdditional(s));
-    }
+    }*/
 
     private void StaticClearCommand()
     {
