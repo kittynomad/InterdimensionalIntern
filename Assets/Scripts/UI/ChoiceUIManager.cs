@@ -74,7 +74,7 @@ public class ChoiceUIManager : MonoBehaviour
                 _choiceTexts[i].text = _choices.Choices[i].ToString();
             else
             {
-                _choiceTexts[0].text = _choiceTexts[0].text + "\n" + _choices.Choices[i].ToString();
+                _choiceTexts[0].text = _choiceTexts[0].text + "\n" + i + ": " + _choices.Choices[i].ToString();
                 _inputField.Select();
             }
 
