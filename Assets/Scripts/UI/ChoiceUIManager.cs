@@ -64,6 +64,9 @@ public class ChoiceUIManager : MonoBehaviour
         commandActions.Add("intern", PayCommand);
         commandActions.Add("union", unionCommand);
         commandActions.Add("merger", mergerCommand);
+        commandActions.Add("somethingwitty", wittyCommand);
+        commandActions.Add("yippee", yippeeCommand);
+        commandActions.Add("escape", escapeCommand);
     }
 
     public void DisplayNewChoices()
@@ -313,6 +316,26 @@ public class ChoiceUIManager : MonoBehaviour
         StartCoroutine(TypeAdditional(s));
     }
 
+    private void wittyCommand()
+    {
+        string s = "Clever response.";
+        StartCoroutine(TypeAdditional(s));
+    }
+
+    private void yippeeCommand()
+    {
+        string s = "Yippee!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!";
+        StartCoroutine(TypeAdditional(s));
+    }
+
+    private void escapeCommand()
+    {
+        string s = "Why would you want to escape, intern?" +
+            "\nYou're working for the BEST COMPANY IN THE OBSERVABLE UNIVERSE!*" +
+            "\n*'Best' according to value of net worth and merged beings composite";
+        StartCoroutine(TypeAdditional(s));
+    }
+
     private void StaticClearCommand()
     {
         string s = "Whoops, spaced out for a moment there.\nSystem Restored";
@@ -371,7 +394,6 @@ public class ChoiceUIManager : MonoBehaviour
 
     IEnumerator TypeAdditional(string sentence, int choiceToApply = -1)
     {
-        sentence = sentence + " ";
         _inputField.DeactivateInputField();
         _inputField.text = "";
         isTyping = true;
