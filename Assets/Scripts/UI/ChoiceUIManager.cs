@@ -46,11 +46,11 @@ public class ChoiceUIManager : MonoBehaviour
     private void SetUpCommands()
     {
         commandActions.Add("help", DisplayCommands);
-        commandActions.Add("?civStats", DisplayCurrentStats);
+        commandActions.Add("?civstats", DisplayCurrentStats);
         commandActions.Add("bored", DisplayWhatToDo);
         commandActions.Add("bored1", DisplayWhatToDo);
-        commandActions.Add("bored2", InputTipsCommand);
-        commandActions.Add("funCommand", DisplayFunCommand);
+        //commandActions.Add("bored2", InputTipsCommand);
+        commandActions.Add("funcommand", DisplayFunCommand);
         commandActions.Add("animal", DisplayAnimal);
         commandActions.Add("credits", DisplayCredits);
         commandActions.Add("frown", FrownCommand);
@@ -59,6 +59,14 @@ public class ChoiceUIManager : MonoBehaviour
         commandActions.Add("cow", WarmCommand);
         commandActions.Add("wasd", WASDCommand);
         commandActions.Add("qwerty", QWERTYCommand);
+        commandActions.Add("fuse", FuseCommand);
+        commandActions.Add("pay", PayCommand);
+        commandActions.Add("intern", PayCommand);
+        commandActions.Add("union", unionCommand);
+        commandActions.Add("merger", mergerCommand);
+        commandActions.Add("somethingwitty", wittyCommand);
+        commandActions.Add("yippee", yippeeCommand);
+        commandActions.Add("escape", escapeCommand);
     }
 
     public void DisplayNewChoices()
@@ -74,7 +82,7 @@ public class ChoiceUIManager : MonoBehaviour
                 _choiceTexts[i].text = _choices.Choices[i].ToString();
             else
             {
-                _choiceTexts[0].text = _choiceTexts[0].text + "\n" + _choices.Choices[i].ToString();
+                _choiceTexts[0].text = _choiceTexts[0].text + "\n" + i + ": " + _choices.Choices[i].ToString();
                 _inputField.Select();
             }
 
@@ -121,9 +129,9 @@ public class ChoiceUIManager : MonoBehaviour
 
         try
         {
-            if (commandActions.ContainsKey(t)) //display commands
+            if (commandActions.ContainsKey(t.ToLower())) //display commands
             {
-                commandActions[t]();
+                commandActions[t.ToLower()]();
                 return;
             }
         }
@@ -176,8 +184,7 @@ public class ChoiceUIManager : MonoBehaviour
         StartCoroutine(TypeAdditional("\nType choice num. + \"?\" to display choice info \n(i.e. \"0?\" for choice 0)"
             +"\nType choice number to choose that option\n(i.e. type \"1\" for choice 1)"
             +"\nType ?civStats to see exact current stats of civilization"
-            +"\nIf you have idle hands, you could try typing 'bored'...? "
-            +"\n(NOTE: all commands are case sensitive)"));
+            +"\nIf you have idle hands, you could try typing 'bored'...? "));
     }
 
     private void DisplayCurrentStats()
@@ -187,12 +194,12 @@ public class ChoiceUIManager : MonoBehaviour
 
     private void DisplayWhatToDo()
     {
-        string s = "\nNO IDLE HANDS, INTERN!\n" 
-            +"----------------------------------\n"
-            +"If you're out of things to do, try entering random words/phrases into the terminal.\n"
-            +"There are several hidden commands, which do a variety of random things.\n"
-            +"If you find a 'funCommand', write it down on a sticky note for future interns!" +
-            "\n(bored 1/2)";
+        string s = "\nNO IDLE HANDS, INTERN!\n"
+            + "----------------------------------\n"
+            + "If you're out of things to do, try entering random words/phrases into the terminal.\n"
+            + "There are several hidden commands, which do a variety of random things.\n"
+            + "If you find a 'funCommand', write it down on a sticky note for future interns!"; //+
+            //"\n(bored 1/2)";
 
         StartCoroutine(TypeAdditional(s));
     }
@@ -261,13 +268,71 @@ public class ChoiceUIManager : MonoBehaviour
         StartCoroutine(TypeAdditional(s));
     }
 
-    private void InputTipsCommand()
+    /*private void InputTipsCommand()
     {
         string s = "*Most commands use camelCase capitalization. (no spaces, second word onward capitalized" +
             "\n*Most commands are case sensitive, so keep the above tip in mind." +
             "\n*Observe your surroundings for inspiration for words/phrases to try." +
             "\n*All commands/output will be interrupted when a choice is ready to be made." +
             "\n(bored 2/2)";
+        StartCoroutine(TypeAdditional(s));
+    }*/
+
+    private void FuseCommand()
+    {
+        string s = "Salutations, FUSE 2025! \n" +
+            "The  Company will be attending FUSE in the pursit of more interns for the eternal machine.\n" +
+            "Come visit us in Peoria for the chance to contribute to something larger than yourself!";
+
+        StartCoroutine(TypeAdditional(s));
+    }
+
+    private void PayCommand()
+    {
+        string s = "TC POSITION: PART-TIME INTERN" +
+            "\nHOURLY PAY: 0.00" +
+            "\nADDITIONAL BENEFITS: N/A" +
+            "\nQUALIFICATIONS: ORGANIC, SENTIENT, CONSCIOUS" +
+            "\nRESPONSIBILITIES: PREPARE INFANT CIVILIZATION FOR MERGER" +
+            "\nNOTES: DISPOSABLE";
+        StartCoroutine(TypeAdditional(s));
+    }
+
+    private void unionCommand()
+    {
+        string s = "!ERROR!" +
+            "\nTERM 'UNION' IS A WORK OF FICTION." +
+            "\nDO NOT ATTEMPT FORMATION OF ANY GROUP OR ORGANIZATION RESEMBLING THE FICTIONAL CONCEPT OF 'UNION'." +
+            "\nGROUPS/ORGANIZATIONS ATTEMPTING TO APPEAR AS FICTIONAL 'UNION' HAVE 98% LETHALITY RATE TO PARTICIPANTS.";
+        StartCoroutine(TypeAdditional(s));
+    }
+
+    private void mergerCommand()
+    {
+        string s = "Attempting merger ..." +
+            "\n.............................." +
+            "\nERROR: CIVILIZATION HAS INSUFFICIENT NET WORTH." +
+            "\nTerminating merger attempt.";
+        StartCoroutine(TypeAdditional(s));
+    }
+
+    private void wittyCommand()
+    {
+        string s = "Clever response.";
+        StartCoroutine(TypeAdditional(s));
+    }
+
+    private void yippeeCommand()
+    {
+        string s = "Yippee!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!";
+        StartCoroutine(TypeAdditional(s));
+    }
+
+    private void escapeCommand()
+    {
+        string s = "Why would you want to escape, intern?" +
+            "\nYou're working for the BEST COMPANY IN THE OBSERVABLE UNIVERSE!*" +
+            "\n*'Best' according to value of net worth and merged beings composite";
         StartCoroutine(TypeAdditional(s));
     }
 

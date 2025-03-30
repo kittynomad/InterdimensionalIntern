@@ -1792,7 +1792,7 @@ MonoBehaviour:
   _inputField: {fileID: 4269417741095155291}
   _choices: {fileID: 11400000, guid: 9a59f4269f6c7b040bffe23b01fe4dc9, type: 2}
   _retroMode: 1
-  _textSpeed: 0.025
+  _textSpeed: 0.01
 --- !u!1 &8692786725412521803
 GameObject:
   m_ObjectHideFlags: 0
