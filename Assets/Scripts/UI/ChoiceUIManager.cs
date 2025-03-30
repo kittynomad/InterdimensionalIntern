@@ -59,6 +59,11 @@ public class ChoiceUIManager : MonoBehaviour
         commandActions.Add("cow", WarmCommand);
         commandActions.Add("wasd", WASDCommand);
         commandActions.Add("qwerty", QWERTYCommand);
+        commandActions.Add("fuse", FuseCommand);
+        commandActions.Add("pay", PayCommand);
+        commandActions.Add("intern", PayCommand);
+        commandActions.Add("union", unionCommand);
+        commandActions.Add("merger", mergerCommand);
     }
 
     public void DisplayNewChoices()
@@ -270,6 +275,44 @@ public class ChoiceUIManager : MonoBehaviour
         StartCoroutine(TypeAdditional(s));
     }*/
 
+    private void FuseCommand()
+    {
+        string s = "Salutations, FUSE 2025! \n" +
+            "The  Company will be attending FUSE in the pursit of more interns for the eternal machine.\n" +
+            "Come visit us in Peoria for the chance to contribute to something larger than yourself!";
+
+        StartCoroutine(TypeAdditional(s));
+    }
+
+    private void PayCommand()
+    {
+        string s = "TC POSITION: PART-TIME INTERN" +
+            "\nHOURLY PAY: 0.00" +
+            "\nADDITIONAL BENEFITS: N/A" +
+            "\nQUALIFICATIONS: ORGANIC, SENTIENT, CONSCIOUS" +
+            "\nRESPONSIBILITIES: PREPARE INFANT CIVILIZATION FOR MERGER" +
+            "\nNOTES: DISPOSABLE";
+        StartCoroutine(TypeAdditional(s));
+    }
+
+    private void unionCommand()
+    {
+        string s = "!ERROR!" +
+            "\nTERM 'UNION' IS A WORK OF FICTION." +
+            "\nDO NOT ATTEMPT FORMATION OF ANY GROUP OR ORGANIZATION RESEMBLING THE FICTIONAL CONCEPT OF 'UNION'." +
+            "\nGROUPS/ORGANIZATIONS ATTEMPTING TO APPEAR AS FICTIONAL 'UNION' HAVE 98% LETHALITY RATE TO PARTICIPANTS.";
+        StartCoroutine(TypeAdditional(s));
+    }
+
+    private void mergerCommand()
+    {
+        string s = "Attempting merger ..." +
+            "\n.............................." +
+            "\nERROR: CIVILIZATION HAS INSUFFICIENT NET WORTH." +
+            "\nTerminating merger attempt.";
+        StartCoroutine(TypeAdditional(s));
+    }
+
     private void StaticClearCommand()
     {
         string s = "Whoops, spaced out for a moment there.\nSystem Restored";
@@ -328,6 +371,7 @@ public class ChoiceUIManager : MonoBehaviour
 
     IEnumerator TypeAdditional(string sentence, int choiceToApply = -1)
     {
+        sentence = sentence + " ";
         _inputField.DeactivateInputField();
         _inputField.text = "";
         isTyping = true;
