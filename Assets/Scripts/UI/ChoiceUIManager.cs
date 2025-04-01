@@ -87,7 +87,7 @@ public class ChoiceUIManager : MonoBehaviour
             }
 
         }
-        StartCoroutine(TypeChoices(_choiceTexts[0].text + "\ntype \"help\" for a list of commands"));
+        StartCoroutine(TypeChoices(_choiceTexts[0].text + "\ntype \"0\" or \"1\" to make a selection"));
     }
 
     public void ApplyChoice(int choiceToApply)
@@ -96,7 +96,7 @@ public class ChoiceUIManager : MonoBehaviour
         try
         {
             
-            StartCoroutine(TypeAdditional("\nchose a thing", choiceToApply));
+            StartCoroutine(TypeAdditional("\nOption " + choiceToApply + " selected", choiceToApply));
         }
         catch
         {
@@ -425,6 +425,7 @@ public class ChoiceUIManager : MonoBehaviour
             FindObjectOfType<CivilizationStatsManager>().ApplyChoice(_choices.Choices[choiceToApply]);
             _choices = null;
             FindObjectOfType<StageManager>().OnChoice();
+            StartCoroutine(TypeAdditional("\nNormal civilization function resumed\n(Time resumes)"));
         }
         _inputField.ActivateInputField();
         _inputField.Select();
