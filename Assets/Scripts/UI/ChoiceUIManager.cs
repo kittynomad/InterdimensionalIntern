@@ -95,8 +95,10 @@ public class ChoiceUIManager : MonoBehaviour
         
         try
         {
-            
-            StartCoroutine(TypeAdditional("\nOption " + choiceToApply + " selected", choiceToApply));
+            if (choiceToApply < _choices.Choices.Length)
+                StartCoroutine(TypeAdditional("\nOption " + choiceToApply + " selected", choiceToApply));
+            else
+                StartCoroutine(TypeAdditional("\nInvalid choice!"));
         }
         catch
         {
