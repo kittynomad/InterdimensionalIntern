@@ -10,10 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e97403ba7267f32419a10c3b58cef336, type: 3}
-  m_Name: TestChoiceSet 1
+  m_Name: HutSet 2
   m_EditorClassIdentifier: 
-  _choiceSetName: Test Choices
+  _choiceSetName: 
   _choicePhase: 0
   _choices:
-  - {fileID: 11400000, guid: 9c577a7ee30efbb44a03d3d7db01a3f9, type: 2}
-  - {fileID: 11400000, guid: d3d39a31467a17a4a9f61e2859d1b6fb, type: 2}
+  - {fileID: 11400000, guid: ef4f37bac42760343ae69a9198a871ad, type: 2}
+  - {fileID: 11400000, guid: a3b98151d6c1daa4d81f67d7fb10d838, type: 2}
+  _weight: 1

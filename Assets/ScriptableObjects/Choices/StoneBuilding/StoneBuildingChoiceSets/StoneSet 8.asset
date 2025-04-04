@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e97403ba7267f32419a10c3b58cef336, type: 3}
-  m_Name: HutSet3
+  m_Name: StoneSet 8
   m_EditorClassIdentifier: 
-  _choiceSetName: HutSet3
-  _choicePhase: 0
+  _choiceSetName: Stone Set
+  _choicePhase: 2
   _choices:
-  - {fileID: 11400000, guid: 7a3702d0b66936a4d86a91eff9d17b68, type: 2}
-  - {fileID: 11400000, guid: 2395e5b2288fcca409dea65f401b7d10, type: 2}
+  - {fileID: 11400000, guid: c266c6e8f29fdce40976d5b87af7dce8, type: 2}
+  - {fileID: 11400000, guid: 7f39377df15d3a5448fdf5f5cc08fd19, type: 2}
   _weight: 1

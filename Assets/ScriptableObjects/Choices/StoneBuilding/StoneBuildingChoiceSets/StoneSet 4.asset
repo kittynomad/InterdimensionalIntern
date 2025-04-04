@@ -15,6 +15,6 @@ MonoBehaviour:
   _choiceSetName: Stone Set
   _choicePhase: 2
   _choices:
-  - {fileID: 11400000, guid: ceff5552cf53a3343afb66c48282139c, type: 2}
-  - {fileID: 11400000, guid: 0fe6884964d328e4fb5fca79571bfacf, type: 2}
+  - {fileID: 11400000, guid: 5b0d2e91af2d2e444b85d21e6625fc91, type: 2}
+  - {fileID: 11400000, guid: b710e7d4ddc6e5c4e9e20d9a75c58e61, type: 2}
   _weight: 1

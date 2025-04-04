@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e97403ba7267f32419a10c3b58cef336, type: 3}
   m_Name: HutSet 3
   m_EditorClassIdentifier: 
-  _choiceSetName: 
+  _choiceSetName: HutSet3
   _choicePhase: 0
   _choices:
-  - {fileID: 11400000, guid: 52585395d4811e34bb24c6efeeded062, type: 2}
-  - {fileID: 11400000, guid: e66de08c4f77a054290213ba9a4850d7, type: 2}
+  - {fileID: 11400000, guid: 7a3702d0b66936a4d86a91eff9d17b68, type: 2}
+  - {fileID: 11400000, guid: 2395e5b2288fcca409dea65f401b7d10, type: 2}
   _weight: 1
