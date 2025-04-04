@@ -16,8 +16,8 @@ MonoBehaviour:
   _choiceDescription: Nothing bad can happen by mixing two volitile chemicals together.
   _statModifiers:
   - _statToModify: 0
-    _modificationToPerform: 0
-    _modificationValue: -50
+    _modificationToPerform: 1
+    _modificationValue: 50
     _hiddenModification: 0
   - _statToModify: 3
     _modificationToPerform: 0

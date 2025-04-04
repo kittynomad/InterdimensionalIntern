@@ -12,7 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92109ab8881064945aec6e7a2ed0e84a, type: 3}
   m_Name: CitiesBeginToFloat
   m_EditorClassIdentifier: 
-  _choiceName: 
-  _choiceDescription: 
-  _statModifiers: []
+  _choiceName: Cities Begin to float
+  _choiceDescription: ARISE
+  _statModifiers:
+  - _statToModify: 3
+    _modificationToPerform: 0
+    _modificationValue: 1
+    _hiddenModification: 0
   _choiceAnimation: {fileID: 0}
