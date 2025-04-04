@@ -10,7 +10,10 @@ public class CivRestartManager : MonoBehaviour
     }
     public void Button_NewGame()
     {
-        _statsManager.GetComponent<StageManager>().BuildingsParent.gameObject.SetActive(true);
+        foreach (Transform transform in _statsManager.GetComponent<StageManager>().BuildingsParents)
+        {
+            transform.gameObject.SetActive(true);
+        }
         _statsManager.ResumeGame();
         gameObject.SetActive(false);
     }
@@ -19,6 +22,9 @@ public class CivRestartManager : MonoBehaviour
         yield return new WaitForSeconds(0.1f);
         _statsManager.PauseGame();
         ParallaxBackground.ResumeAllParallax();
-        _statsManager.GetComponent<StageManager>().BuildingsParent.gameObject.SetActive(false);
+        foreach (Transform transform in _statsManager.GetComponent<StageManager>().BuildingsParents)
+        {
+            transform.gameObject.SetActive(false);
+        }
     }
 }
