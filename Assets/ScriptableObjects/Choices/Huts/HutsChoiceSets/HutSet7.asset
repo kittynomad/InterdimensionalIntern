@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e97403ba7267f32419a10c3b58cef336, type: 3}
-  m_Name: HutSet 2
+  m_Name: HutSet7
   m_EditorClassIdentifier: 
   _choiceSetName: 
   _choicePhase: 0
