@@ -42,15 +42,13 @@ public class StageManager : MonoBehaviour
     IEnumerator NextPersonPause(int delay)
     {
         yield return new WaitForSeconds(delay);
-        statsManager.PopUpManager.PopUpCanvas.SetActive(false);
         statsManager.NextPersonCanvas.SetActive(true);
-        StopAllCoroutines();
+        statsManager.PauseGame();
     }
     public void NextPersonResume()
     {
-        statsManager.PopUpManager.PopUpCanvas.SetActive(true);
         statsManager.NextPersonCanvas.SetActive(false);
-        statsManager.StartCoroutine(statsManager.tickAdvance());
+        statsManager.ResumeGame();
     }
     private void StageCheck()
     {
