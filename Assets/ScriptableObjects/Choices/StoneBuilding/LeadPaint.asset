@@ -14,5 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _choiceName: Popularize Lead Paint
   _choiceDescription: 'The latest in pigment technology, and completely safe to ingest!  '
-  _statModifiers: []
+  _statModifiers:
+  - _statToModify: 1
+    _modificationToPerform: 1
+    _modificationValue: 2
+    _hiddenModification: 0
   _choiceAnimation: {fileID: 0}

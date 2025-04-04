@@ -20,10 +20,6 @@ MonoBehaviour:
   _statModifiers:
   - _statToModify: 0
     _modificationToPerform: 0
-    _modificationValue: 0
-    _hiddenModification: 0
-  - _statToModify: 0
-    _modificationToPerform: 0
-    _modificationValue: 0
+    _modificationValue: 3
     _hiddenModification: 0
   _choiceAnimation: {fileID: 0}

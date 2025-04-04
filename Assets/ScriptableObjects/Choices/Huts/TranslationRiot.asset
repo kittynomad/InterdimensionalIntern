@@ -16,8 +16,8 @@ MonoBehaviour:
   _choiceDescription: 'The creating of language truly is hard. '
   _statModifiers:
   - _statToModify: 0
-    _modificationToPerform: 0
-    _modificationValue: -3
+    _modificationToPerform: 1
+    _modificationValue: 3
     _hiddenModification: 0
   - _statToModify: 1
     _modificationToPerform: 0

@@ -16,8 +16,8 @@ MonoBehaviour:
   _choiceDescription: Now you can poke things from a safe distance. Revolutionary!
   _statModifiers:
   - _statToModify: 0
-    _modificationToPerform: 0
-    _modificationValue: 0
+    _modificationToPerform: 1
+    _modificationValue: 50
     _hiddenModification: 0
   - _statToModify: 0
     _modificationToPerform: 0
