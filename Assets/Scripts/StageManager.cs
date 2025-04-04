@@ -7,7 +7,7 @@ using UnityEngine;
 public class StageManager : MonoBehaviour
 {
     [SerializeField] private CivStage[] stages;
-    [SerializeField] private Transform _buildingsParent;
+    [SerializeField] private Transform[] _buildingsParents;
     [SerializeField] private int _choicesUntilCivilizationShift = 3;
     [SerializeField] private Animator _backgroundAnimator;
     private int curStage;
@@ -17,7 +17,7 @@ public class StageManager : MonoBehaviour
 
     public int CurStage { get => curStage; set => curStage = value; }
     public CivStage[] Stages { get => stages; set => stages = value; }
-    public Transform BuildingsParent { get => _buildingsParent; set => _buildingsParent = value; }
+    public Transform[] BuildingsParents { get => _buildingsParents; set => _buildingsParents = value; }
 
     void Start()
     {
@@ -103,10 +103,13 @@ public class StageManager : MonoBehaviour
     {
         if (stages[curStage].Buildings.Count > 0)
         {
-            for (int index = 0; index < _buildingsParent.childCount; index++)
+            for (int index = 0; index < _buildingsParents.Length; index++)
             {
                 int randomSprite = Random.Range(0, stages[curStage].Buildings.Count);
-                _buildingsParent.GetChild(index).GetComponent<SpriteRenderer>().sprite = stages[curStage].Buildings[randomSprite];
+                foreach (SpriteRenderer spriteRenderer in _buildingsParents[index].GetComponentsInChildren<SpriteRenderer>())
+                {
+                    spriteRenderer.sprite = stages[curStage].Buildings[randomSprite];
+                }
             }
         }
     }
