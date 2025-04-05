@@ -32,9 +32,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 3cb7802e755171a408332d8e1b3b4f6d, type: 2}
   - {fileID: 11400000, guid: 3cb7802e755171a408332d8e1b3b4f6d, type: 2}
   _buildings:
-  - {fileID: 21300000, guid: fee446b5de0273a46af624ed76861736, type: 3}
-  - {fileID: 21300000, guid: fee446b5de0273a46af624ed76861736, type: 3}
-  - {fileID: 21300000, guid: fee446b5de0273a46af624ed76861736, type: 3}
+  - {fileID: 21300000, guid: 3a5b88573af7f7b4b833db3d042918ca, type: 3}
+  - {fileID: 21300000, guid: 14df6998d8e0a4943ae05c441b703c1b, type: 3}
   _foreground: {fileID: 21300000, guid: 35a650f1424a3e047b6918ab6df33f65, type: 3}
   _foregroundDetails: {fileID: 21300000, guid: 16313bf93fe5c304fb482d09a223e1f4, type: 3}
   _background: {fileID: 21300000, guid: d1e2ea513201b3f4f83d72b8eb15578b, type: 3}
