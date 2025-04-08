@@ -47,33 +47,17 @@ public class CivStage : ScriptableObject
         return requireAllStats;
     }
 
-    public bool CivilizationBelowMaximumStats(CivilizationStatsManager civ, bool requireAllStats = true)
+    public bool CivilizationBelowMaximumStats(CivilizationStatsManager civ)
     {
 
         foreach (StatWithAssociatedValue s in MaxStats)
         {
             if (civ.GetStatFromModifyableStatsEnum(s.Stat) <= s.Value)
             {
-                if (!requireAllStats) Debug.Log( true);
-            }
-            else
-            {
-                if (requireAllStats) Debug.Log(false);
+                return true;
             }
         }
 
-        foreach (StatWithAssociatedValue s in MaxStats)
-        {
-            if (civ.GetStatFromModifyableStatsEnum(s.Stat) <= s.Value)
-            {
-                if (!requireAllStats) return true;
-            }
-            else
-            {
-                if (requireAllStats) return false;
-            }
-        }
-
-        return requireAllStats;
+        return false;
     }
 }
