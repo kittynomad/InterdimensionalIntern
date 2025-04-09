@@ -1199,16 +1199,16 @@ MonoBehaviour:
   _population: 2
   _resources: 10.4
   _popGrowthPercentPerTick: 100
-  _popGrowthDecayPerTick: 0.1
+  _popGrowthDecayPerTick: 0.05
   _happinessGrowthPercentPerTick: 99.8
-  _happinessGrowthDecayPerTick: 0.1
+  _happinessGrowthDecayPerTick: 0.05
   _happiness: 20
   _temperature: 70
   _tempGrowthPercentPerTick: 100
-  _tempGrowthDecayPerTick: 0.1
+  _tempGrowthDecayPerTick: 0.05
   _thermometer: {fileID: 519199093}
   _thermometerMax: 120
-  _tickTime: 0.3
+  _tickTime: 1
   _liveGraph: {fileID: 761984161}
   _popUpManager: {fileID: 504462881}
   _world: {fileID: 831570100}
