@@ -49,15 +49,13 @@ public class CivStage : ScriptableObject
 
     public bool CivilizationBelowMaximumStats(CivilizationStatsManager civ)
     {
-
         foreach (StatWithAssociatedValue s in MaxStats)
         {
-            if (civ.GetStatFromModifyableStatsEnum(s.Stat) <= s.Value)
+            if (civ.GetStatFromModifyableStatsEnum(s.Stat) <= s.Value) //currentStat <= maxStat
             {
                 return true;
             }
         }
-
         return false;
     }
 }

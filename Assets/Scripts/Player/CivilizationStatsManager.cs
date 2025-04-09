@@ -10,10 +10,13 @@ public class CivilizationStatsManager : MonoBehaviour
     [SerializeField] private int _population = 2;
     [SerializeField] private float _resources = 10.4f;
     [SerializeField] private float _popGrowthPercentPerTick = 100f;
+    [SerializeField] private float _popGrowthDecayPerTick = 0.1f;
     [SerializeField] private float _happinessGrowthPercentPerTick = 100f;
+    [SerializeField] private float _happinessGrowthDecayPerTick = 0.1f;
     [SerializeField] [Range(0.0f, 100.0f)] private float _happiness = 100f;
     [SerializeField] private float _temperature = 70f;
     [SerializeField] private float _tempGrowthPercentPerTick = 100f;
+    [SerializeField] private float _tempGrowthDecayPerTick = 0.1f;
     [SerializeField] private Thermometer _thermometer;
     [SerializeField] private float _thermometerMax = 120f;
 
@@ -89,6 +92,8 @@ public class CivilizationStatsManager : MonoBehaviour
 
         Temperature *= (_tempGrowthPercentPerTick / 100f);
 
+        GrowthDecayCheck();
+
         _liveGraph.UpdateLiveGraph();
         _popUpManager.UpdatePopUp();
         _thermometer.UpdateThermometer();
@@ -110,6 +115,29 @@ public class CivilizationStatsManager : MonoBehaviour
         }
         tickCount++;
     }
+    
+    /// <summary>
+    /// Slowly brings growth stats back to their default value (100)
+    /// </summary>
+    public void GrowthDecayCheck()
+    {
+        //Over default
+        if (_popGrowthPercentPerTick > 100)
+            _popGrowthPercentPerTick -= _popGrowthDecayPerTick;
+        if (_happinessGrowthPercentPerTick > 100)
+            _happinessGrowthPercentPerTick -= _happinessGrowthDecayPerTick;
+        if (_tempGrowthPercentPerTick > 100)
+            _tempGrowthPercentPerTick -= _tempGrowthDecayPerTick;
+        
+        //Under default
+        if (_popGrowthPercentPerTick < 100)
+            _popGrowthPercentPerTick += _popGrowthDecayPerTick;
+        if (_happinessGrowthPercentPerTick < 100)
+            _happinessGrowthPercentPerTick += _happinessGrowthDecayPerTick;
+        if (_tempGrowthPercentPerTick < 100)
+            _tempGrowthPercentPerTick += _tempGrowthDecayPerTick;
+    }
+
     /// <summary>
     /// Pauses the tick advance for _ticksToChoose ticks then continues it after time runs out or the player has made a choice.
     /// </summary>
