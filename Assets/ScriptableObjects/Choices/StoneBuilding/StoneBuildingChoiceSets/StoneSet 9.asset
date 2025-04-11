@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e97403ba7267f32419a10c3b58cef336, type: 3}
-  m_Name: WoodSet 1
+  m_Name: StoneSet 9
   m_EditorClassIdentifier: 
-  _choiceSetName: Cabin Set
-  _choicePhase: 1
+  _choiceSetName: Stone Set
+  _choicePhase: 2
   _choices:
-  - {fileID: 11400000, guid: 9f347a979df7c344ab6bedb11edf6015, type: 2}
-  - {fileID: 11400000, guid: 4e95ab8da74747f49bbf82eb2b3bff0e, type: 2}
+  - {fileID: 11400000, guid: c266c6e8f29fdce40976d5b87af7dce8, type: 2}
+  - {fileID: 11400000, guid: 7f39377df15d3a5448fdf5f5cc08fd19, type: 2}
   _weight: 1
