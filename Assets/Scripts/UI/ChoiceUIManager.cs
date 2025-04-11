@@ -82,12 +82,12 @@ public class ChoiceUIManager : MonoBehaviour
                 _choiceTexts[i].text = _choices.Choices[i].ToString();
             else
             {
-                _choiceTexts[0].text = _choiceTexts[0].text + "\n" + i + ": " + _choices.Choices[i].ToString();
+                _choiceTexts[0].text = _choiceTexts[0].text + "\n" + (i + 1) + ": " + _choices.Choices[i].ToString();
                 _inputField.Select();
             }
 
         }
-        StartCoroutine(TypeChoices(_choiceTexts[0].text + "\ntype \"0\" or \"1\" to make a selection"));
+        StartCoroutine(TypeChoices(_choiceTexts[0].text + "\ntype \"1\" or \"2\" to make a selection"));
     }
 
     public void ApplyChoice(int choiceToApply)
@@ -95,8 +95,8 @@ public class ChoiceUIManager : MonoBehaviour
         
         try
         {
-            if (choiceToApply < _choices.Choices.Length)
-                StartCoroutine(TypeAdditional("\nOption " + choiceToApply + " selected", choiceToApply));
+            if (choiceToApply < _choices.Choices.Length && choiceToApply >= 0)
+                StartCoroutine(TypeAdditional("\nOption " + (choiceToApply + 1) + " selected", choiceToApply));
             else
                 StartCoroutine(TypeAdditional("\nInvalid choice!"));
         }
@@ -147,7 +147,7 @@ public class ChoiceUIManager : MonoBehaviour
         {
             try
             {
-                int i = System.Convert.ToInt32(t.Substring(0, 1));
+                int i = System.Convert.ToInt32(t.Substring(0, 1)) - 1;
                 print(_choices.Choices[i].ToString());
                 StopAllCoroutines();
                 StartCoroutine(TypeAdditional("\n"+_choices.Choices[i].ToString()));
@@ -162,7 +162,7 @@ public class ChoiceUIManager : MonoBehaviour
         int inputAsInt = -1;
         try //choose an option
         {
-            inputAsInt = System.Convert.ToInt32(t);
+            inputAsInt = System.Convert.ToInt32(t) - 1;
             ApplyChoice(inputAsInt);
         }
         catch
