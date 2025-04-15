@@ -89,8 +89,12 @@ public class StageManager : MonoBehaviour
                     parallaxBackground.GetComponent<SpriteRenderer>().sprite = Stages[curStage].Foreground; break;
                 case ParallaxBackground.ParallaxType.ForegroundDetails:
                     parallaxBackground.GetComponent<SpriteRenderer>().sprite = Stages[curStage].ForegroundDetails; break;
-                case ParallaxBackground.ParallaxType.Background:
-                    parallaxBackground.GetComponent<SpriteRenderer>().sprite = Stages[curStage].Background; break;
+                case ParallaxBackground.ParallaxType.Background1:
+                    parallaxBackground.GetComponent<SpriteRenderer>().sprite = Stages[curStage].Background1; break;
+                case ParallaxBackground.ParallaxType.Background2:
+                    parallaxBackground.GetComponent<SpriteRenderer>().sprite = Stages[curStage].Background2; break;
+                case ParallaxBackground.ParallaxType.Background3:
+                    parallaxBackground.GetComponent<SpriteRenderer>().sprite = Stages[curStage].Background3; break;
                 case ParallaxBackground.ParallaxType.SkyDetails:
                     parallaxBackground.GetComponentInChildren<SpriteRenderer>().sprite = Stages[curStage].SkyDetails; break;
                 case ParallaxBackground.ParallaxType.Sky:
@@ -105,9 +109,9 @@ public class StageManager : MonoBehaviour
         {
             for (int index = 0; index < _buildingsParents.Length; index++)
             {
-                int randomSprite = Random.Range(0, stages[curStage].Buildings.Count);
                 foreach (SpriteRenderer spriteRenderer in _buildingsParents[index].GetComponentsInChildren<SpriteRenderer>())
                 {
+                    int randomSprite = Random.Range(0, stages[curStage].Buildings.Count);
                     spriteRenderer.sprite = stages[curStage].Buildings[randomSprite];
                 }
             }
