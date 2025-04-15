@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92109ab8881064945aec6e7a2ed0e84a, type: 3}
   m_Name: Tornado
   m_EditorClassIdentifier: 
-  _choiceName: Devastating Tornad
+  _choiceName: Devastating Tornado
   _choiceDescription: 'Has your civilization been building a little too close to
     the sun? Send them a gentle reminder that man is mortal with an earth rattling
     natural disaster '
