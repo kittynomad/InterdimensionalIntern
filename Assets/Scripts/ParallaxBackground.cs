@@ -10,6 +10,8 @@ public class ParallaxBackground : MonoBehaviour
         Background1,
         Background2,
         Background3,
+        Background4,
+        Background5,
         SkyDetails,
         Sky,
     }
