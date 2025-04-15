@@ -17,6 +17,8 @@ public class CivStage : ScriptableObject
     [SerializeField] private Sprite _background1;
     [SerializeField] private Sprite _background2;
     [SerializeField] private Sprite _background3;
+    [SerializeField] private Sprite _background4;
+    [SerializeField] private Sprite _background5;
     [SerializeField] private Sprite _skyDetails;
     [SerializeField] private Sprite _sky;
 
@@ -33,6 +35,8 @@ public class CivStage : ScriptableObject
     public Sprite Background1 { get => _background1; set => _background1 = value; }
     public Sprite Background2 { get => _background2; set => _background2 = value; }
     public Sprite Background3 { get => _background3; set => _background3 = value; }
+    public Sprite Background4 { get => _background4; set => _background4 = value; }
+    public Sprite Background5 { get => _background5; set => _background5 = value; }
 
     public bool CivilizationAboveMinimumStats(CivilizationStatsManager civ, bool requireAllStats = false)
     {

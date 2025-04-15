@@ -95,6 +95,10 @@ public class StageManager : MonoBehaviour
                     parallaxBackground.GetComponent<SpriteRenderer>().sprite = Stages[curStage].Background2; break;
                 case ParallaxBackground.ParallaxType.Background3:
                     parallaxBackground.GetComponent<SpriteRenderer>().sprite = Stages[curStage].Background3; break;
+                case ParallaxBackground.ParallaxType.Background4:
+                    parallaxBackground.GetComponent<SpriteRenderer>().sprite = Stages[curStage].Background4; break;
+                case ParallaxBackground.ParallaxType.Background5:
+                    parallaxBackground.GetComponent<SpriteRenderer>().sprite = Stages[curStage].Background5; break;
                 case ParallaxBackground.ParallaxType.SkyDetails:
                     parallaxBackground.GetComponentInChildren<SpriteRenderer>().sprite = Stages[curStage].SkyDetails; break;
                 case ParallaxBackground.ParallaxType.Sky:
