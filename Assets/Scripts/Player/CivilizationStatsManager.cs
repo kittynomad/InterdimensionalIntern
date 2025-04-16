@@ -52,6 +52,10 @@ public class CivilizationStatsManager : MonoBehaviour
     public PopUpManager PopUpManager { get => _popUpManager; set => _popUpManager = value; }
     public GameObject NextPersonCanvas { get => _nextPersonCanvas; set => _nextPersonCanvas = value; }
     public CivRestartManager CivRestartManager { get => _civRestartManager; set => _civRestartManager = value; }
+    public float PopGrowthPercentPerTick { get => _popGrowthPercentPerTick; set => _popGrowthPercentPerTick = value; }
+    public float HappinessGrowthPercentPerTick { get => _happinessGrowthPercentPerTick; set => _happinessGrowthPercentPerTick = value; }
+    public float TempGrowthPercentPerTick { get => _tempGrowthPercentPerTick; set => _tempGrowthPercentPerTick = value; }
+    public ParticlePeopleHandler ParticlePeopleHandler { get => _particlePeopleHandler; set => _particlePeopleHandler = value; }
 
     public void Start()
     {
