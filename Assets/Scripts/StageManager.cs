@@ -57,18 +57,19 @@ public class StageManager : MonoBehaviour
             Debug.Log("Not above minimum:" + !Stages[CurStage].CivilizationAboveMinimumStats(statsManager));
             CurStage--;
             _backgroundAnimator.SetInteger("curStage", CurStage);
+            UpdateStageSprites();
         }
         else if (CurStage < Stages.Length - 1 && !Stages[CurStage].CivilizationBelowMaximumStats(statsManager))//statsManager.Population >= stages[curStage].MaxPopulation)
         {
             Debug.Log("Not below maximum: " + !Stages[CurStage].CivilizationBelowMaximumStats(statsManager));
-            if (curStage >= Stages.Length - 1) //if on last stage
+            if (curStage >= stages.Length - 1) //if on last stage
                 ResetCivilization();
             else
                 CurStage++;
             _backgroundAnimator.SetInteger("curStage", CurStage);
+            UpdateStageSprites();
         }
         UpdateLiveGraphY();
-        UpdateStageSprites();
 
         Debug.Log("CurrentStage:" + Stages[CurStage].Phase);
     }
@@ -76,7 +77,15 @@ public class StageManager : MonoBehaviour
     {
         Debug.Log("Civ reset");
         curStage = 0;
+        statsManager.Population = 2;
+        statsManager.PopGrowthPercentPerTick = 100;
+        statsManager.Resources = 10.4f;
+        statsManager.Happiness = 20;
+        statsManager.HappinessGrowthPercentPerTick = 99.8f;
+        statsManager.Temperature = 70;
+        statsManager.TempGrowthPercentPerTick = 100;
         _backgroundAnimator.SetInteger("curStage", CurStage);
+        statsManager.ParticlePeopleHandler.Ps.Clear();
         StartCoroutine(statsManager.CivRestartManager.ShowCivRestartScreen());
     }
     private void UpdateStageSprites()

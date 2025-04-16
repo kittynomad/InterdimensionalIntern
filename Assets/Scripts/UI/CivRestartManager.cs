@@ -15,7 +15,7 @@ public class CivRestartManager : MonoBehaviour
             transform.gameObject.SetActive(true);
         }
         _statsManager.ResumeGame();
-        gameObject.SetActive(false);
+        transform.GetChild(0).gameObject.SetActive(false);
     }
     public IEnumerator ShowCivRestartScreen()
     {
@@ -26,5 +26,6 @@ public class CivRestartManager : MonoBehaviour
         {
             transform.gameObject.SetActive(false);
         }
+        transform.GetChild(0).gameObject.SetActive(true);
     }
 }
