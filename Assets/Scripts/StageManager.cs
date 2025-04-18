@@ -88,7 +88,7 @@ public class StageManager : MonoBehaviour
         statsManager.ParticlePeopleHandler.Ps.Clear();
         StartCoroutine(statsManager.CivRestartManager.ShowCivRestartScreen());
     }
-    private void UpdateStageSprites()
+    public void UpdateStageSprites()
     {
         foreach (ParallaxBackground parallaxBackground in GameObject.FindObjectsOfType<ParallaxBackground>())
         {

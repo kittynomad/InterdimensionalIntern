@@ -16,6 +16,7 @@ public class CivRestartManager : MonoBehaviour
         }
         _statsManager.ResumeGame();
         transform.GetChild(0).gameObject.SetActive(false);
+        FindObjectOfType<StageManager>().UpdateStageSprites();
     }
     public IEnumerator ShowCivRestartScreen()
     {
