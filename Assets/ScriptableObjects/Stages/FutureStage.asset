@@ -41,7 +41,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 26ed791a70392e843bbe57f02691dd1c, type: 3}
   - {fileID: 21300000, guid: 26ed791a70392e843bbe57f02691dd1c, type: 3}
   - {fileID: 21300000, guid: 26ed791a70392e843bbe57f02691dd1c, type: 3}
-  _foreground: {fileID: 21300000, guid: 35a650f1424a3e047b6918ab6df33f65, type: 3}
+  _foreground: {fileID: 21300000, guid: c9dffb99486282c479409853f21bf263, type: 3}
   _foregroundDetails: {fileID: 21300000, guid: c9dffb99486282c479409853f21bf263, type: 3}
   _background1: {fileID: 21300000, guid: 84f2356e78bb4df459eca9267472df05, type: 3}
   _background2: {fileID: 21300000, guid: 2c2199116c5338f408a9a99e202ff242, type: 3}
