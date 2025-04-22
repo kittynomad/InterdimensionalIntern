@@ -16,15 +16,15 @@ MonoBehaviour:
   _choiceDescription: 'Make sure to bring your canary with you! '
   _statModifiers:
   - _statToModify: 1
-    _modificationToPerform: 0
+    _modificationToPerform: 1
     _modificationValue: 1
     _hiddenModification: 0
   - _statToModify: 2
     _modificationToPerform: 0
-    _modificationValue: 2
+    _modificationValue: 7
     _hiddenModification: 0
   - _statToModify: 0
     _modificationToPerform: 1
-    _modificationValue: 1
+    _modificationValue: 5
     _hiddenModification: 0
   _choiceAnimation: {fileID: 0}

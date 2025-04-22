@@ -15,9 +15,9 @@ MonoBehaviour:
   _choiceName: Digital Afterlife
   _choiceDescription: Even in death, the work never ends!
   _statModifiers:
-  - _statToModify: 0
+  - _statToModify: 4
     _modificationToPerform: 0
-    _modificationValue: 10
+    _modificationValue: 4
     _hiddenModification: 0
   - _statToModify: 2
     _modificationToPerform: 0

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92109ab8881064945aec6e7a2ed0e84a, type: 3}
   m_Name: AncientSatue
   m_EditorClassIdentifier: 
-  _choiceName: Ancient Statue U
+  _choiceName: 'Ancient Statue '
   _choiceDescription: "This statue some people found while digging a hole for fun
     looks a lot like you for some reason. Just don\u2019t worry about it. "
   _statModifiers:
@@ -20,7 +20,7 @@ MonoBehaviour:
     _modificationToPerform: 1
     _modificationValue: 3
     _hiddenModification: 0
-  - _statToModify: 3
+  - _statToModify: 1
     _modificationToPerform: 1
     _modificationValue: 3
     _hiddenModification: 0

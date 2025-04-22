@@ -15,9 +15,9 @@ MonoBehaviour:
   _choiceName: Pollute The Water
   _choiceDescription: This is one way to make catching fish easier.
   _statModifiers:
-  - _statToModify: 5
-    _modificationToPerform: 0
-    _modificationValue: 2
+  - _statToModify: 1
+    _modificationToPerform: 1
+    _modificationValue: 1
     _hiddenModification: 0
   - _statToModify: 3
     _modificationToPerform: 1
