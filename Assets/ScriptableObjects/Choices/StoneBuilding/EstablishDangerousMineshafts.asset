@@ -17,10 +17,14 @@ MonoBehaviour:
   _statModifiers:
   - _statToModify: 3
     _modificationToPerform: 1
-    _modificationValue: 2
+    _modificationValue: 3
     _hiddenModification: 0
-  - _statToModify: 5
+  - _statToModify: 2
     _modificationToPerform: 0
-    _modificationValue: 2
+    _modificationValue: 6
+    _hiddenModification: 0
+  - _statToModify: 0
+    _modificationToPerform: 1
+    _modificationValue: 3
     _hiddenModification: 0
   _choiceAnimation: {fileID: 0}

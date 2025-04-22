@@ -16,7 +16,7 @@ MonoBehaviour:
   _choiceDescription: I guess reading is a little important.
   _statModifiers:
   - _statToModify: 3
-    _modificationToPerform: 0
+    _modificationToPerform: 1
     _modificationValue: 1
     _hiddenModification: 0
   - _statToModify: 1
