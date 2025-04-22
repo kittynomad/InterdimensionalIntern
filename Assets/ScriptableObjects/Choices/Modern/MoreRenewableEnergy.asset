@@ -16,8 +16,8 @@ MonoBehaviour:
   _choiceDescription: "The hippies are on us again about our \u201Cirreparably destructive
     carbon footprint.\u201D Switch to renewable energy to get them off our backs!"
   _statModifiers:
-  - _statToModify: 5
-    _modificationToPerform: 1
+  - _statToModify: 2
+    _modificationToPerform: 0
     _modificationValue: 3
     _hiddenModification: 0
   - _statToModify: 3

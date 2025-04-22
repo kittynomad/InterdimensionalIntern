@@ -14,9 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _choiceName: Popularize Fur Coats
   _choiceDescription: "Not only are these lavish trappings the height of luxury,
-    but they\u2019ll keep you good and toasty in those long winter Not only are these
-    lavish trappings the height of luxury, but they\u2019ll keep you good and toasty
-    in those long winter months. . "
+    but they\u2019ll keep you good and toasty in those long winter."
   _statModifiers:
   - _statToModify: 0
     _modificationToPerform: 0

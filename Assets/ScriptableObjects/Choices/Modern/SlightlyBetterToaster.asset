@@ -18,9 +18,9 @@ MonoBehaviour:
   _statModifiers:
   - _statToModify: 4
     _modificationToPerform: 0
-    _modificationValue: 7
+    _modificationValue: 4
     _hiddenModification: 0
-  - _statToModify: 5
+  - _statToModify: 2
     _modificationToPerform: 0
     _modificationValue: 2
     _hiddenModification: 0

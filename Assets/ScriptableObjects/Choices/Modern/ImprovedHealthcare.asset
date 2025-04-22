@@ -15,7 +15,7 @@ MonoBehaviour:
   _choiceName: Healthcare
   _choiceDescription: Heal more people with support from pHARMacy Co.
   _statModifiers:
-  - _statToModify: 1
+  - _statToModify: 0
     _modificationToPerform: 0
     _modificationValue: 3
     _hiddenModification: 0

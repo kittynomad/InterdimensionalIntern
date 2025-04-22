@@ -20,8 +20,8 @@ MonoBehaviour:
     _modificationToPerform: 1
     _modificationValue: 8
     _hiddenModification: 0
-  - _statToModify: 3
-    _modificationToPerform: 1
-    _modificationValue: 8
+  - _statToModify: 2
+    _modificationToPerform: 0
+    _modificationValue: 5
     _hiddenModification: 0
   _choiceAnimation: {fileID: 0}

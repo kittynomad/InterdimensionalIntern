@@ -18,11 +18,11 @@ MonoBehaviour:
     11 Pound Kiwi is an affront to god and a slap in the face to the natural order!"
   _statModifiers:
   - _statToModify: 3
-    _modificationToPerform: 0
-    _modificationValue: 1
+    _modificationToPerform: 1
+    _modificationValue: 3
     _hiddenModification: 0
   - _statToModify: 0
     _modificationToPerform: 0
-    _modificationValue: 2000
+    _modificationValue: 7
     _hiddenModification: 0
   _choiceAnimation: {fileID: 0}
