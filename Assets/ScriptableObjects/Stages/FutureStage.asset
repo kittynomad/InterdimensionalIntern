@@ -38,9 +38,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 2eda36720c014624bbfea0b2b5147177, type: 2}
   - {fileID: 11400000, guid: dd0b275ddcdaec14cb6b66e9ee982700, type: 2}
   _buildings:
-  - {fileID: 21300000, guid: 26ed791a70392e843bbe57f02691dd1c, type: 3}
-  - {fileID: 21300000, guid: 26ed791a70392e843bbe57f02691dd1c, type: 3}
-  - {fileID: 21300000, guid: 26ed791a70392e843bbe57f02691dd1c, type: 3}
+  - {fileID: 21300000, guid: c9dffb99486282c479409853f21bf263, type: 3}
   _foreground: {fileID: 21300000, guid: c9dffb99486282c479409853f21bf263, type: 3}
   _foregroundDetails: {fileID: 21300000, guid: c9dffb99486282c479409853f21bf263, type: 3}
   _background1: {fileID: 21300000, guid: 84f2356e78bb4df459eca9267472df05, type: 3}
