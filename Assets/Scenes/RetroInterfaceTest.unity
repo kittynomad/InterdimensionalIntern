@@ -1521,7 +1521,7 @@ MonoBehaviour:
   _population: 2
   _resources: 10.4
   _popGrowthPercentPerTick: 100
-  _popGrowthDecayPerTick: 0.05
+  _popGrowthDecayPerTick: 0.1
   _happinessGrowthPercentPerTick: 99.8
   _happinessGrowthDecayPerTick: 0.05
   _happiness: 20
@@ -3416,7 +3416,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -4.06, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 3.55, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 844212}
@@ -5048,7 +5048,7 @@ ParticleSystem:
         m_RotationOrder: 4
     randomizeRotationDirection: 0
     gravitySource: 1
-    maxNumParticles: 50000
+    maxNumParticles: 500
     customEmitterVelocity: {x: 0, y: 0, z: 0}
     size3D: 0
     rotation3D: 0
@@ -11642,7 +11642,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 7.56
+  orthographic size: 7.82
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
@@ -12363,7 +12363,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 3.26, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 3.3125, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 844212}
@@ -13954,7 +13954,7 @@ Transform:
   m_GameObject: {fileID: 1978543540}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 16.89, y: 0.04, z: 0}
+  m_LocalPosition: {x: 23.4, y: 0.04, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -14481,7 +14481,7 @@ Transform:
   m_GameObject: {fileID: 2015442284}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -16.08, y: 0.04, z: 0}
+  m_LocalPosition: {x: -21.11, y: 0.04, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

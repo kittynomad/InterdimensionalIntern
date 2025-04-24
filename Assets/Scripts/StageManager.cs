@@ -15,6 +15,8 @@ public class StageManager : MonoBehaviour
 
     private CivilizationStatsManager statsManager;
 
+    public static ChoiceSet[] ChoicesThisTime;
+
     public int CurStage { get => curStage; set => curStage = value; }
     public CivStage[] Stages { get => stages; set => stages = value; }
     public Transform[] BuildingsParents { get => _buildingsParents; set => _buildingsParents = value; }
@@ -25,10 +27,12 @@ public class StageManager : MonoBehaviour
         choiceCount = 0;
         CurStage = 0;
         Debug.Log("Stages Length:" + (Stages.Length - 1));
+        ChoicesThisTime = new ChoiceSet[_choicesUntilCivilizationShift];
     }
 
-    public void OnChoice()
+    public void OnChoice(ChoiceSet c = null)
     {
+        ChoicesThisTime[choiceCount] = c;
         choiceCount++;
         Debug.Log("Choice #:" + choiceCount);
         if (choiceCount >= _choicesUntilCivilizationShift)
@@ -36,6 +40,7 @@ public class StageManager : MonoBehaviour
             Debug.Log("Population: " + statsManager.Population + "\nMax " + Stages[CurStage].MaxStats[0].Stat + ": " + Stages[CurStage].MaxStats[0].Value + "\nCurrent Stage: " + CurStage);
             StageCheck();
             choiceCount = 0;
+            ChoicesThisTime = new ChoiceSet[_choicesUntilCivilizationShift];
             StartCoroutine(NextPersonPause(2));
         }
     }
