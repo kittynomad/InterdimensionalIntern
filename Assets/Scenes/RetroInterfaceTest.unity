@@ -1521,7 +1521,7 @@ MonoBehaviour:
   _population: 2
   _resources: 10.4
   _popGrowthPercentPerTick: 100
-  _popGrowthDecayPerTick: 0.05
+  _popGrowthDecayPerTick: 0.1
   _happinessGrowthPercentPerTick: 99.8
   _happinessGrowthDecayPerTick: 0.05
   _happiness: 20
@@ -5048,7 +5048,7 @@ ParticleSystem:
         m_RotationOrder: 4
     randomizeRotationDirection: 0
     gravitySource: 1
-    maxNumParticles: 5000
+    maxNumParticles: 500
     customEmitterVelocity: {x: 0, y: 0, z: 0}
     size3D: 0
     rotation3D: 0

@@ -11,6 +11,6 @@ public class ParticlePeopleHandler : MonoBehaviour
     public void SetPopChange(int popChange)
     {
         var emission = ps.emission;
-        emission.rateOverTime = popChange;
+        emission.rateOverTime = popChange / 25;
     }
 }
