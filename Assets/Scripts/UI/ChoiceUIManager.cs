@@ -426,7 +426,7 @@ public class ChoiceUIManager : MonoBehaviour
             yield return new WaitForSeconds(1f);
             FindObjectOfType<CivilizationStatsManager>().ApplyChoice(_choices.Choices[choiceToApply]);
             _choices = null;
-            FindObjectOfType<StageManager>().OnChoice();
+            FindObjectOfType<StageManager>().OnChoice(_choices);
             StartCoroutine(TypeAdditional("\nNormal civilization function resumed\n(Time resumes)"));
         }
         _inputField.ActivateInputField();
