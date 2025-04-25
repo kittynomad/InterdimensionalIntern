@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92109ab8881064945aec6e7a2ed0e84a, type: 3}
   m_Name: GatheringInnovation
   m_EditorClassIdentifier: 
-  _choiceName: Innovations in gathering
+  _choiceName: Innovations in Gathering
   _choiceDescription: Gorp put berries in bag. Hold more berry. Gorp smart.
   _statModifiers:
   - _statToModify: 1
@@ -21,6 +21,6 @@ MonoBehaviour:
     _hiddenModification: 0
   - _statToModify: 2
     _modificationToPerform: 0
-    _modificationValue: 2
+    _modificationValue: 10
     _hiddenModification: 0
   _choiceAnimation: {fileID: 0}

@@ -16,9 +16,9 @@ MonoBehaviour:
   _choiceDescription: It absolutely not better, but its faster, cheaper, and more
     of it so who cares.
   _statModifiers:
-  - _statToModify: 3
+  - _statToModify: 2
     _modificationToPerform: 0
-    _modificationValue: 1
+    _modificationValue: 50
     _hiddenModification: 0
   - _statToModify: 5
     _modificationToPerform: 0

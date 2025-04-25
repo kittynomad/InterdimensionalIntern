@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92109ab8881064945aec6e7a2ed0e84a, type: 3}
   m_Name: GreatWar
   m_EditorClassIdentifier: 
-  _choiceName: Bring About A Great Wa
+  _choiceName: Bring About A Great War
   _choiceDescription: "So great that we won\u2019t need a sequel to it.  "
   _statModifiers:
   - _statToModify: 3
