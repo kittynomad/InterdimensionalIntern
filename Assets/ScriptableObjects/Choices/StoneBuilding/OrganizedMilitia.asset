@@ -13,8 +13,7 @@ MonoBehaviour:
   m_Name: OrganizedMilitia
   m_EditorClassIdentifier: 
   _choiceName: Organized Militia
-  _choiceDescription: 'Someone left berries in a jar for too long and discovered
-    fermentation. Why they then decided to drink it remains a mystery. '
+  _choiceDescription: Child soldiers are all the rage across the pond!
   _statModifiers:
   - _statToModify: 3
     _modificationToPerform: 1

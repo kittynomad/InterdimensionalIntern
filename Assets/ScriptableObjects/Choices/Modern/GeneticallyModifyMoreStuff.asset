@@ -23,6 +23,6 @@ MonoBehaviour:
     _hiddenModification: 0
   - _statToModify: 0
     _modificationToPerform: 0
-    _modificationValue: 7
+    _modificationValue: 70
     _hiddenModification: 0
   _choiceAnimation: {fileID: 0}

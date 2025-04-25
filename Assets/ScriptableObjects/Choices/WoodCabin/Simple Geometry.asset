@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92109ab8881064945aec6e7a2ed0e84a, type: 3}
   m_Name: Simple Geometry
   m_EditorClassIdentifier: 
-  _choiceName: Simpe Geometry
+  _choiceName: Simple Geometry
   _choiceDescription: "First the wheel, and now this? What\u2019s next, triangles?
     God forbid squares?! "
   _statModifiers:

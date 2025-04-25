@@ -15,9 +15,9 @@ MonoBehaviour:
   _choiceName: Crude Metalwork
   _choiceDescription: A stick, of metal!
   _statModifiers:
-  - _statToModify: 3
+  - _statToModify: 1
     _modificationToPerform: 0
-    _modificationValue: 2
+    _modificationValue: 1
     _hiddenModification: 0
   - _statToModify: 2
     _modificationToPerform: 0

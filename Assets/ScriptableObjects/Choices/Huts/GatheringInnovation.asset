@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: GatheringInnovation
   m_EditorClassIdentifier: 
   _choiceName: Innovations in gathering
-  _choiceDescription: Gorp put berries in bad. Hold more berry. Gorp smart.
+  _choiceDescription: Gorp put berries in bag. Hold more berry. Gorp smart.
   _statModifiers:
   - _statToModify: 1
     _modificationToPerform: 0

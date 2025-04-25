@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92109ab8881064945aec6e7a2ed0e84a, type: 3}
   m_Name: MixChemicalsTogether
   m_EditorClassIdentifier: 
-  _choiceName: Mixing one volitile substance with another, what could go wrong?
-  _choiceDescription: Nothing bad can happen by mixing two volitile chemicals together.
+  _choiceName: Mix Stuff Together
+  _choiceDescription: Nothing bad can happen by mixing two volatile chemicals together.
   _statModifiers:
   - _statToModify: 0
     _modificationToPerform: 1

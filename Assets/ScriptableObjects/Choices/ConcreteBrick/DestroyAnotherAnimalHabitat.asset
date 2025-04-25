@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: DestroyAnotherAnimalHabitat
   m_EditorClassIdentifier: 
   _choiceName: Destroy Another Animal Habitat
-  _choiceDescription: These animals maybe cute, but its survival of the fittest and
-    we need more fancy hats!
+  _choiceDescription: These animals may be cute, but its survival of the fittest
+    and we need more fancy hats!
   _statModifiers:
   - _statToModify: 3
     _modificationToPerform: 1

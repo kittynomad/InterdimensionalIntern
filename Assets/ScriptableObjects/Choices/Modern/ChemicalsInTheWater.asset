@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92109ab8881064945aec6e7a2ed0e84a, type: 3}
   m_Name: ChemicalsInTheWater
   m_EditorClassIdentifier: 
-  _choiceName: Chemicals spil into water
+  _choiceName: Chemicals spill into water
   _choiceDescription: Big things happening in the frog community.
   _statModifiers:
   - _statToModify: 1
