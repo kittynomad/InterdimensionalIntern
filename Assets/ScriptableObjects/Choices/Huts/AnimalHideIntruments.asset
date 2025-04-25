@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92109ab8881064945aec6e7a2ed0e84a, type: 3}
   m_Name: AnimalHideIntruments
   m_EditorClassIdentifier: 
-  _choiceName: Animal skn used to make instruments
+  _choiceName: Animal hide used to make instruments
   _choiceDescription: "Country hasn\u2019t been invented here, so it\u2019s fine
     to give your civilization musical freedom, right? "
   _statModifiers:
