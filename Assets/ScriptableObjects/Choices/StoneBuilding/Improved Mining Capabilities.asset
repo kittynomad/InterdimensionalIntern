@@ -21,7 +21,7 @@ MonoBehaviour:
     _hiddenModification: 0
   - _statToModify: 2
     _modificationToPerform: 0
-    _modificationValue: 40
+    _modificationValue: 35
     _hiddenModification: 0
   - _statToModify: 0
     _modificationToPerform: 1

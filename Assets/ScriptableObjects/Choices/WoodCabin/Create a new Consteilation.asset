@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92109ab8881064945aec6e7a2ed0e84a, type: 3}
   m_Name: Create a new Consteilation
   m_EditorClassIdentifier: 
-  _choiceName: Create a new Consteilation
+  _choiceName: Create a new Constellation
   _choiceDescription: 'Does that look like a Frog to anyone else? Just us? '
   _statModifiers:
   - _statToModify: 3

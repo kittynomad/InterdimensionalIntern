@@ -17,12 +17,12 @@ MonoBehaviour:
   - _stat: 0
     _value: 2501
   - _stat: 2
-    _value: 1001
+    _value: 501
   _maxStats:
   - _stat: 0
     _value: 10000
   - _stat: 2
-    _value: 5000
+    _value: 3000
   - _stat: 3
     _value: 50
   _choiceSets:
