@@ -64,7 +64,8 @@ public class StageManager : MonoBehaviour
             _backgroundAnimator.SetInteger("curStage", CurStage);
             UpdateStageSprites();
         }
-        else if (CurStage < Stages.Length - 1 && !Stages[CurStage].CivilizationBelowMaximumStats(statsManager))//statsManager.Population >= stages[curStage].MaxPopulation)
+        //else if (CurStage < Stages.Length - 1 && !Stages[CurStage].CivilizationBelowMaximumStats(statsManager))//statsManager.Population >= stages[curStage].MaxPopulation)
+        else if (!Stages[CurStage].CivilizationBelowMaximumStats(statsManager))//statsManager.Population >= stages[curStage].MaxPopulation)
         {
             Debug.Log("Not below maximum: " + !Stages[CurStage].CivilizationBelowMaximumStats(statsManager));
             if (curStage >= stages.Length - 1) //if on last stage
