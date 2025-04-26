@@ -20,8 +20,8 @@ MonoBehaviour:
     _modificationValue: 4
     _hiddenModification: 0
   - _statToModify: 2
-    _modificationToPerform: 0
-    _modificationValue: 500
+    _modificationToPerform: 1
+    _modificationValue: 1000
     _hiddenModification: 0
   - _statToModify: 5
     _modificationToPerform: 0

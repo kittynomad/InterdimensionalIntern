@@ -15,9 +15,9 @@ MonoBehaviour:
   _choiceName: Forest Fire
   _choiceDescription: Ash to ash, dust to dust.
   _statModifiers:
-  - _statToModify: 0
+  - _statToModify: 2
     _modificationToPerform: 1
-    _modificationValue: 6
+    _modificationValue: 20
     _hiddenModification: 0
   - _statToModify: 1
     _modificationToPerform: 1

@@ -17,12 +17,12 @@ MonoBehaviour:
   - _stat: 0
     _value: 5001
   - _stat: 2
-    _value: 100
+    _value: 101
   _maxStats:
   - _stat: 0
     _value: 25000
   - _stat: 2
-    _value: 1000
+    _value: 500
   _choiceSets:
   - {fileID: 11400000, guid: c2c7486521c0e6045945895991b60ade, type: 2}
   - {fileID: 11400000, guid: d18de12c16db26f459ac667ac346dbb4, type: 2}
